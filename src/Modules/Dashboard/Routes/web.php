@@ -11,6 +11,7 @@
 |
 */
 
-Route::prefix('dashboard')->group(function() {
-    Route::get('/', 'DashboardController@index');
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function ($r){
+    $r->get('/', 'DashboardController@index')->name('index');
 });
+

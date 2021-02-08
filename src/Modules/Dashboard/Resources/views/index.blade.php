@@ -1,9 +1,13 @@
-@extends('dashboard::layouts.master')
+@extends('dashboard::layouts.app')
+
+@section('title')
+    Dashboard
+@endsection
+
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('dashboard') }}
+@endsection
 
 @section('content')
-    <h1>Hello World</h1>
 
-    <p>
-        This view is loaded from module: {!! config('dashboard.name') !!}
-    </p>
 @endsection
