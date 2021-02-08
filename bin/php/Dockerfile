@@ -25,8 +25,8 @@ RUN apt-get update && apt-get install -yq \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
 
     # Install extensions
-    #docker-php-ext-install bcmath ctype exif fileinfo json mbstring pcntl pdo zip && \
-    docker-php-ext-install bcmath exif pcntl zip && \
+    #docker-php-ext-install bcmath ctype exif fileinfo json mbstring pcntl pdo pdo_mysql zip && \
+    docker-php-ext-install bcmath exif pcntl pdo_mysql zip && \
     docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
     docker-php-ext-install gd && \
 

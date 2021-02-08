@@ -11,6 +11,9 @@ takes_memory:
 	docker ps -s
 inspect_process:
 	docker-compose ps
+ide_helper_regen:
+	docker exec $(app_container) sh -c "php artisan ide-helper:generate && \
+	php artisan ide-helper:meta && php artisan ide-helper:models --nowrite"
 reset_app_perm:
 	sudo chown -Rf ${USER}:${USER} ./src/* && \
 	docker exec $(app_container) sh -c "chmod -Rf 777 storage"
