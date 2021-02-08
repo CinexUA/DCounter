@@ -11,7 +11,13 @@
 |
 */
 
-Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function ($r){
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale().'/dashboard',
+        'as' => 'dashboard.',
+        'middleware' => [ 'localizationRedirect', 'localeViewPath' ]
+    ], function ($r){
+
     $r->get('/', 'DashboardController@index')->name('index');
 });
 
