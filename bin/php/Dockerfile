@@ -32,11 +32,11 @@ RUN apt-get update && apt-get install -yq \
 
     # Install composer
     cd /tmp && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
 
     # Add user for laravel application
-    #groupadd -g 1000 www && \
-    #useradd -u 1000 -ms /bin/bash -g www www
+    groupadd -g 1000 www && \
+    useradd -u 1000 -ms /bin/bash -g www www
 
 
 # Change current root user to www

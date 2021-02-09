@@ -16,7 +16,8 @@ ide_helper_regen:
 	php artisan ide-helper:meta && php artisan ide-helper:models --nowrite"
 reset_app_perm:
 	sudo chown -Rf ${USER}:${USER} ./src/* && \
-	docker exec $(app_container) sh -c "chmod -Rf 777 storage"
+	docker exec $(app_container) sh -c "chmod -Rf 777 storage && \
+	chmod -Rf 777 bootstrap/cache/"
 reset_logs_perm:
 	sudo chown -Rf ${USER}:${USER} ./logs/*
 copy_fpm_settings:

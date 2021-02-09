@@ -8,7 +8,7 @@
         @foreach(\LaravelLocalization::getLocalesOrder() as $key=>$lang)
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{\LaravelLocalization::localizeURL(route('dashboard.index'), $key)}}" class="nav-link">
-                {{$key}}
+                {{strtoupper($key)}}
             </a>
         </li>
         @endforeach

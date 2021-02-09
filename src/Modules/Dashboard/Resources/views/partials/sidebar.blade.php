@@ -27,9 +27,20 @@
                         <p>@lang("dashboard::sidebar.dashboard_link_name")</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" class="nav-link"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>@lang("auth.logout")</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
 </aside>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+    @csrf
+</form>
