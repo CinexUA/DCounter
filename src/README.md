@@ -6,6 +6,10 @@ For example:
 php artisan translatable:export es
 php artisan translatable:export es,bg,de
 ```
+AND for JS: \
+```php artisan lang:js``` \
+or compressing the JS file: \
+```php artisan lang:js -c``` 
 
 ## Caching & optimization
 configuration caching 
@@ -29,3 +33,7 @@ Optimize Autoload
 composer dumpautoload -o
 dump-autoload –optimize
 ```
+
+#### Configuration Dashboard module
+configurations that override the behavior of extensions: "breadcrumbs" and "paginator" are located on the path: \
+```Module/Dashboard/Providers/ConfigurationServiceProvider``` in method ```boot```

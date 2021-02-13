@@ -474,17 +474,11 @@
 .flag-icon-ga.flag-icon-squared {
   background-image: url(../flags/1x1/ga.svg);
 }
-.flag-icon-gb {
+.flag-icon-en {
   background-image: url(../flags/4x3/gb.svg);
 }
-.flag-icon-gb.flag-icon-squared {
+.flag-icon-en.flag-icon-squared {
   background-image: url(../flags/1x1/gb.svg);
-}
-.flag-icon-gd {
-  background-image: url(../flags/4x3/gd.svg);
-}
-.flag-icon-gd.flag-icon-squared {
-  background-image: url(../flags/1x1/gd.svg);
 }
 .flag-icon-ge {
   background-image: url(../flags/4x3/ge.svg);
@@ -1392,10 +1386,10 @@
 .flag-icon-tz.flag-icon-squared {
   background-image: url(../flags/1x1/tz.svg);
 }
-.flag-icon-ua {
+.flag-icon-uk {
   background-image: url(../flags/4x3/ua.svg);
 }
-.flag-icon-ua.flag-icon-squared {
+.flag-icon-uk.flag-icon-squared {
   background-image: url(../flags/1x1/ua.svg);
 }
 .flag-icon-ug {

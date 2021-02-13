@@ -15,9 +15,20 @@ Route::group(
     [
         'prefix' => LaravelLocalization::setLocale().'/dashboard',
         'as' => 'dashboard.',
-        'middleware' => [ 'localizationRedirect', 'localeViewPath', 'auth', 'verified' ]
+        'middleware' => [
+            'localizationRedirect',
+            'localeViewPath',
+            'auth',
+            'verified',
+            'role:superadministrator,administrator',
+        ]
     ], function ($r){
 
     $r->get('/', 'DashboardController@index')->name('index');
+
+    $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:superadministrator']], function($r) {
+        $r->resource('users', 'UsersController');
+    });
+
 });
 

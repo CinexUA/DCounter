@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('vendor/dashboard/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/common/css/style.css') }}">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -29,11 +30,16 @@
 </div>
 <!-- /.login-box -->
 
+<div id="loader" class="loader">
+    <img src="{{asset('/images/rolling-loader.gif')}}" alt="loader">
+</div>
+
 <!-- jQuery -->
 <script src="{{ asset('vendor/dashboard/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('vendor/dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('vendor/dashboard/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/common/js/script.js') }}"></script>
 </body>
 </html>

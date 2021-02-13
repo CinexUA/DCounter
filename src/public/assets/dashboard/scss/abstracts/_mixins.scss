@@ -1,0 +1,209 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin transition($args: all 0.3s ease 0s) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-duration($args1, $args2) {
+  -webkit-transition-duration: $args1, $args2;
+  -moz-transition-duration: $args1, $args2;
+  -o-transition-duration: $args1, $args2;
+  transition-duration: $args1, $args2;
+}
+
+@mixin transition-delay($args1, $args2) {
+  -webkit-transition-delay: $args1, $args2;
+  -moz-transition-delay: $args1, $args2;
+  -o-transition-delay: $args1, $args2;
+  transition-delay: $args1, $args2;
+}
+
+@mixin transition-property($args1, $args2) {
+  -webkit-transition-property: $args1, $args2;
+  -moz-transition-property: $args1, $args2;
+  -o-transition-property: $args1, $args2;
+  transition-property: $args1, $args2;
+}
+
+
+// Placeholder Mixins
+
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin gradient($deg, $args1,$args2){
+  background: -webkit-linear-gradient($deg, $args1, $args2);
+  background: -moz-linear-gradient($deg, $args1, $args2);
+  background: -ms-linear-gradient($deg, $args1, $args2);
+  background: -o-linear-gradient($deg, $args1, $args2);
+  background: linear-gradient($deg, $args1, $args2);
+}
+
+@mixin gradient2($deg, $args1,$args2, $args3){
+  background: -webkit-linear-gradient($deg, $args1, $args2, $args3);
+  background: -moz-linear-gradient($deg, $args1, $args2, $args3);
+  background: -ms-linear-gradient($deg, $args1, $args2, $args3);
+  background: -o-linear-gradient($deg, $args1, $args2, $args3);
+  background: linear-gradient($deg, $args1, $args2, $args3);
+}
+
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+
+
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-origin($value) {
+  -webkit-transform-origin: $value;
+  -moz-transform-origin: $value;
+  -ms-transform-origin: $value;
+  -o-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin backface-visibility($value) {
+  -webkit-backface-visibility: $value;
+  -moz-backface-visibility: $value;
+  backface-visibility: $value;
+}
+
+@mixin calc ( $property, $expression ) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin keyframes ( $animation-name ) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name}  {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation ($args) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+
+@mixin center {
+  position: absolute;
+  left:50%;
+  top:50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 1450px) { @content; }
+  }@else if $point == xsmall {
+    @media (max-width: 600px) { @content; }
+  }
+
+}
+
+@mixin placeholder($color){
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color;
+    opacity: 1; /* Firefox */
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: $color;
+  }
+}
+
+@mixin placeholder_opt{
+  &::placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-ms-input-placeholder { @content; }
+}
+
+@mixin hide_number_arrows{
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  -moz-appearance: textfield;
+}

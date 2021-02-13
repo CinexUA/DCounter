@@ -48,6 +48,25 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->name;
     }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getUserRolesAsString()
+    {
+        return implode(', ', $this->roles()->get()->pluck('display_name')->toArray());
+    }
+
+    public function getUserRolesAsStringWrap()
+    {
+        $rolesArray = $this->roles()->get()->pluck('display_name')->toArray();
+        $rolesArray = array_map(function ($el){
+            return sprintf('<span class="badge bg-success">%s</span>', $el);
+        }, $rolesArray);
+        return implode(', ', $rolesArray);
+    }
     //endregion getters
 
     //region mutators

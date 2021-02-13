@@ -4,6 +4,7 @@ return [
     'directories'=> [
         'app',
         'resources',
+        'Modules/Dashboard'
     ],
 
     // File Patterns to search for.
@@ -20,7 +21,7 @@ return [
     'functions'=> [
         '__',
         '_t',
-        '@lang',
+        //'@lang',
     ],
 
     // Indicates whether you need to sort the translations alphabetically
