@@ -20,7 +20,6 @@ Route::group(
             'localeViewPath',
             'auth',
             'verified',
-            'role:superadministrator,administrator',
         ]
     ], function ($r){
 

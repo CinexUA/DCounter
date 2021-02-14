@@ -4,8 +4,8 @@
 <div class="card-body login-card-body">
     <p class="login-box-msg">@lang('auth.register_a_new_membership')</p>
 
-    <form action="{{ route('register') }}" method="post">
-        @csrf
+    {!! Form::open(['route' => 'register', 'files' => true]) !!}
+
 
         <div class="input-group mb-3">
             <input type="text"
@@ -85,6 +85,26 @@
             </div>
         </div>
 
+        <div class="input-group mb-3">
+            <div class="input-group @error('avatar') is-invalid @enderror">
+                <div class="custom-file">
+                    <input
+                        name="avatar"
+                        type="file"
+                        accept="image/*"
+                        class="custom-file-input @error('avatar') is-invalid @enderror"
+                        id="input-avatar"
+                    />
+                    <label class="custom-file-label" for="input-avatar">{{__('Choose avatar')}}</label>
+                </div>
+            </div>
+            @error('avatar')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+
         <div class="row">
 
             <div class="offset-md-6 col-md-6 col-12">
@@ -92,10 +112,20 @@
             </div>
 
         </div>
-    </form>
+    {!! Form::close() !!}
 
     <p class="mt-2 mb-1">
         @lang('auth.already_have_an_account', ['url' => route('login')])
     </p>
 </div>
 @endsection
+
+@push('inline_scripts')
+    <!-- bs-custom-file-input -->
+    <script src="{{ asset('vendor/dashboard/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script>
+        $(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+@endpush
