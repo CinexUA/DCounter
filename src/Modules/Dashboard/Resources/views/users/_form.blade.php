@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 col-sm-8 col-md-6">
+    <div class="col-12 col-sm-6 col-md-6">
         <div class="card card-info">
             <div class="card-body">
 
@@ -56,6 +56,15 @@
                     ) }}
                 </div>
 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-6">
+        <div class="card card-info">
+            <div class="card-body">
+
                 <div class="form-group">
                     <label>{{__('Roles')}}</label>
                     {{ Form::select('roles[]', $roles, null,
@@ -90,16 +99,18 @@
                     </div>
                     <div class="mt-2">
                         @if(isset($user) && $user->hasMedia('avatar'))
-                        <img src="{{$user->getFirstMediaUrl('avatar', 'thumb')}}" alt="avatar">
+                            <a href="{{$user->getFirstMediaUrl('avatar')}}">
+                                <img
+                                    width="128"
+                                    height="128"
+                                    src="{{$user->getFirstMediaUrl('avatar', 'thumb')}}"
+                                    alt="avatar"
+                                >
+                            </a>
                         @else
-                        <img width="100" src="{{asset('images/no-image.jpg')}}" alt="no-image">
+                            <img width="100" src="{{asset('images/no-image.jpg')}}" alt="no-image">
                         @endif
                     </div>
-                </div>
-
-                <div class="form-group">
-                    {{Form::submit((isset($user) ? __('Update') : __('Create')),
-                        ['class' => 'btn btn-block btn-success'])}}
                 </div>
 
             </div>
