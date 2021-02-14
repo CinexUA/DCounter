@@ -69,6 +69,7 @@
                     <label>{{__('Roles')}}</label>
                     {{ Form::select('roles[]', $roles, null,
                         [
+                            ($user->getKey() == auth()->id() ? 'disabled' : ''),
                             'class' => 'select2bs4' . ($errors->has('roles') ? ' is-invalid' : ''),
                             'multiple' => 'multiple',
                             'data-placeholder' => __('Select roles'),

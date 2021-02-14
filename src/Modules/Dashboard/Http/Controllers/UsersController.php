@@ -3,6 +3,7 @@
 namespace Modules\Dashboard\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Arr;
 use Modules\Dashboard\Http\Requests\UserRequest;
 use Modules\Dashboard\Services\RoleService;
 use Modules\Dashboard\Services\UserService;
