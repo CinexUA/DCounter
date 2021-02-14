@@ -6,6 +6,7 @@ namespace Modules\Dashboard\Services;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Psr\Http\Message\StreamInterface;
@@ -27,11 +28,8 @@ class UserService extends BaseService
 
     public function update(User $user, array $data): User
     {
-        $user->update([
-            'name' => $data['name'],
-            'email' => $data['email']
-        ]);
-
+        $filteredData = Arr::only($data, ['name', 'email']);
+        $user->update($filteredData);
         $user->roles()->sync($data['roles'] ?? []);
 
         if(isset($data['avatar'])){

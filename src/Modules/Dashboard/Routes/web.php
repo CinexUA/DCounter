@@ -24,6 +24,7 @@ Route::group(
     ], function ($r){
 
     $r->get('/', 'DashboardController@index')->name('index');
+    $r->resource('profile', 'ProfileController')->only(['edit', 'update']);
 
     $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:superadministrator']], function($r) {
         $r->resource('users', 'UsersController');

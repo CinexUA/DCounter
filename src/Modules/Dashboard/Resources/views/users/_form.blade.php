@@ -46,12 +46,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="input-password">{{__('Password confirmation')}}</label>
+                    <label for="input-password-confirmed">{{__('Password confirmation')}}</label>
                     {{ Form::password('password_confirmation',
                         [
                             'class' => 'form-control' . ($errors->has('password-confirmation') ? ' is-invalid' : ''),
                             'placeholder' => __('Password confirmation'),
-                            'id' => 'input-password'
+                            'id' => 'input-password-confirmed'
                         ]
                     ) }}
                 </div>
