@@ -8,6 +8,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Psr\Http\Message\StreamInterface;
 
 
 class UserService extends BaseService
@@ -44,7 +45,7 @@ class UserService extends BaseService
         return $user;
     }
 
-    public function avatarUpload(User $user, UploadedFile $avatar)
+    public function avatarUpload(User $user, UploadedFile $avatar): void
     {
         $user->addMediaFromString($this->compressImage($avatar))
             ->sanitizingFileName(function($fileName) {
@@ -54,7 +55,7 @@ class UserService extends BaseService
             ->toMediaCollection('avatar');
     }
 
-    public function compressImage(UploadedFile $avatar)
+    public function compressImage(UploadedFile $avatar): StreamInterface
     {
         return Image::make($avatar)
             ->resize(800, null, function ($constraint) {
