@@ -1,13 +1,20 @@
 <li class="nav-item dropdown user-menu">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <img src="{{ asset('vendor/dashboard/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
+        @if(auth()->user()->hasMedia('avatar'))
+        <img src="{{ auth()->user()->getMedia('avatar')->first()->getUrl('thumb') }}" class="user-image img-circle elevation-2" alt="User Image">
+        @else
+        <img src="{{ asset('images/no-image.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
+        @endif
         <span class="d-none d-md-inline">{{auth()->user()->getName()}}</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
         <!-- User image -->
         <li class="user-header bg-primary">
-            <img src="{{ asset('vendor/dashboard/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-
+            @if(auth()->user()->hasMedia('avatar'))
+            <img src="{{ auth()->user()->getMedia('avatar')->first()->getUrl('thumb') }}" class="img-circle elevation-2" alt="User Image">
+            @else
+            <img src="{{ asset('images/no-image.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            @endif
             <p>
                 {{auth()->user()->getName()}}
             </p>

@@ -1,3 +1,9 @@
+## Manual installation
+1. ```composer clearcache```
+1. ```composer install```
+1. ```php artisan cache:clear && php artisan route:clear && php artisan route:trans:clear && php artisan view:clear && php artisan clear-compiled```
+1. ```php artisan migrate```
+
 ## Export translatable strings
 ```php artisan translatable:export <lang>``` \
 Where <lang> is a language code or a comma-separated list of language codes.

@@ -36,6 +36,17 @@
                         <p class="text-muted">
                             {!! $user->getUserRolesAsStringWrap() !!}
                         </p>
+                        <hr>
+
+                        <strong>{{__('Avatar')}}</strong>
+                        <p class="text-muted">
+                            @if($user->hasMedia('avatar'))
+                            <img src="{{$user->getFirstMediaUrl('avatar', 'thumb')}}" alt="avatar">
+                            @else
+                            <img width="100" src="{{asset('images/no-image.jpg')}}" alt="no-image">
+                            @endif
+                        </p>
+
 
                     </div>
 

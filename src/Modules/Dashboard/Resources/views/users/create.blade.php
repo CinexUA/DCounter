@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="container-fluid">
-        {!! Form::open(['route' => 'dashboard.admin.users.store']) !!}
+        {!! Form::open(['route' => 'dashboard.admin.users.store', 'files' => true]) !!}
         @include('dashboard::users._form')
         {!! Form::close() !!}
     </div>

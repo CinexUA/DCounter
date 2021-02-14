@@ -10,7 +10,13 @@
 
 @section('content')
     <div class="container-fluid">
-        {!! Form::model($user, ['method' => 'PATCH', 'route' => ['dashboard.admin.users.update', $user]]) !!}
+        {!! Form::model($user,
+            [
+                'method' => 'PATCH',
+                'files' => true,
+                'route' => ['dashboard.admin.users.update', $user]
+            ]
+        ) !!}
         @include('dashboard::users._form')
         {!! Form::close() !!}
     </div>

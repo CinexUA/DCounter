@@ -16,7 +16,8 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string|max:255',
-            'roles' => 'required|exists:roles,id'
+            'roles' => 'required|exists:roles,id',
+            'avatar' => 'nullable|image|max:2048'
         ];
 
         switch ($this->method()){
