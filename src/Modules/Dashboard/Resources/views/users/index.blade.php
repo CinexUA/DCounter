@@ -38,7 +38,8 @@
                     <div class="card-footer clearfix">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                @include('dashboard::partials._per_page')&nbsp;
+                                @include('dashboard::partials._per_page', ['default_per_page' => $users->perPage()])
+                                &nbsp;
                                 @lang('shared.show_page_from_to_total', [
                                     'first' => $users->firstItem(),
                                     'last' => $users->lastItem(),
