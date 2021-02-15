@@ -1,11 +1,10 @@
 <label>
     <select class="custom-select" name="per-page">
         <option
-            @if(app('request')->input('per-page') == ($default_per_page ?? 15)) selected @endif
-            value="{{ Request::fullUrlWithQuery(array_merge(request()->except('per-page'),
-                        ['per-page' => $default_per_page ?? 15])) }}"
+            @if(app('request')->input('per-page') == 15) selected @endif
+            value="{{ Request::fullUrlWithQuery(array_merge(request()->except('per-page'), ['per-page' => 15])) }}"
         >
-            {{ $default_per_page ?? 15 }}
+            15
         </option>
         <option
             @if(app('request')->input('per-page') == 25) selected @endif
