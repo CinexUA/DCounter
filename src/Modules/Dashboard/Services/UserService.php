@@ -6,6 +6,7 @@ namespace Modules\Dashboard\Services;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
@@ -14,9 +15,12 @@ use Psr\Http\Message\StreamInterface;
 
 class UserService extends BaseService
 {
-    public function paginate(): LengthAwarePaginator
+    public function paginate(Request $request): LengthAwarePaginator
     {
-        return User::with('roles')->paginate();
+        $perPage = $request->get('per-page');
+        return User::with('roles')
+            ->filter($request->all())
+            ->paginateFilter($perPage);
     }
 
     public function create(array $data): User

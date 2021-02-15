@@ -21,6 +21,7 @@
         "nwidart/laravel-modules": "^8.2",
         "santigarcor/laratrust": "^6.3",
         "spatie/laravel-medialibrary": "^9.0.0",
+        "tucker-eric/eloquentfilter": "^2.4",
         "yoeunes/toastr": "^1.2"
     },
     "require-dev": {

@@ -12,6 +12,7 @@ return [
     'no_entries' => 'No entries',
     'add' => 'Add',
     'edit' => 'Edit',
-    'delete' => 'Delete'
+    'delete' => 'Delete',
+    'show_page_from_to_total' => 'Showing :first to :last of total :total entries',
 
 ];

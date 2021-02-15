@@ -32,7 +32,7 @@
                     <ul class="nav nav-treeview" style="display: none;">
                         <li class="nav-item">
                             <a href="{{route('dashboard.admin.users.index')}}"
-                               class="nav-link {{set_active('dashboard.admin.users.index')}}"
+                               class="nav-link {{set_active('dashboard.admin.users.*')}}"
                             >
                                 <i class="fas fa-users nav-icon"></i>
                                 <p>@lang('dashboard::sidebar.users_link_name')</p>

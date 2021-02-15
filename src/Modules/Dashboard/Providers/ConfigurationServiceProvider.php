@@ -21,6 +21,7 @@ class ConfigurationServiceProvider extends ServiceProvider
     {
         config()->set('breadcrumbs.view', 'dashboard::partials/breadcrumbs');
         config()->set('breadcrumbs.files', base_path('Modules/Dashboard/Routes/breadcrumbs.php'));
+        config()->set('eloquentfilter.namespace', 'Modules\\Dashboard\\Filters\\');
 
         Paginator::defaultView('dashboard::vendor/pagination/bootstrap-4');
     }

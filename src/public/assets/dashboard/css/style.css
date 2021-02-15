@@ -1,6 +1,11 @@
 .alert ul {
   margin-bottom: 0; }
 
+.filter-area {
+  display: none; }
+  .filter-area.active {
+    display: block; }
+
 .btn-group-xs > .btn, .btn-xs {
   padding: .25rem .4rem;
   font-size: .75rem;

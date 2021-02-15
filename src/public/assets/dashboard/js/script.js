@@ -2,6 +2,20 @@ Lang.setFallback('en');
 
 jQuery(function($){
 
+    /*$(".auto-close-alert").fadeTo(5000, 500).slideUp(500, function(){
+        $(this).remove();
+    });*/
+
+    //filter area
+    $('.btn-filter').click(function (e) {
+        e.preventDefault();
+        $('.filter-area').toggle('.active');
+    });
+
+    $('.btn-loader-handle').click(function (e) {
+        showLoader();
+    });
+
     //delete table item
     $(document).on('click','.delete',function(e){
         e.preventDefault();

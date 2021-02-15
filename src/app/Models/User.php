@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use EloquentFilter\Filterable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 use Spatie\MediaLibrary\HasMedia;
@@ -15,7 +16,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class User extends Authenticatable implements MustVerifyEmail, HasMedia
 {
     use LaratrustUserTrait;
-    use HasFactory, Notifiable, InteractsWithMedia;
+    use HasFactory, Notifiable, InteractsWithMedia, Filterable;
 
     /**
      * The attributes that are mass assignable.

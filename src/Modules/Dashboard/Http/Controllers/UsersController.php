@@ -3,7 +3,7 @@
 namespace Modules\Dashboard\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 use Modules\Dashboard\Http\Requests\UserRequest;
 use Modules\Dashboard\Services\RoleService;
 use Modules\Dashboard\Services\UserService;
@@ -21,10 +21,11 @@ class UsersController  extends BaseController
         $this->roleService = $roleService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = $this->userService->paginate();
-        return view('dashboard::users.index', compact('users'));
+        $users = $this->userService->paginate($request);
+        $roles = $this->roleService->listAsSelectArray();
+        return view('dashboard::users.index', compact('users', 'roles'));
     }
 
     public function create()

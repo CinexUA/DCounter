@@ -59,7 +59,7 @@
         @if(session()->has('success'))
         <div class="content">
             <div class="container-fluid">
-                <div class="alert alert-success alert-dismissible fade show" role="alert" id="auto-close-alert">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{session()->get('success')}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

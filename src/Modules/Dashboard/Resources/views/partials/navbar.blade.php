@@ -14,7 +14,7 @@
 
         @include('dashboard::partials._language_switcher')
 
-        <li class="nav-item">
+        <li class="nav-item d-none d-lg-block">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
