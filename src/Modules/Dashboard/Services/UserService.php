@@ -20,6 +20,7 @@ class UserService extends BaseService
         $perPage = $request->get('per-page');
         return User::with('roles')
             ->filter($request->all())
+            ->sortable()
             ->paginateFilter($perPage);
     }
 

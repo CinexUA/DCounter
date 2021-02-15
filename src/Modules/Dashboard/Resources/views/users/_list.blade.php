@@ -2,7 +2,7 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th style="width: 10px">#</th>
+            <th style="width: 55px">@sortablelink('id', '#')</th>
             <th>@lang('shared.name')</th>
             <th>@lang('shared.email')</th>
             <th>@lang('shared.roles')</th>

@@ -19,6 +19,7 @@
         "laravelcollective/html": "^6.2",
         "mcamara/laravel-localization": "^1.6",
         "nwidart/laravel-modules": "^8.2",
+        "kyslik/column-sortable": "^6.0",
         "santigarcor/laratrust": "^6.3",
         "spatie/laravel-medialibrary": "^9.0.0",
         "tucker-eric/eloquentfilter": "^2.4",
