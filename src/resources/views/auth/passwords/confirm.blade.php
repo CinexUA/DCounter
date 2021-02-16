@@ -28,7 +28,7 @@
         <div class="row">
 
             <div class="offset-md-4 col-md-8 col-12">
-                <button type="submit" class="btn btn-primary btn-block">{{ __('Confirm Password') }}</button>
+                <button type="submit" class="btn btn-primary btn-block">@lang('auth.password_confirmation')</button>
             </div>
 
         </div>

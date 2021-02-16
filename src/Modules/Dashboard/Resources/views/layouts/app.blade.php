@@ -94,7 +94,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong><a href="https://github.com/CinexUA/DCounter">DCounter</a>.</strong>
+        <strong><a href="https://github.com/CinexUA/DCounter">{{ config('dashboard.name', 'DCounter') }}</a>.</strong>
         <div class="float-right d-none d-sm-inline-block">
 
         </div>

@@ -1,7 +1,7 @@
 @extends('dashboard::layouts.app')
 
 @section('title')
-    {{__('User Profile')}}
+    @lang('shared.user_profile')
 @endsection
 
 @section('breadcrumbs')
@@ -48,7 +48,7 @@
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">@lang('shared.settings')</a></li>
                         </ul>
                     </div><!-- /.card-header -->
                     <div class="card-body">
@@ -63,12 +63,12 @@
                                     ]
                                 ) !!}
                                     <div class="form-group row">
-                                        <label for="input-name" class="col-sm-2 col-form-label">{{__('Username')}}</label>
+                                        <label for="input-name" class="col-sm-2 col-form-label">@lang('shared.username')</label>
                                         <div class="col-sm-10">
                                             {{ Form::text('name', null,
                                                 [
                                                     'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
-                                                    'placeholder' => __('Username'),
+                                                    'placeholder' => trans('shared.username'),
                                                     'id' => 'input-name'
                                                 ]
                                             ) }}
@@ -78,20 +78,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="input-email" class="col-sm-2 col-form-label">{{__('Email')}}</label>
+                                        <label for="input-email" class="col-sm-2 col-form-label">@lang('shared.email')</label>
                                         <div class="col-sm-10">
                                             {{ Form::email('email', null,
                                                 [
                                                     'disabled',
                                                     'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
-                                                    'placeholder' => __('Email'),
+                                                    'placeholder' => trans('shared.email'),
                                                     'id' => 'input-email'
                                                 ]
                                             ) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="input-password" class="col-sm-2 col-form-label">{{__('Password')}}</label>
+                                        <label for="input-password" class="col-sm-2 col-form-label">@lang('shared.password')</label>
                                         <div class="col-sm-10">
                                             <small class="text-muted">
                                                 {{__('Leave blank if you do not want to change')}}
@@ -99,7 +99,7 @@
                                             {{ Form::password('password',
                                                 [
                                                     'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
-                                                    'placeholder' => __('Password'),
+                                                    'placeholder' => trans('shared.password'),
                                                     'id' => 'input-password'
                                                 ]
                                             ) }}
@@ -110,20 +110,20 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="input-password-confirmed" class="col-sm-2 col-form-label">
-                                            {{__('Password confirmation')}}
+                                            @lang('shared.password_confirmation')
                                         </label>
                                         <div class="col-sm-10">
                                             {{ Form::password('password_confirmation',
                                                 [
                                                     'class' => 'form-control' . ($errors->has('password-confirmation') ? ' is-invalid' : ''),
-                                                    'placeholder' => __('Password confirmation'),
+                                                    'placeholder' => trans('shared.password_confirmation'),
                                                     'id' => 'input-password-confirmed'
                                                 ]
                                             ) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="input-avatar" class="col-sm-2 col-form-label">{{__('Avatar')}}</label>
+                                        <label for="input-avatar" class="col-sm-2 col-form-label">@lang('shared.avatar')</label>
                                         <div class="col-sm-10">
                                             <div class="input-group @error('avatar') is-invalid @enderror">
                                                 <div class="custom-file">
@@ -134,7 +134,7 @@
                                                         class="custom-file-input @error('avatar') is-invalid @enderror"
                                                         id="input-avatar"
                                                     />
-                                                    <label class="custom-file-label" for="input-avatar">{{__('Choose avatar')}}</label>
+                                                    <label class="custom-file-label" for="input-avatar">@lang('shared.choose_avatar')</label>
                                                 </div>
                                             </div>
                                             @error('avatar')
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="offset-sm-2 col-sm-10">
-                                            {{Form::submit(__('Update'), ['class' => 'btn btn-success'])}}
+                                            {{Form::submit(trans('shared.update'), ['class' => 'btn btn-success'])}}
                                         </div>
                                     </div>
                                 {!! Form::close() !!}

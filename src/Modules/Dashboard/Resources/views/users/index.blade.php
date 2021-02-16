@@ -1,7 +1,7 @@
 @extends('dashboard::layouts.app')
 
 @section('title')
-    {{__('Users')}}
+    @lang('shared.users')
 @endsection
 
 @section('breadcrumbs')
@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col-sm-6 mb-2 mb-sm-0">
                                 <a href="#" class="btn btn-sm btn-primary btn-filter">
-                                    <i class="fas fa-filter"></i> {{__('Filter')}}
+                                    <i class="fas fa-filter"></i> @lang('shared.filter')
                                 </a>
                             </div>
                             <div class="col-sm-6 text-sm-right">

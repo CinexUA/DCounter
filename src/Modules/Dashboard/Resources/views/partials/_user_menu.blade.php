@@ -22,7 +22,7 @@
 
         <li class="user-footer">
             <a href="{{route('dashboard.profile.edit', auth()->user())}}" class="btn btn-default btn-flat">
-                {{__('Profile')}}
+                @lang('shared.profile')
             </a>
             <a href="{{ route('logout') }}"
                class="btn btn-default btn-flat float-right"

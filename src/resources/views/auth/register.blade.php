@@ -95,7 +95,7 @@
                         class="custom-file-input @error('avatar') is-invalid @enderror"
                         id="input-avatar"
                     />
-                    <label class="custom-file-label" for="input-avatar">{{__('Choose avatar')}}</label>
+                    <label class="custom-file-label" for="input-avatar">@lang('shared.choose_avatar')</label>
                 </div>
             </div>
             @error('avatar')

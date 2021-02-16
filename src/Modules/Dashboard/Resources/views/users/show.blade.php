@@ -1,7 +1,7 @@
 @extends('dashboard::layouts.app')
 
 @section('title')
-    {{__('User detail')}}
+    @lang('shared.user_detail')
 @endsection
 
 @section('breadcrumbs')
@@ -15,13 +15,13 @@
                 <div class="card card-info">
                     <div class="card-body">
 
-                        <strong>{{__('Username')}}</strong>
+                        <strong>@lang('shared.username')</strong>
                         <p class="text-muted">
                             {{$user->getName()}}
                         </p>
                         <hr>
 
-                        <strong>{{__('Email')}}</strong>
+                        <strong>@lang('shared.email')</strong>
                         <p class="text-muted">
                             {{$user->getEmail()}}
                         </p>
@@ -35,13 +35,13 @@
                 <div class="card card-info">
                     <div class="card-body">
 
-                        <strong>{{__('Roles')}}</strong>
+                        <strong>@lang('shared.roles')</strong>
                         <p class="text-muted">
                             {!! $user->getUserRolesAsStringWrap() !!}
                         </p>
                         <hr>
 
-                        <strong>{{__('Avatar')}}</strong>
+                        <strong>@lang('shared.avatar')</strong>
                         <p class="text-muted">
                             @if($user->hasMedia('avatar'))
                                 <a href="{{$user->getFirstMediaUrl('avatar')}}">
@@ -65,13 +65,13 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <a href="{{route('dashboard.admin.users.index')}}"
-                   class="btn btn-secondary">{{__('Cancel')}}</a>
+                   class="btn btn-secondary">@lang('shared.cancel')</a>
                 @can('update', $user)
                 <a
                     href="{{route('dashboard.admin.users.edit', $user)}}"
                     class="btn btn-success float-right"
                 >
-                    {{__('Edit')}}
+                    @lang('shared.edit')
                 </a>
                 @endcan
             </div>

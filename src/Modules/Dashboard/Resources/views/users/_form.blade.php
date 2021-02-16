@@ -4,11 +4,11 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    <label for="input-name">{{__('Username')}}</label>
+                    <label for="input-name">@lang('shared.username')</label>
                     {{ Form::text('name', null,
                         [
                             'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
-                            'placeholder' => __('Username'),
+                            'placeholder' => trans('shared.username'),
                             'id' => 'input-name'
                         ]
                     ) }}
@@ -18,11 +18,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="input-email">{{__('Email')}}</label>
+                    <label for="input-email">@lang('shared.email')</label>
                     {{ Form::email('email', null,
                         [
                             'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
-                            'placeholder' => __('Email'),
+                            'placeholder' => trans('shared.email'),
                             'id' => 'input-email'
                         ]
                     ) }}
@@ -32,11 +32,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="input-password">{{__('Password')}}</label>
+                    <label for="input-password">@lang('shared.password')</label>
                     {{ Form::password('password',
                         [
                             'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
-                            'placeholder' => __('Password'),
+                            'placeholder' => trans('shared.password'),
                             'id' => 'input-password'
                         ]
                     ) }}
@@ -46,11 +46,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="input-password-confirmed">{{__('Password confirmation')}}</label>
+                    <label for="input-password-confirmed">@lang('shared.password_confirmation')</label>
                     {{ Form::password('password_confirmation',
                         [
                             'class' => 'form-control' . ($errors->has('password-confirmation') ? ' is-invalid' : ''),
-                            'placeholder' => __('Password confirmation'),
+                            'placeholder' => trans('shared.password_confirmation'),
                             'id' => 'input-password-confirmed'
                         ]
                     ) }}
@@ -66,12 +66,12 @@
             <div class="card-body">
 
                 <div class="form-group">
-                    <label>{{__('Roles')}}</label>
+                    <label>@lang('shared.roles')</label>
                     {{ Form::select('roles[]', $roles, null,
                         [
                             'class' => 'select2bs4' . ($errors->has('roles') ? ' is-invalid' : ''),
                             'multiple' => 'multiple',
-                            'data-placeholder' => __('Select roles'),
+                            'data-placeholder' => trans('shared.select_roles'),
                             'style' => 'width: 100%'
                         ]
                     ) }}
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="input-avatar">{{__('Avatar')}}</label>
+                    <label for="input-avatar">@lang('shared.avatar')</label>
                     <div class="input-group">
                         <div class="custom-file">
                             <input
@@ -91,10 +91,7 @@
                                 class="custom-file-input"
                                 id="input-avatar"
                             />
-                            <label class="custom-file-label" for="input-avatar">{{__('Choose avatar')}}</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text">{{__("Upload")}}</span>
+                            <label class="custom-file-label" for="input-avatar">@lang('shared.choose_avatar')</label>
                         </div>
                     </div>
                     <div class="mt-2">
