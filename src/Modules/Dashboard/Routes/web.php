@@ -28,6 +28,7 @@ Route::group(
 
     $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:superadministrator']], function($r) {
         $r->resource('users', 'UsersController');
+        $r->resource('roles', 'RolesController')->only(['index', 'show']);
     });
 
 });

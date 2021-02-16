@@ -39,7 +39,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('dashboard.admin.roles.index')}}"
+                               class="nav-link {{set_active('dashboard.admin.roles.*')}}"
+                            >
                                 <i class="fas fa-user nav-icon"></i>
                                 <p>@lang('dashboard::sidebar.roles_link_name')</p>
                             </a>
