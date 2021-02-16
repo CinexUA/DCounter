@@ -35,7 +35,10 @@ class UserService extends BaseService
     {
         $filteredData = Arr::only($data, ['name', 'email']);
         $user->update($filteredData);
-        $user->roles()->sync($data['roles'] ?? []);
+
+        if(isset($data['roles'])){
+            $user->roles()->sync($data['roles'] ?? []);
+        }
 
         if(isset($data['avatar'])){
             $this->avatarUpload($user, $data['avatar']);
