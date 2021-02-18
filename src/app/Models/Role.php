@@ -32,5 +32,19 @@ class Role extends LaratrustRole
     {
         return $this->updated_at;
     }
+
+    public function getRolesPermissionsAsString()
+    {
+        return implode(', ', $this->permissions()->get()->pluck('display_name')->toArray());
+    }
+
+    public function getRolesPermissionsAsStringWrap()
+    {
+        $permissionsArray = $this->permissions()->get()->pluck('display_name')->toArray();
+        $permissionsArray = array_map(function ($el){
+            return sprintf('<span class="badge bg-success">%s</span>', $el);
+        }, $permissionsArray);
+        return implode(', ', $permissionsArray);
+    }
     //endregion getters
 }

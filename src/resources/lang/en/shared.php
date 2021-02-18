@@ -17,6 +17,7 @@ return [
     'password_confirmation' => 'Password confirmation',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
+    'permissions' => 'Permissions',
     'roles' => 'Roles',
     'select_roles' => 'Select roles',
     'action' => 'Action',
@@ -36,6 +37,12 @@ return [
     'users' => 'Users',
     'settings' => 'Settings',
     'dashboard' => 'Dashboard',
+    'empty_list' => 'Empty list',
+    'remove_all' => 'Remove all',
+    'remove_selected' => 'Remove selected',
+    'move_selected' => 'Move selected',
+    'show_all' => 'Show all',
+    'move_all' => 'Move all',
     'show_page_from_to_total' => 'Showing :first to :last of total :total entries',
 
 ];

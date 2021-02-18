@@ -41,4 +41,8 @@ Breadcrumbs::for('admin.roles.show', function ($trail, $role) use($trans) {
     $trail->push($trans('role_show_link'), route('dashboard.admin.roles.show', $role));
 });
 
+Breadcrumbs::for('admin.roles.edit', function ($trail, $role) use($trans) {
+    $trail->parent('admin.roles.index');
+    $trail->push($trans('role_edit_link'), route('dashboard.admin.roles.edit', $role));
+});
 //endregion admin roles

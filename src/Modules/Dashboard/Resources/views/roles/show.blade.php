@@ -42,6 +42,33 @@
 
                 </div>
             </div>
+            <div class="col-12 col-sm-6 col-md-6">
+                <div class="card card-info">
+                    <div class="card-body">
+
+                        <strong>@lang('shared.permissions')</strong>
+                        <p class="text-muted">
+                            {!! $role->getRolesPermissionsAsStringWrap() !!}
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{route('dashboard.admin.roles.index')}}"
+                   class="btn btn-secondary">@lang('shared.cancel')</a>
+                @can('update', $role)
+                    <a
+                        href="{{route('dashboard.admin.roles.edit', $role)}}"
+                        class="btn btn-success float-right"
+                    >
+                        @lang('shared.edit')
+                    </a>
+                @endcan
+            </div>
         </div>
     </div>
 @endsection

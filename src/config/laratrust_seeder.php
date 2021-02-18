@@ -13,10 +13,14 @@ return [
 
     'roles_structure' => [
         'superadministrator' => [
-            'users' => 'c,r,u,d'
+            'users' => 'c,r,u,d',
+            'roles' => 'c,r,u,d',
+            'permissions' => 'c,r,u,d'
         ],
         'administrator' => [
-            'users' => 'c,r,u,d'
+            'users' => 'r',
+            'roles' => 'r',
+            'permissions' => 'r'
         ],
     ],
 
@@ -24,6 +28,6 @@ return [
         'c' => 'create',
         'r' => 'read',
         'u' => 'update',
-        'd' => 'delete'
+        'd' => 'delete',
     ]
 ];

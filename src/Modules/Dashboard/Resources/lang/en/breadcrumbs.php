@@ -11,5 +11,6 @@ return [
 
     'roles_index_link' => 'Roles list',
     'role_show_link' => 'Show role',
+    'role_edit_link' => 'Edit role',
 
 ];

@@ -2,7 +2,9 @@
 
 namespace Modules\Dashboard\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
+use Modules\Dashboard\Http\Requests\RoleRequest;
 use Modules\Dashboard\Services\RoleService;
 
 class RolesController extends BaseController
@@ -26,5 +28,17 @@ class RolesController extends BaseController
         return view('dashboard::roles.show', compact('role'));
     }
 
+    public function edit(Role $role)
+    {
+        $permissions = Permission::all()->pluck('display_name', 'id')->toArray();
+        $selectedPermissions = $role->permissions()->get()->pluck('id')->toArray();
+        return view('dashboard::roles.edit', compact('role', 'permissions', 'selectedPermissions'));
+    }
 
+    public function update(RoleRequest $roleRequest, Role $role)
+    {
+        toastr()->success(__("Roles permissions has been updated"));
+        $this->roleService->update($role, $roleRequest->validated());
+        return redirect()->back();
+    }
 }

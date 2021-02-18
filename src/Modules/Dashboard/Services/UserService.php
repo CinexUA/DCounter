@@ -27,7 +27,7 @@ class UserService extends BaseService
     public function create(array $data): User
     {
         $user = User::create($data);
-        $user->roles()->sync($data['roles'] ?? []);
+        $user->syncRoles($data['roles'] ?? []);
         return $user;
     }
 
@@ -37,7 +37,7 @@ class UserService extends BaseService
         $user->update($filteredData);
 
         if(isset($data['roles'])){
-            $user->roles()->sync($data['roles'] ?? []);
+            $user->syncRoles($data['roles'] ?? []);
         }
 
         if(isset($data['avatar'])){

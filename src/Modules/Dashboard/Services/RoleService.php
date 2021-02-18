@@ -18,4 +18,10 @@ class RoleService extends BaseService
     {
         return Role::paginate();
     }
+
+    public function update(Role $role, array $data): Role
+    {
+        $role->syncPermissions($data['permissions'] ?? []);
+        return $role;
+    }
 }

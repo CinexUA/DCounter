@@ -22,9 +22,11 @@
                                 </a>
                             </div>
                             <div class="col-sm-6 text-sm-right">
+                                @can('users-create')
                                 <a href="{{route('dashboard.admin.users.create')}}" class="btn btn-sm btn-success">
                                     <i class="fas fa-plus"></i> @lang('shared.add')
                                 </a>
+                                @endcan
                             </div>
                         </div>
                     </div>
