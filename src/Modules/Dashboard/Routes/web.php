@@ -26,9 +26,10 @@ Route::group(
     $r->get('/', 'DashboardController@index')->name('index');
     $r->resource('profile', 'ProfileController')->only(['edit', 'update']);
 
-    $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:superadministrator|administrator']], function($r) {
+    $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:administrator']], function($r) {
         $r->resource('users', 'UsersController');
         $r->resource('roles', 'RolesController')->only(['index', 'show', 'edit', 'update']);
+        $r->resource('permissions', 'PermissionsController')->only(['index', 'show', 'edit', 'update']);
     });
 
 });

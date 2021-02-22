@@ -13,7 +13,7 @@ class RolePolicy
 
     public function before(User $user)
     {
-        if($user->hasRole('superadministrator')){
+        if($user->hasRole('administrator')){
             return true;
         }
     }

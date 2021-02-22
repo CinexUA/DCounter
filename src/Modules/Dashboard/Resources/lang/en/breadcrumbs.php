@@ -13,4 +13,8 @@ return [
     'role_show_link' => 'Show role',
     'role_edit_link' => 'Edit role',
 
+    'permissions_index_link' => 'Permissions list',
+    'permission_show_link' => 'Show permission',
+    'permission_edit_link' => 'Edit permission',
+
 ];

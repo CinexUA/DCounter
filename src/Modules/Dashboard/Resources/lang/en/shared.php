@@ -14,4 +14,8 @@ return [
     'available_permissions' => 'available permissions',
     'filtered_0_from_1' => '<span class="badge badge-warning">Filtered</span> {0} from {1}',
 
+    'permission_detail' => 'Permission detail',
+    'permission_edit' => 'Permission edit',
+    'permission_name_code' => 'Name/Code',
+
 ];

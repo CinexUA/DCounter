@@ -46,3 +46,20 @@ Breadcrumbs::for('admin.roles.edit', function ($trail, $role) use($trans) {
     $trail->push($trans('role_edit_link'), route('dashboard.admin.roles.edit', $role));
 });
 //endregion admin roles
+
+//region admin permissions
+Breadcrumbs::for('admin.permissions.index', function ($trail) use($trans) {
+    $trail->parent('dashboard');
+    $trail->push($trans('permissions_index_link'), route('dashboard.admin.permissions.index'));
+});
+
+Breadcrumbs::for('admin.permissions.show', function ($trail, $permission) use($trans) {
+    $trail->parent('admin.permissions.index');
+    $trail->push($trans('permission_show_link'), route('dashboard.admin.permissions.show', $permission));
+});
+
+Breadcrumbs::for('admin.permissions.edit', function ($trail, $permission) use($trans) {
+    $trail->parent('admin.permissions.index');
+    $trail->push($trans('permission_edit_link'), route('dashboard.admin.permissions.edit', $permission));
+});
+//endregion admin permissions

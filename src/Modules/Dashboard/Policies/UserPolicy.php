@@ -12,7 +12,7 @@ class UserPolicy
 
     public function before(User $currentUser, string $ability)
     {
-        if($ability !== 'delete' && $currentUser->hasRole('superadministrator')){
+        if($ability !== 'delete' && $currentUser->hasRole('administrator')){
             return true;
         }
     }

@@ -20,7 +20,7 @@
                     </a>
                 </li>
 
-                @role(['superadministrator', 'administrator'])
+                @role(['administrator'])
                 <li class="nav-item {{set_active('dashboard.admin.*','menu-open')}}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tasks"></i>
@@ -30,7 +30,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
-                        @ability('superadministrator,administrator', 'users-read')
+                        @ability('administrator', 'users-read')
                         <li class="nav-item">
                             <a href="{{route('dashboard.admin.users.index')}}"
                                class="nav-link {{set_active('dashboard.admin.users.*')}}"
@@ -40,7 +40,7 @@
                             </a>
                         </li>
                         @endability
-                        @ability('superadministrator,administrator', 'roles-read')
+                        @ability('administrator', 'roles-read')
                         <li class="nav-item">
                             <a href="{{route('dashboard.admin.roles.index')}}"
                                class="nav-link {{set_active('dashboard.admin.roles.*')}}"
@@ -50,15 +50,16 @@
                             </a>
                         </li>
                         @endability
-                        @ability('superadministrator,administrator', 'permissions-read')
+                        @ability('administrator', 'permissions-read')
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('dashboard.admin.permissions.index')}}" class="nav-link">
                                 <i class="fas fa-ban nav-icon"></i>
                                 <p>@lang('dashboard::sidebar.permissions_link_name')</p>
                             </a>
                         </li>
                         @endability
-                        @role(['superadministrator'])
+                        @if(config('laratrust.panel.register'))
+                        @role(['administrator'])
                         <li class="nav-item">
                             <a href="{{route('laratrust.roles-assignment.index')}}" class="nav-link">
                                 <i class="fas fa-user-shield nav-icon"></i>
@@ -66,6 +67,7 @@
                             </a>
                         </li>
                         @endrole
+                        @endif
                     </ul>
                 </li>
                 @endrole

@@ -31,8 +31,8 @@ class DefaultSuperAdminSeeder extends Seeder
         $this->command->info('Created default super admin');
 
         $this->command->info('Adding super-administrator role for default admin');
-        $role = Role::where('name', 'superadministrator')->firstOrFail();
-        if(!$user->hasRole('superadministrator')){
+        $role = Role::where('name', 'administrator')->firstOrFail();
+        if(!$user->hasRole('administrator')){
             $user->attachRole($role);
         }
         $this->command->info('Super-administrator role for default admin has been added');
