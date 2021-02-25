@@ -63,3 +63,25 @@ Breadcrumbs::for('admin.permissions.edit', function ($trail, $permission) use($t
     $trail->push($trans('permission_edit_link'), route('dashboard.admin.permissions.edit', $permission));
 });
 //endregion admin permissions
+
+//region companies
+Breadcrumbs::for('companies.index', function ($trail) use($trans) {
+    $trail->parent('dashboard');
+    $trail->push($trans('company_index_link'), route('dashboard.companies.index'));
+});
+
+Breadcrumbs::for('companies.show', function ($trail, $company) use($trans) {
+    $trail->parent('companies.index');
+    $trail->push($trans('company_show_link'), route('dashboard.companies.show', $company));
+});
+
+Breadcrumbs::for('companies.create', function ($trail) use($trans) {
+    $trail->parent('companies.index');
+    $trail->push($trans('company_create_link'), route('dashboard.companies.create'));
+});
+
+Breadcrumbs::for('companies.edit', function ($trail, $company) use($trans) {
+    $trail->parent('companies.index');
+    $trail->push($trans('company_edit_link'), route('dashboard.companies.edit', $company));
+});
+//endregioncompanies

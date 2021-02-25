@@ -7,5 +7,6 @@ return [
     'users_link_name' => 'Users',
     'roles_link_name' => 'Roles',
     'permissions_link_name' => 'Permissions',
+    'companies_link_name' => 'Companies',
 
 ];

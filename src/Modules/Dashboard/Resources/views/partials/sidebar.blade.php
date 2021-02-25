@@ -52,25 +52,32 @@
                         @endability
                         @ability('administrator', 'permissions-read')
                         <li class="nav-item">
-                            <a href="{{route('dashboard.admin.permissions.index')}}" class="nav-link">
+                            <a href="{{route('dashboard.admin.permissions.index')}}"
+                               class="nav-link {{set_active('dashboard.admin.permissions.*')}}"
+                            >
                                 <i class="fas fa-ban nav-icon"></i>
                                 <p>@lang('dashboard::sidebar.permissions_link_name')</p>
                             </a>
                         </li>
                         @endability
                         @if(config('laratrust.panel.register'))
-                        @role(['administrator'])
                         <li class="nav-item">
                             <a href="{{route('laratrust.roles-assignment.index')}}" class="nav-link">
                                 <i class="fas fa-user-shield nav-icon"></i>
                                 <p>{{__('Laratrust panel')}}</p>
                             </a>
                         </li>
-                        @endrole
                         @endif
                     </ul>
                 </li>
                 @endrole
+
+                <li class="nav-item">
+                    <a href="{{route('dashboard.companies.index')}}" class="nav-link {{set_active('dashboard.companies.*')}}">
+                        <i class="nav-icon fas fa-hand-holding-usd"></i>
+                        <p>@lang("dashboard::sidebar.companies_link_name")</p>
+                    </a>
+                </li>
 
             </ul>
         </nav>

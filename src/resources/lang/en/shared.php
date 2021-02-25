@@ -17,6 +17,8 @@ return [
     'password_confirmation' => 'Password confirmation',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
+    'organizer' => 'Organizer',
+    'price_per_month' => 'Price per month',
     'permissions' => 'Permissions',
     'roles' => 'Roles',
     'select_roles' => 'Select roles',

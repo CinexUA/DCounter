@@ -2,6 +2,7 @@
 
 return [
 
+    'price_per_month' => 'Price per month',
     'add_new_user' => 'Add new user',
     'edit_user' => 'Edit user',
 
@@ -17,5 +18,10 @@ return [
     'permission_detail' => 'Permission detail',
     'permission_edit' => 'Permission edit',
     'permission_name_code' => 'Name/Code',
+
+    'companies_list' => 'Companies list',
+    'add_new_company' => 'Add new company',
+    'edit_company' => 'Edit company',
+    'detail_company' => 'Detail company'
 
 ];

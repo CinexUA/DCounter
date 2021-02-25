@@ -32,5 +32,7 @@ Route::group(
         $r->resource('permissions', 'PermissionsController')->only(['index', 'show', 'edit', 'update']);
     });
 
+    $r->resource('companies', 'CompaniesController');
+
 });
 
