@@ -22,7 +22,7 @@
                 role="button"
                 data-id="{{$client->getKey()}}"
                 data-name="{{$client->getName()}}"
-                data-url="{{route('dashboard.company.clients.destroy', $client->getKey())}}"
+                data-url="{{route('dashboard.company.clients.destroy', [$company, $client])}}"
             >
                 <i class="fas fa-trash"></i>
             </a>

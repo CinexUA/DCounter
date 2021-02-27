@@ -1,7 +1,7 @@
 @extends('dashboard::layouts.app')
 
 @section('title')
-    @lang('shared.detail_company')
+    @lang('dashboard::shared.detail_company')
 @endsection
 
 @section('breadcrumbs')

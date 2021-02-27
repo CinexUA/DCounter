@@ -58,7 +58,7 @@ class CompanyClientsController extends BaseController
         return redirect()->back();
     }
 
-    public function destroy(Client $client)
+    public function destroy(Company $company, Client $client)
     {
         toastr()->success(__("Client has been deleted"));
         $client->delete();
