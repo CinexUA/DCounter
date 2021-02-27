@@ -9,7 +9,7 @@
         </tr>
         </thead>
         <tbody>
-        @each('dashboard::roles._item', $roles, 'role', 'shared/_empty')
+        @each('dashboard::roles._item', $roles, 'role', 'shared/_empty_table_row')
         </tbody>
     </table>
 </div>

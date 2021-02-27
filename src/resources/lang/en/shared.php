@@ -31,6 +31,7 @@ return [
     'delete' => 'Delete',
     'cancel' => 'Cancel',
     'search' => 'Search',
+    'company' => 'Company',
     'reset' => 'Reset',
     'username' => 'Username',
     'user_detail' => 'User detail',

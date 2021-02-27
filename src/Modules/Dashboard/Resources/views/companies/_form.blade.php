@@ -21,7 +21,7 @@
                     <label for="input-description">@lang('shared.description')</label>
                     {{ Form::text('description', null,
                         [
-                            'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
+                            'class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''),
                             'placeholder' => trans('shared.description'),
                             'id' => 'input-description'
                         ]

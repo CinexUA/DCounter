@@ -51,6 +51,13 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'email_verified_at' => 'datetime',
     ];
 
+    //region relations
+    public function companies()
+    {
+        return $this->hasMany(Company::class, 'organizer_id');
+    }
+    //endregion relations
+
     //region redefine MediaLibrary methods
     public function registerMediaCollections(): void
     {

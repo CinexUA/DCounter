@@ -8,5 +8,6 @@ return [
     'roles_link_name' => 'Roles',
     'permissions_link_name' => 'Permissions',
     'companies_link_name' => 'Companies',
+    'clients_link_name' => 'Clients',
 
 ];

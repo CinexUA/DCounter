@@ -2,11 +2,13 @@
 
 namespace Modules\Dashboard\Providers;
 
+use App\Models\Client;
 use App\Models\Company;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Modules\Dashboard\Policies\ClientPolicy;
 use Modules\Dashboard\Policies\CompanyPolicy;
 use Modules\Dashboard\Policies\PermissionPolicy;
 use Modules\Dashboard\Policies\RolePolicy;
@@ -16,9 +18,10 @@ class AuthServiceProvider extends ServiceProvider
 {
     protected $policies = [
         Company::class => CompanyPolicy::class,
+        Client::class => ClientPolicy::class,
         User::class => UserPolicy::class,
         Role::class => RolePolicy::class,
-        Permission::class => PermissionPolicy::class
+        Permission::class => PermissionPolicy::class,
     ];
 
     /**

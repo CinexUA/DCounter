@@ -3,9 +3,12 @@
     <td>{{$company->getName()}}</td>
     <td>{{$company->getDescription()}}</td>
     <td>{{$company->organizer->getName()}}</td>
-    <td>{{$company->getPricePerMonth()}}</td>
+    <td>{{$company->getPricePerMonthFormatted()}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">
+            <a class="btn btn-success" href="{{route('dashboard.company.clients.index', $company)}}" role="button">
+                <i class="fas fa-house-user"></i>
+            </a>
             @can('view', $company)
             <a class="btn btn-primary" href="{{route('dashboard.companies.show', $company)}}" role="button">
                 <i class="fas fa-eye"></i>

@@ -19,9 +19,15 @@ return [
     'permission_edit' => 'Permission edit',
     'permission_name_code' => 'Name/Code',
 
+    'company' => 'Company: :name',
     'companies_list' => 'Companies list',
     'add_new_company' => 'Add new company',
     'edit_company' => 'Edit company',
-    'detail_company' => 'Detail company'
+    'detail_company' => 'Detail company',
+
+    'clients_list' => 'Clients list',
+    'add_new_client' => 'Add new client',
+    'edit_client' => 'Edit client',
+    'detail_client' => 'Detail client',
 
 ];

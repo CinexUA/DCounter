@@ -10,7 +10,7 @@
         </tr>
         </thead>
         <tbody>
-        @each('dashboard::users._item', $users, 'user', 'shared/_empty')
+        @each('dashboard::users._item', $users, 'user', 'shared/_empty_table_row')
         </tbody>
     </table>
 </div>

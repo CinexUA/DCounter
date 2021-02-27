@@ -4,14 +4,16 @@
         <tr>
             <th style="width: 55px">@sortablelink('id', '#')</th>
             <th>@lang('shared.name')</th>
-            <th>@lang('shared.description')</th>
-            <th>@lang('shared.organizer')</th>
-            <th>@lang('shared.price_per_month')</th>
+            <th>@lang('shared.email')</th>
             <th>@lang('shared.action')</th>
         </tr>
         </thead>
         <tbody>
-        @each('dashboard::companies._item', $companies, 'company', 'shared/_empty_table_row')
+        @forelse($clients as $client)
+            @include('dashboard::clients._item', ['company' => $company, 'client' => $client])
+        @empty
+            @include('shared._empty_table_row')
+        @endforelse
         </tbody>
     </table>
 </div>

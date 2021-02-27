@@ -21,6 +21,11 @@ class Company extends Model
     {
         return $this->belongsTo(User::class, 'organizer_id');
     }
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class, 'company_id');
+    }
     //endregion relations
 
 
@@ -47,6 +52,11 @@ class Company extends Model
     public function getPricePerMonth(): float
     {
         return $this->price_per_month;
+    }
+
+    public function getPricePerMonthFormatted($decimals = 2): string
+    {
+        return number_format($this->getPricePerMonth(), $decimals);
     }
 
     public function getOrganizer()

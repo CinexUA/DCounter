@@ -2,12 +2,12 @@
 
 namespace Modules\Dashboard\Policies;
 
-use App\Models\Company;
+use App\Models\Client;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 
-class CompanyPolicy
+class ClientPolicy
 {
     use HandlesAuthorization;
 
@@ -23,9 +23,9 @@ class CompanyPolicy
         return true;
     }
 
-    public function view(User $user, Company $company): bool
+    public function view(User $user, Client $client): bool
     {
-        return $company->compareUserId($user->getKey());
+        return $client->company->compareUserId($user->getKey());
     }
 
     public function create(User $user): bool
@@ -33,22 +33,22 @@ class CompanyPolicy
         return true;
     }
 
-    public function update(User $user, Company $company): bool
+    public function update(User $user, Client $client): bool
     {
-        return $company->compareUserId($user->getKey());
+        return $client->company->compareUserId($user->getKey());
     }
 
-    public function delete(User $user, Company $company): bool
+    public function delete(User $user, Client $client): bool
     {
-        return $company->compareUserId($user->getKey());
+        return $client->company->compareUserId($user->getKey());
     }
 
-    public function restore(User $user, Company $company): bool
+    public function restore(User $user, Client $client): bool
     {
         return true;
     }
 
-    public function forceDelete(User $user, Company $company): bool
+    public function forceDelete(User $user, Client $client): bool
     {
         return true;
     }

@@ -84,4 +84,26 @@ Breadcrumbs::for('companies.edit', function ($trail, $company) use($trans) {
     $trail->parent('companies.index');
     $trail->push($trans('company_edit_link'), route('dashboard.companies.edit', $company));
 });
-//endregioncompanies
+//endregion companies
+
+//region clients
+Breadcrumbs::for('company.clients.index', function ($trail, $company) use($trans) {
+    $trail->parent('companies.index');
+    $trail->push($trans('client_index_link'), route('dashboard.company.clients.index', $company));
+});
+
+Breadcrumbs::for('company.clients.show', function ($trail, $company, $client) use($trans) {
+    $trail->parent('company.clients.index', $company);
+    $trail->push($trans('client_show_link'), route('dashboard.company.clients.show', [$company, $client]));
+});
+
+Breadcrumbs::for('company.clients.create', function ($trail, $company) use($trans) {
+    $trail->parent('company.clients.index', $company);
+    $trail->push($trans('client_create_link'), route('dashboard.company.clients.create', $company));
+});
+
+Breadcrumbs::for('company.clients.edit', function ($trail, $company, $client) use($trans) {
+    $trail->parent('company.clients.index', $company);
+    $trail->push($trans('client_edit_link'), route('dashboard.company.clients.edit', [$company, $client]));
+});
+//endregion clients

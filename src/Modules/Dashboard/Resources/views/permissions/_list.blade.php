@@ -9,7 +9,7 @@
         </tr>
         </thead>
         <tbody>
-        @each('dashboard::permissions._item', $permissions, 'permission', 'shared/_empty')
+        @each('dashboard::permissions._item', $permissions, 'permission', 'shared/_empty_table_row')
         </tbody>
     </table>
 </div>

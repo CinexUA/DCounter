@@ -5,15 +5,8 @@ namespace Modules\Dashboard\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class ClientRequest extends FormRequest
 {
-    protected function prepareForValidation(): void
-    {
-        if(!$this->has('roles')){
-            $this->merge(['roles' => []]);
-        }
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,13 +16,11 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string|max:255',
-            'roles' => 'nullable|exists:roles,id',
-            'avatar' => 'nullable|image|max:2048'
         ];
 
         switch ($this->method()){
             case 'POST':
-                $rules['email'] = 'required|string|email|max:255|unique:users';
+                $rules['email'] = 'required|string|email|max:255|unique:clients';
                 $rules['password'] = 'required|string|min:8|confirmed';
                 break;
             case 'PUT':
@@ -39,12 +30,11 @@ class UserRequest extends FormRequest
                     'email',
                     'string',
                     'max:255',
-                    Rule::unique('users')->ignore($this->user->id, 'id')
+                    Rule::unique('clients')->ignore($this->client->id, 'id')
                 ];
                 $rules['password'] = 'nullable|string|min:8|confirmed';
                 break;
         }
-
 
         return $rules;
     }

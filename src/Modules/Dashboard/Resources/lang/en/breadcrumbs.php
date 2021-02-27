@@ -18,8 +18,13 @@ return [
     'permission_edit_link' => 'Edit permission',
 
     'company_index_link' => 'Companies list',
-    'company_show_link' => 'Company user',
+    'company_show_link' => 'Show company',
     'company_create_link' => 'Create a new company',
     'company_edit_link' => 'Edit company',
+
+    'client_index_link' => 'Clients list',
+    'client_show_link' => 'Show client',
+    'client_create_link' => 'Create a new client',
+    'client_edit_link' => 'Edit client',
 
 ];
