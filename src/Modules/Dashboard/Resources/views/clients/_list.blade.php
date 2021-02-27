@@ -5,6 +5,7 @@
             <th style="width: 55px">@sortablelink('id', '#')</th>
             <th>@lang('shared.name')</th>
             <th>@lang('shared.email')</th>
+            <th>@lang('shared.balance')</th>
             <th>@lang('shared.action')</th>
         </tr>
         </thead>

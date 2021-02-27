@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use Bavix\Wallet\Traits\HasWalletFloat;
+use Bavix\Wallet\Interfaces\Wallet;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 
-class Client extends Model
+class Client extends Model implements Wallet
 {
-    use HasFactory, Filterable, Sortable;
+    use HasFactory, Filterable, Sortable, HasWalletFloat;
 
     public $sortable = ['id'];
     public $fillable = [

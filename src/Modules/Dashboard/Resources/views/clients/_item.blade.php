@@ -2,6 +2,7 @@
     <td>{{$client->getKey()}}</td>
     <td>{{$client->getName()}}</td>
     <td>{{$client->getEmail()}}</td>
+    <td>{{$client->wallet->balanceFloat}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">
             @can('view', $client)

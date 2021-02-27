@@ -17,6 +17,7 @@ class ClientService extends BaseService
         $perPage = $request->get('per-page');
         return $company
             ->clients()
+            ->with('wallet')
             ->filter($request->all())
             ->sortable()
             ->paginateFilter($perPage);

@@ -12,6 +12,7 @@ return [
     'name' => 'Name',
     'display' => 'Display',
     'display_name' => 'Display name',
+    'balance' => 'Balance',
     'email' => 'Email',
     'password' => 'Password',
     'password_confirmation' => 'Password confirmation',

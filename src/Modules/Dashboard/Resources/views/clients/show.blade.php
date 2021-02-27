@@ -31,6 +31,12 @@
                         <p class="text-muted">
                             {{$company->getName()}}
                         </p>
+                        <hr>
+
+                        <strong>@lang('shared.balance')</strong>
+                        <p class="text-muted">
+                            {{$client->balanceFloat}}
+                        </p>
 
                     </div>
 
