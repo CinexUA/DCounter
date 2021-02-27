@@ -36,16 +36,24 @@ Route::group(
 
     //region company clients
     $r->group(['prefix' => 'company', 'as' => 'company.clients.'], function ($r){
-        $r->get('{company}/clients', ['as'=>'index','uses'=>'ClientsController@index']);
-        $r->get('{company}/client/create', ['as'=>'create','uses'=>'ClientsController@create']);
-        $r->get('{company}/client/{client}', ['as'=>'show','uses'=>'ClientsController@show']);
-        $r->post('{company}/client', ['as'=>'store','uses'=>'ClientsController@store']);
-        $r->get('{company}/client/{client}/edit', ['as'=>'edit','uses'=>'ClientsController@edit']);
-        $r->patch('client/{client}', ['as'=>'update','uses'=>'ClientsController@update']);
-        $r->delete('client/{client}', ['as'=>'destroy','uses'=>'ClientsController@destroy']);
+        $r->get('{company}/clients', ['as'=>'index','uses'=>'CompanyClientsController@index']);
+        $r->get('{company}/client/create', ['as'=>'create','uses'=>'CompanyClientsController@create']);
+        $r->get('{company}/client/{client}', ['as'=>'show','uses'=>'CompanyClientsController@show']);
+        $r->post('{company}/client', ['as'=>'store','uses'=>'CompanyClientsController@store']);
+        $r->get('{company}/client/{client}/edit', ['as'=>'edit','uses'=>'CompanyClientsController@edit']);
+        $r->patch('client/{client}', ['as'=>'update','uses'=>'CompanyClientsController@update']);
+        $r->delete('client/{client}', ['as'=>'destroy','uses'=>'CompanyClientsController@destroy']);
     });
     //endregion company clients
 
+    $r->get('company/{company}/client-wallet/{client}/transactions',
+        ['as' => 'client-wallet.transactions', 'uses' => 'ClientWalletController@transactions']
+    );
+    $r->resource('client-wallet', 'ClientWalletController')
+        ->only(['edit', 'update'])
+        ->parameters([
+            'client-wallet' => 'client'
+        ]);
 
 });
 

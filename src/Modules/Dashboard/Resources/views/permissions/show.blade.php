@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <a href="{{route('dashboard.admin.permissions.index')}}"
-                   class="btn btn-secondary">@lang('shared.cancel')</a>
+                   class="btn btn-secondary">@lang('shared.back')</a>
                 @can('update', $permission)
                     <a
                         href="{{route('dashboard.admin.permissions.edit', $permission)}}"

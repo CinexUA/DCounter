@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <a href="{{route('dashboard.companies.index')}}"
-                   class="btn btn-secondary">@lang('shared.cancel')</a>
+                   class="btn btn-secondary">@lang('shared.back')</a>
                 @can('update', $company)
                 <a
                     href="{{route('dashboard.companies.edit', $company)}}"

@@ -9,25 +9,27 @@ use Illuminate\Http\Request;
 use Modules\Dashboard\Http\Requests\ClientRequest;
 use Modules\Dashboard\Services\ClientService;
 
-class ClientsController extends BaseController
+class CompanyClientsController extends BaseController
 {
     private $clientService;
 
     public function __construct(ClientService $clientService)
     {
-        $this->authorizeResource(Client::class);
+        $this->authorizeResource(Client::class, null, ['except' => ['index']]);
         $this->clientService = $clientService;
     }
 
     public function index(Company $company, Request $request): Renderable
     {
+        $this->authorize('view', $company);
         $clients = $this->clientService->paginate($company, $request);
         return view('dashboard::clients.index', compact('company', 'clients'));
     }
 
     public function show(Company $company, Client $client)
     {
-        return view('dashboard::clients.show', compact('company', 'client'));
+        $latestTransactions = $this->clientService->getLatestTransactions($client, 5);
+        return view('dashboard::clients.show', compact('company', 'client', 'latestTransactions'));
     }
 
     public function create(Company $company)

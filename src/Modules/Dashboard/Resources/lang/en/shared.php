@@ -29,5 +29,7 @@ return [
     'add_new_client' => 'Add new client',
     'edit_client' => 'Edit client',
     'detail_client' => 'Detail client',
+    'client_wallet' => 'Client wallet',
+    'transactions_list' => 'Transactions list',
 
 ];

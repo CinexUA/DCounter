@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'id' => 'id',
     'back' => 'Back',
     'submit' => 'Submit',
@@ -48,5 +47,16 @@ return [
     'show_all' => 'Show all',
     'move_all' => 'Move all',
     'show_page_from_to_total' => 'Showing :first to :last of total :total entries',
-
+    'wallet' => 'Wallet',
+    'amount' => 'Amount',
+    'deposit' => 'Deposit',
+    'charge' => 'Charge',
+    'operation_type' => 'Operation type',
+    'withdrawal' => 'Withdrawal',
+    'transactions' => 'Transactions',
+    'latest_transactions' => 'Latest transactions',
+    'uid' => 'uid',
+    'type' => 'Type',
+    'show_all_transactions' => 'Show all transactions',
+    'deposit_withdrawal' => 'Deposit / Withdrawal',
 ];

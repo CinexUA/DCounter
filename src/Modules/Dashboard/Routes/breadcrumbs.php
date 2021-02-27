@@ -107,3 +107,14 @@ Breadcrumbs::for('company.clients.edit', function ($trail, $company, $client) us
     $trail->push($trans('client_edit_link'), route('dashboard.company.clients.edit', [$company, $client]));
 });
 //endregion clients
+
+//region client-wallet
+Breadcrumbs::for('client.wallet.edit', function ($trail, $company, $client) use($trans) {
+    $trail->parent('company.clients.show', $company, $client);
+    $trail->push($trans('client_wallet_link'), route('dashboard.client-wallet.edit', $client));
+});
+Breadcrumbs::for('client.wallet.transactions', function ($trail, $company, $client) use($trans) {
+    $trail->parent('company.clients.show', $company, $client);
+    $trail->push($trans('client_transactions_link'), route('dashboard.client-wallet.edit', $client));
+});
+//endregion client-wallet
