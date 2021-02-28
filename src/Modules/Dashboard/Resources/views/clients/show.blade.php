@@ -33,6 +33,12 @@
                         </p>
                         <hr>
 
+                        <strong>@lang('shared.status')</strong>
+                        <p class="text-muted">
+                            {!! $client->getStatusAsBadge() !!}
+                        </p>
+                        <hr>
+
                         <strong>@lang('shared.balance')</strong>
                         <p class="text-muted">
                             {{$client->balanceFloat}}

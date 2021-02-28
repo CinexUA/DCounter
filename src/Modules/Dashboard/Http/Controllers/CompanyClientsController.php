@@ -47,10 +47,11 @@ class CompanyClientsController extends BaseController
 
     public function edit(Company $company, Client $client)
     {
-        return view('dashboard::clients.edit', compact('company', 'client'));
+        $statues = $client->getStatusValues();
+        return view('dashboard::clients.edit', compact('company', 'client', 'statues'));
     }
 
-    public function update(Client $client, ClientRequest $clientRequest)
+    public function update(Company $company, Client $client, ClientRequest $clientRequest)
     {
         toastr()->success(__("Client has been updated"));
         $this->clientService->update($client, $clientRequest->validated());

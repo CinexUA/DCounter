@@ -23,6 +23,8 @@ return [
     'roles' => 'Roles',
     'select_roles' => 'Select roles',
     'action' => 'Action',
+    'active' => 'Active',
+    'frozen' => 'Frozen',
     'no_entries' => 'No entries',
     'create' => 'Create',
     'add' => 'Add',
@@ -59,4 +61,5 @@ return [
     'type' => 'Type',
     'show_all_transactions' => 'Show all transactions',
     'deposit_withdrawal' => 'Deposit / Withdrawal',
+    'status' => 'Status',
 ];

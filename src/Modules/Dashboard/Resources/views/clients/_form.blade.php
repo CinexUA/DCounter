@@ -32,6 +32,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="input-status">@lang('shared.status')</label>
+                    {{ Form::select('status', $statues, null,
+                        [
+                            'class' => 'form-control custom-select rounded-0'
+                                            . ($errors->has('status') ? ' is-invalid' : ''),
+                            'placeholder' => trans('shared.status'),
+                            'id' => 'input-status'
+                        ]
+                    ) }}
+                    @error("status")
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="input-password">@lang('shared.password')</label>
                     @if(isset($client))
                         <small class="text-muted">

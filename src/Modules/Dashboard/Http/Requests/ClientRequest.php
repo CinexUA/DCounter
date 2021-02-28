@@ -16,6 +16,11 @@ class ClientRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string|max:255',
+            'status' => [
+                'required',
+                'integer',
+                Rule::in(array_keys($this->client->getStatusValues()))
+            ]
         ];
 
         switch ($this->method()){

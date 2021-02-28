@@ -33,7 +33,7 @@ class ClientService extends BaseService
 
     public function update(Client $client, array $data): Client
     {
-        $filteredData = Arr::only($data, ['name', 'email']);
+        $filteredData = Arr::only($data, ['name', 'email', 'status']);
         $client->update($filteredData);
 
         if(!empty($data['password'])){
