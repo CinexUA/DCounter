@@ -39,6 +39,12 @@
                         </p>
                         <hr>
 
+                        <strong>@lang('dashboard::shared.payment_will_be_charged_via')</strong>
+                        <p class="text-muted">
+                            {{$client->getLeftDaysTransVariant()}}
+                        </p>
+                        <hr>
+
                         <strong>@lang('shared.balance')</strong>
                         <p class="text-muted">
                             {{$client->balanceFloat}}

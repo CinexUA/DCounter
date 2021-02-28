@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Bavix\Wallet\Traits\HasWallet;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Kyslik\ColumnSortable\Sortable;
 
 class Company extends Model
 {
-    use HasFactory, Filterable, Sortable;
+    use HasFactory, Filterable, Sortable, HasWallet;
 
     public $sortable = ['id'];
     public $fillable = [

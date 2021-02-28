@@ -4,6 +4,7 @@
     <td>{{$client->getEmail()}}</td>
     <td>{!! $client->getStatusAsBadge() !!}</td>
     <td>{{$client->wallet->balanceFloat}}</td>
+    <td>{{$client->getLeftDaysTransVariant()}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">
             @can('view', $client)

@@ -72,4 +72,19 @@ class ClientService extends BaseService
         return $client->transactions()->take($latest)->latest()->get();
     }
 
+    public function checkSubscription(Client $client)
+    {
+        if($client->isActive()){
+            if($client->hasSubscriptionExpired()){
+                $client->forceWithdraw($client->company->getPricePerMonth() * 100,
+                    [
+                        'description' => $client->company->getName()
+                    ]
+                );
+                $client->resetLeftDays();
+            } else {
+                $client->decreaseLeftDays();
+            }
+        }
+    }
 }

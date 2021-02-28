@@ -27,7 +27,8 @@ class Client extends Model implements Wallet
     ];
 
     protected $casts = [
-        'status' => 'integer'
+        'status' => 'integer',
+        'left_days' => 'integer',
     ];
 
     //region relations
@@ -46,6 +47,17 @@ class Client extends Model implements Wallet
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function getLeftDays(): int
+    {
+        return $this->left_days;
+    }
+
+    public function getLeftDaysTransVariant(): string
+    {
+        return $this->getLeftDays() . ' '
+            . trans_choice('dashboard::shared.days_trans_variant', $this->getLeftDays());
     }
 
     public function getStatus(): int
@@ -75,6 +87,33 @@ class Client extends Model implements Wallet
             self::STATUS_FROZEN => trans('shared.frozen'),
             self::STATUS_ACTIVE => trans('shared.active'),
         ];
+    }
+
+    public function decreaseLeftDays(): void
+    {
+        $this->left_days--;
+        $this->save();
+    }
+
+    public function resetLeftDays(): void
+    {
+        $this->left_days = 30;
+        $this->save();
+    }
+
+    public function hasSubscriptionExpired(): bool
+    {
+        return $this->getLeftDays() <= 0;
+    }
+
+    public function isFrozen()
+    {
+        return $this->getStatus() === self::STATUS_FROZEN;
+    }
+
+    public function isActive()
+    {
+        return $this->getStatus() === self::STATUS_ACTIVE;
     }
 
     //region mutators

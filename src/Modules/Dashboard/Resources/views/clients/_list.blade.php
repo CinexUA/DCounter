@@ -7,6 +7,7 @@
             <th>@lang('shared.email')</th>
             <th>@lang('shared.status')</th>
             <th>@lang('shared.balance')</th>
+            <th>@lang('shared.left_days')</th>
             <th>@lang('shared.action')</th>
         </tr>
         </thead>

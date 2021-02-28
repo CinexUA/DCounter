@@ -34,7 +34,8 @@ class CompanyClientsController extends BaseController
 
     public function create(Company $company)
     {
-        return view('dashboard::clients.create', compact('company'));
+        $statues = (new Client())->getStatusValues();
+        return view('dashboard::clients.create', compact('company', 'statues'));
     }
 
     public function store(Company $company, ClientRequest $clientRequest)

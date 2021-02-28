@@ -2,6 +2,7 @@
 
 namespace Modules\Dashboard\Http\Requests;
 
+use App\Models\Client;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -19,7 +20,7 @@ class ClientRequest extends FormRequest
             'status' => [
                 'required',
                 'integer',
-                Rule::in(array_keys($this->client->getStatusValues()))
+                Rule::in(array_keys((new Client())->getStatusValues()))
             ]
         ];
 

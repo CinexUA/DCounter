@@ -32,4 +32,8 @@ return [
     'client_wallet' => 'Client wallet',
     'transactions_list' => 'Transactions list',
 
+    'withdrawal_of_payment_for' => 'Withdrawal of payment for: :name',
+    'payment_will_be_charged_via' => 'Payment will be charged via',
+    'days_trans_variant' => 'day|days|days'
+
 ];

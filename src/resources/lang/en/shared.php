@@ -62,4 +62,6 @@ return [
     'show_all_transactions' => 'Show all transactions',
     'deposit_withdrawal' => 'Deposit / Withdrawal',
     'status' => 'Status',
+    'days' => 'Days',
+    'left_days' => 'Left days',
 ];
