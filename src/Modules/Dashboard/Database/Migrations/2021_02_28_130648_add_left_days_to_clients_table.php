@@ -14,7 +14,7 @@ class AddLeftDaysToClientsTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->tinyInteger('left_days')->default(30)->after('status');
+            $table->tinyInteger('left_days')->default(0)->after('status');
         });
     }
 

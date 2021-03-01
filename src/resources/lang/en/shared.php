@@ -64,4 +64,8 @@ return [
     'status' => 'Status',
     'days' => 'Days',
     'left_days' => 'Left days',
+    'today' => 'Today',
+    'next_payment' => 'Next payment',
+    'days_trans_variant' => 'day|days|days',
+    'clients' => 'Clients',
 ];

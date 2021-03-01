@@ -42,6 +42,16 @@
                         <strong>@lang('dashboard::shared.payment_will_be_charged_via')</strong>
                         <p class="text-muted">
                             {{$client->getLeftDaysTransVariant()}}
+                            <br />
+                            <a id="calculate_days_for_next_month" href="#">
+                                @lang('dashboard::shared.calculate_days_for_next_month')
+                            </a>
+                        </p>
+                        <hr>
+
+                        <strong>@lang('shared.next_payment')</strong>
+                        <p class="text-muted">
+                            {{$nextPaymentAsString}}
                         </p>
                         <hr>
 
@@ -129,3 +139,34 @@
         </div>
     </div>
 @endsection
+
+@push('inline_scripts')
+    <script>
+        const calculate_days = document.getElementById('calculate_days_for_next_month');
+        if(calculate_days){
+            calculate_days.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if(confirm('{{trans('dashboard::shared.calculate_days_for_next_month_and_update')}}')){
+                    $.ajax({
+                        url: '{{route('dashboard.client.calculateDaysForNextMonth', $client)}}',
+                        type: 'PUT',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        beforeSend: function( xhr ) {
+                            showLoader();
+                        },
+                        success: function(response){
+                            document.location.reload();
+                        },
+                        error:function(response, success, failure) {
+                            document.location.reload();
+                        },
+                        complete: function () {
+                            hideLoader();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+@endpush

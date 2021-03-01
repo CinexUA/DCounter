@@ -34,6 +34,7 @@ return [
 
     'withdrawal_of_payment_for' => 'Withdrawal of payment for: :name',
     'payment_will_be_charged_via' => 'Payment will be charged via',
-    'days_trans_variant' => 'day|days|days'
+    'calculate_days_for_next_month' => 'Calculate days for the next month',
+    'calculate_days_for_next_month_and_update' => 'Attention! Calculate days for the next month and update the counter?',
 
 ];

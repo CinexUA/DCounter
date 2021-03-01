@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Company;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Modules\Dashboard\Http\Requests\ClientRequest;
 use Modules\Dashboard\Services\ClientService;
 
@@ -28,8 +29,16 @@ class CompanyClientsController extends BaseController
 
     public function show(Company $company, Client $client)
     {
-        $latestTransactions = $this->clientService->getLatestTransactions($client, 5);
-        return view('dashboard::clients.show', compact('company', 'client', 'latestTransactions'));
+        $nextPaymentAsString = $this->clientService->nextPaymentAt($company, $client);
+        $latestTransactions = $this->clientService->getLatestTransactions($client, 10);
+        return view('dashboard::clients.show',
+            compact(
+                'company',
+                'client',
+                'latestTransactions',
+                'nextPaymentAsString'
+            )
+        );
     }
 
     public function create(Company $company)
@@ -65,5 +74,11 @@ class CompanyClientsController extends BaseController
         toastr()->success(__("Client has been deleted"));
         $client->delete();
         return response()->json(['message' => null, 'success' => true], 204);
+    }
+
+    public function calculateDaysForNextMonth(Client $client)
+    {
+        $client->calculateNextLeftDays();
+        return response()->json(['message' => null, 'success' => true], 200);
     }
 }

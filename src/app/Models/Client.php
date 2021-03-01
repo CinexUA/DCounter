@@ -7,6 +7,7 @@ use Bavix\Wallet\Interfaces\Wallet;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Kyslik\ColumnSortable\Sortable;
 
 class Client extends Model implements Wallet
@@ -57,7 +58,7 @@ class Client extends Model implements Wallet
     public function getLeftDaysTransVariant(): string
     {
         return $this->getLeftDays() . ' '
-            . trans_choice('dashboard::shared.days_trans_variant', $this->getLeftDays());
+            . trans_choice('shared.days_trans_variant', $this->getLeftDays());
     }
 
     public function getStatus(): int
@@ -95,9 +96,9 @@ class Client extends Model implements Wallet
         $this->save();
     }
 
-    public function resetLeftDays(): void
+    public function calculateNextLeftDays(): void
     {
-        $this->left_days = 30;
+        $this->left_days = Carbon::now()->addMonth()->diffInDays();
         $this->save();
     }
 

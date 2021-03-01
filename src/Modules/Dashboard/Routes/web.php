@@ -33,6 +33,11 @@ Route::group(
     });
 
     $r->resource('companies', 'CompaniesController');
+
+    $r->put(
+        'client/{client}/calculate-days-for-next-month',
+        'CompanyClientsController@calculateDaysForNextMonth'
+    )->name('client.calculateDaysForNextMonth');
     $r->resource('company.clients', 'CompanyClientsController');
 
     $r->get('company/{company}/client-wallet/{client}/transactions',

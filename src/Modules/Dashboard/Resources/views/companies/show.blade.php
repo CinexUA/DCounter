@@ -33,6 +33,12 @@
                         <p class="text-muted">
                             {{$company->getPricePerMonth()}}
                         </p>
+                        <hr>
+
+                        <strong>@lang('shared.clients')</strong>
+                        <p class="text-muted">
+                            {{$company->clients->count()}}
+                        </p>
 
                     </div>
 
@@ -43,14 +49,22 @@
             <div class="col-12 mb-4">
                 <a href="{{route('dashboard.companies.index')}}"
                    class="btn btn-secondary">@lang('shared.back')</a>
-                @can('update', $company)
-                <a
-                    href="{{route('dashboard.companies.edit', $company)}}"
-                    class="btn btn-success float-right"
-                >
-                    @lang('shared.edit')
-                </a>
-                @endcan
+                <div class="btn-group float-right">
+                    <a
+                        href="{{route('dashboard.company.clients.index', $company)}}"
+                        class="btn btn-primary"
+                    >
+                        @lang('shared.clients')
+                    </a>
+                    @can('update', $company)
+                    <a
+                        href="{{route('dashboard.companies.edit', $company)}}"
+                        class="btn btn-success float-right"
+                    >
+                        @lang('shared.edit')
+                    </a>
+                    @endcan
+                </div>
             </div>
         </div>
     </div>

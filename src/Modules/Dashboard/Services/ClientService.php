@@ -9,6 +9,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
 
 
 class ClientService extends BaseService
@@ -64,7 +65,7 @@ class ClientService extends BaseService
 
     public function getPaginateTransactions(Client $client, ?int $perPage = 15): LengthAwarePaginator
     {
-        return $client->transactions()->paginate($perPage);
+        return $client->transactions()->latest()->paginate($perPage);
     }
 
     public function getLatestTransactions(Client $client, int $latest = 10): Collection
@@ -81,10 +82,49 @@ class ClientService extends BaseService
                         'description' => $client->company->getName()
                     ]
                 );
-                $client->resetLeftDays();
+                $client->calculateNextLeftDays();
             } else {
                 $client->decreaseLeftDays();
             }
+        }
+    }
+
+    public function nextPaymentAt(Company $company, Client $client): string
+    {
+        $pricePerMonth = $company->getPricePerMonth();
+        $userBalance = $client->balance / 100;
+        $leftDays = $client->getLeftDays();
+        $monthsRemaining = abs(($userBalance / $pricePerMonth));
+        $shiftByDays = 0;
+
+        if($userBalance >= 0){
+            $shiftByDays += $leftDays;
+        }
+
+        $monthsWithoutRemainder = intval(floor($monthsRemaining));
+        if($monthsWithoutRemainder > 0){
+            $shiftByDays += Carbon::now()->addMonths($monthsWithoutRemainder)->diffInDays();
+        }
+
+        $remainderDays = $monthsRemaining - $monthsWithoutRemainder;
+        if($remainderDays > 0){
+            $daysInMonth = Carbon::now()->addMonths($monthsWithoutRemainder)->daysInMonth;
+            $shiftByDays += intval(floor($daysInMonth * $remainderDays));
+        }
+
+        switch (true){
+            case ($userBalance > 0):
+                return Carbon::now()
+                    ->addDays(intval($shiftByDays))
+                    ->diffForHumans(null, true, false, 2);
+            case $userBalance < 0:
+                return Carbon::now()->subDays(intval($shiftByDays))->diffForHumans();
+            default:
+                return ($leftDays > 0)
+                    ? Carbon::now()
+                        ->addDays(intval($shiftByDays))
+                        ->diffForHumans(null, true, false, 1)
+                    : trans('shared.today');
         }
     }
 }
