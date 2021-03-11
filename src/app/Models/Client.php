@@ -19,7 +19,7 @@ class Client extends Model implements Wallet
 
     public $sortable = ['id'];
     public $fillable = [
-        'name', 'email', 'password', 'status'
+        'name', 'email', 'password', 'status', 'remember_token'
     ];
 
     protected $hidden = [
@@ -88,6 +88,12 @@ class Client extends Model implements Wallet
             self::STATUS_FROZEN => trans('shared.frozen'),
             self::STATUS_ACTIVE => trans('shared.active'),
         ];
+    }
+
+    public function colorizeBalance(): string
+    {
+        $type = ($this->balanceFloat > 0) ? 'success' : 'danger';
+        return sprintf('<span class="text-%s">%s</span>', $type, $this->balanceFloat);
     }
 
     public function decreaseLeftDays(): void

@@ -5,6 +5,7 @@ namespace Modules\Dashboard\Services;
 
 use App\Models\Client;
 use App\Models\Company;
+use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class ClientService extends BaseService
 
     public function create(Company $company, array $data): Client
     {
+        $data = Arr::add($data, 'remember_token', sha1(time()));
         /** @var $client Client */
         $client = $company->clients()->create($data);
         return $client;
@@ -89,7 +91,13 @@ class ClientService extends BaseService
         }
     }
 
-    public function nextPaymentAt(Company $company, Client $client): string
+    /**
+     * @param Company $company
+     * @param Client $client
+     * @param bool $withHumanDate
+     * @return string
+     */
+    public function nextPaymentAt(Company $company, $client, $withHumanDate = false): string
     {
         $pricePerMonth = $company->getPricePerMonth();
         $userBalance = $client->balance / 100;
@@ -114,17 +122,32 @@ class ClientService extends BaseService
 
         switch (true){
             case ($userBalance > 0):
-                return Carbon::now()
-                    ->addDays(intval($shiftByDays))
-                    ->diffForHumans(null, true, false, 2);
+                return $this->formatDateByShiftDays($shiftByDays, $withHumanDate);
             case $userBalance < 0:
                 return Carbon::now()->subDays(intval($shiftByDays))->diffForHumans();
             default:
                 return ($leftDays > 0)
-                    ? Carbon::now()
-                        ->addDays(intval($shiftByDays))
-                        ->diffForHumans(null, true, false, 1)
+                    ? $this->formatDateByShiftDays($shiftByDays, $withHumanDate)
                     : trans('shared.today');
+        }
+    }
+
+    private function formatDateByShiftDays(int $shiftDays, $withHumanDate = false)
+    {
+        $date = Carbon::now()->addDays(intval($shiftDays));
+        if($withHumanDate){
+            return sprintf(
+                '%s (~%s)',
+                $date->format('d.m.Y'),
+                $date->diffForHumans(
+                    null,
+                    CarbonInterface::DIFF_RELATIVE_TO_NOW,
+                    false,
+                    2
+                )
+            );
+        } else {
+            return $date->format('d.m.Y');
         }
     }
 }

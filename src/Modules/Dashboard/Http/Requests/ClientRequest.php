@@ -27,6 +27,14 @@ class ClientRequest extends FormRequest
         switch ($this->method()){
             case 'POST':
                 $rules['email'] = 'required|string|email|max:255|unique:clients';
+                $rules['email'] = [
+                    'required',
+                    'string',
+                    'email',
+                    'max:255',
+                    Rule::unique('clients')
+                        ->where('company_id', $this->company->id)
+                ];
                 $rules['password'] = 'required|string|min:8|confirmed';
                 break;
             case 'PUT':
@@ -36,7 +44,9 @@ class ClientRequest extends FormRequest
                     'email',
                     'string',
                     'max:255',
-                    Rule::unique('clients')->ignore($this->client->id, 'id')
+                    Rule::unique('clients')
+                        ->ignore($this->client->id, 'id')
+                        ->where('company_id', $this->company->id)
                 ];
                 $rules['password'] = 'nullable|string|min:8|confirmed';
                 break;

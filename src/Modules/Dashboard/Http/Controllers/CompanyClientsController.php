@@ -29,7 +29,7 @@ class CompanyClientsController extends BaseController
 
     public function show(Company $company, Client $client)
     {
-        $nextPaymentAsString = $this->clientService->nextPaymentAt($company, $client);
+        $nextPaymentAsString = $this->clientService->nextPaymentAt($company, $client,true);
         $latestTransactions = $this->clientService->getLatestTransactions($client, 10);
         return view('dashboard::clients.show',
             compact(

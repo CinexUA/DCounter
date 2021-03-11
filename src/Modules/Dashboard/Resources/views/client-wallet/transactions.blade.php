@@ -33,9 +33,9 @@
                                         <td>{{$transaction->amount / 100}}</td>
                                         <td>
                                             @if($transaction->type == \Bavix\Wallet\Models\Transaction::TYPE_DEPOSIT)
-                                                <span class="badge bg-success">{{$transaction->type}}</span>
+                                                <span class="badge bg-success">@lang('shared.deposit')</span>
                                             @else
-                                                <span class="badge bg-danger">{{$transaction->type}}</span>
+                                                <span class="badge bg-danger">@lang('shared.withdrawal')</span>
                                             @endif
                                         </td>
                                         <td>{{$transaction->meta['description'] ?? ''}}</td>
