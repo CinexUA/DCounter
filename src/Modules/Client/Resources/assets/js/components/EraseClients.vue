@@ -1,6 +1,6 @@
 <template>
     <a @click="eraseClients()" href="#" class="dropdown-item pl-3">
-        Erase clients
+        {{$t('client.erase_clients')}}
     </a>
 </template>
 
@@ -13,17 +13,17 @@
             eraseClients(){
                 Swal.fire({
                     type: 'warning',
-                    title: 'Clear clients list?',
-                    text: "Clients list will be cleared!",
+                    title: this.$t('client.clear_clients_list'),
+                    text: this.$t('client.clients_list_will_be_cleared'),
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: 'Yes, delete it !',
-                    cancelButtonText: 'No, cancel !',
+                    confirmButtonText: this.$t('yes_delete_it'),
+                    cancelButtonText: this.$t('no_cancel'),
                 }).then(result => {
                     if (result.value) {
                         this.$store.dispatch('client/removeTokens')
                         Fire.$emit('reloadClients')
-                        Swal.fire("Clients has been deleted!", '', "success")
+                        Swal.fire(this.$t("client.clients_has_been_deleted"), '', "success")
                     }
                 })
             },

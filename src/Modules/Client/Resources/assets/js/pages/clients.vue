@@ -3,7 +3,7 @@
         <card>
             <template v-slot:header>
                 <div class="d-md-flex align-items-md-center justify-content-md-between">
-                    <h5 class="mb-0">Clients</h5>
+                    <h5 class="mb-0">{{$t('client.title')}}</h5>
                     <auth />
                 </div>
             </template>
@@ -13,14 +13,14 @@
                     <table class="table table-striped mb-0">
                         <thead class="thead-light">
                         <tr>
-                            <th class="text-center" scope="col">Name</th>
-                            <th class="text-center" scope="col">Provider</th>
-                            <th class="text-center" scope="col">Price per month</th>
-                            <th class="text-center" scope="col">Left days</th>
-                            <th class="text-center" scope="col">Balance</th>
-                            <th class="text-center" scope="col">Status</th>
-                            <th class="text-center" scope="col">Next payment</th>
-                            <th class="text-center" scope="col">Payment history</th>
+                            <th class="text-center" scope="col">{{$t('name')}}</th>
+                            <th class="text-center" scope="col">{{$t('provider')}}</th>
+                            <th class="text-center" scope="col">{{$t('price_per_month')}}</th>
+                            <th class="text-center" scope="col">{{$t('left_days')}}</th>
+                            <th class="text-center" scope="col">{{$t('balance')}}</th>
+                            <th class="text-center" scope="col">{{$t('status')}}</th>
+                            <th class="text-center" scope="col">{{$t('next_payment')}}</th>
+                            <th class="text-center" scope="col">{{$t('payment_history')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -40,7 +40,7 @@
                     </table>
                 </div>
                 <p v-else class="mb-0">
-                    No entries
+                    {{$t('no_entries')}}
                 </p>
             </template>
         </card>
@@ -57,7 +57,7 @@
             Auth, PaymentHistory
         },
         metaInfo () {
-            return { title: 'Clients' }
+            return { title: this.$t('client.title') }
         },
         beforeMount() {
             Fire.$on('reloadClients', () => {

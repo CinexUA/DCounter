@@ -31,7 +31,7 @@
                                         class="btn btn-secondary"
                                         @click.prevent="onClose()"
                                     >
-                                        {{btnCloseModalName}}
+                                        {{btnCloseModalName || $t('close')}}
                                     </button>
                                     <slot name="footer-buttons"></slot>
                                 </div>
@@ -57,7 +57,7 @@
             btnOpenModalName: { type: String, default: 'Modal' },
             btnOpenModalClass: { type: String, default: null },
             btnOpenModalShow: { type: Boolean, default: true },
-            btnCloseModalName: { type: String, default: 'Close' },
+            btnCloseModalName: { type: String },
             btnCloseModalShow: { type: Boolean, default: true },
         },
         data () {

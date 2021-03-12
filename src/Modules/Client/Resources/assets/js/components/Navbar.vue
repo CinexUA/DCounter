@@ -17,18 +17,24 @@
             </button>
 
             <div id="navbarToggler" class="collapse navbar-collapse">
+
+                <ul class="navbar-nav">
+                    <locale-dropdown />
+                </ul>
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-dark"
                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         >
-                            Menu
+                            {{ $t('menu') }}
                         </a>
                         <div class="dropdown-menu">
                             <erase-clients />
                         </div>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -36,10 +42,11 @@
 
 <script>
     import EraseClients from "./EraseClients";
+    import LocaleDropdown from './LocaleDropdown'
 
     export default {
         components: {
-            EraseClients
+            EraseClients, LocaleDropdown
         },
         data: () => ({
             appName: window.config.appName

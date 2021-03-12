@@ -1,10 +1,10 @@
 <template>
     <div>
         <modal
-            title="Payment history"
+            :title="$t('payment_history')"
             :btnOpenModalShow="true"
             modalDialogClass="modal-xl modal-dialog-scrollable"
-            btnOpenModalName="show"
+            :btnOpenModalName="$t('show')"
             btnOpenModalClass="btn btn-sm btn-primary"
             @onOpen="loadPaymentHistory"
         >
@@ -12,21 +12,21 @@
                 <table class="table table-hover mb-0">
                     <thead>
                     <tr>
-                        <th scope="col">Uuid</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Created at</th>
+                        <th scope="col">{{$t('uuid')}}</th>
+                        <th scope="col">{{$t('type')}}</th>
+                        <th scope="col">{{$t('amount')}}</th>
+                        <th scope="col">{{$t('description')}}</th>
+                        <th scope="col">{{$t('created_at')}}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="payment in payments.data">
                         <td>{{ payment.uuid }}</td>
                         <td v-if="payment.type === 'deposit'">
-                            <span class="badge bg-success">deposit</span>
+                            <span class="badge bg-success">{{$t('deposit')}}</span>
                         </td>
                         <td v-else>
-                            <span class="badge bg-danger">withdrawal</span>
+                            <span class="badge bg-danger">{{$t('withdrawal')}}</span>
                         </td>
                         <td>{{payment.amount}}</td>
                         <td>{{payment.description}}</td>

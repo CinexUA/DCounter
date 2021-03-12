@@ -2,7 +2,7 @@
     $config = [
         'appName' => config('app.name'),
         'locale' => $locale = app()->getLocale(),
-        'locales' => config('app.locales'),
+        'locales' => \LaravelLocalization::getLocalesOrder(),
     ];
 @endphp
 <!DOCTYPE html>

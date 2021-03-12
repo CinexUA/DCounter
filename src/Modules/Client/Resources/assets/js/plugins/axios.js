@@ -5,6 +5,12 @@ import Swal from 'sweetalert2'
 // Request interceptor
 axios.interceptors.request.use(request => {
     Fire.$emit('showLoader');
+
+    const locale = store.getters['lang/locale']
+    if (locale) {
+        request.headers.common['Accept-Language'] = locale
+    }
+
     return request
 })
 
@@ -20,8 +26,8 @@ axios.interceptors.response.use(response => {
             type: 'error',
             title: 'Error 500',
             reverseButtons: true,
-            confirmButtonText: 'Ok',
-            cancelButtonText: 'Cancel'
+            confirmButtonText: this.$t('ok'),
+            cancelButtonText: this.$t('cancel')
         })
     }
 

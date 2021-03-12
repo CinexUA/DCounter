@@ -1,7 +1,7 @@
 <template>
     <div>
         <modal
-            title="Found customers"
+            :title="$t('client.found_customers')"
             :showFooter="true"
             :btnOpenModalShow="false"
             :showModalProp="true"
@@ -10,8 +10,8 @@
                 <table class="table table-hover mb-0">
                     <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Provider</th>
+                        <th scope="col">{{$t('name')}}</th>
+                        <th scope="col">{{$t('provider')}}</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
@@ -24,10 +24,10 @@
                                 v-if="!isTokenExist(client.token)"
                                 href="#" @click.prevent="onAdd(client)"
                             >
-                                add
+                                {{$t('add')}}
                             </a>
                             <p v-else>
-                                added
+                                {{$t('added')}}
                             </p>
                         </td>
                     </tr>

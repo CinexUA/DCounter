@@ -1,10 +1,10 @@
 <template>
     <div>
         <modal
-            title="New Client"
+            :title="$t('auth.new_client')"
             :showFooter="true"
             btnOpenModalClass="btn btn-sm btn-success"
-            btnOpenModalName="Add new client"
+            :btnOpenModalName="$t('auth.add_new_client')"
             @onClose="onClose"
         >
             <form
@@ -12,14 +12,14 @@
                 @keydown="form.onKeydown($event)"
             >
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>{{$t('email')}}</label>
                     <input v-model="form.email" type="text" name="email"
                            class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
                     <has-error :form="form" field="email"></has-error>
                 </div>
 
                 <div class="form-group">
-                    <label>Password</label>
+                    <label>{{$t('password')}}</label>
                     <input v-model="form.password" type="password" name="password"
                            class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
                     <has-error :form="form" field="password"></has-error>
@@ -32,7 +32,7 @@
                     class="btn btn-primary"
                     @click.prevent="onSave()"
                 >
-                    Auth
+                    {{$t('auth.btn_auth')}}
                 </button>
             </template>
 
@@ -67,9 +67,9 @@
                 if(data.data.length === 0){
                     Swal.fire({
                         type: 'warning',
-                        title: 'Account(s) not found',
+                        title: this.$t('account_not_found'),
                         reverseButtons: true,
-                        confirmButtonText: 'Ok',
+                        confirmButtonText: this.$t('ok'),
                     })
                 } else {
                     this.clients = data.data

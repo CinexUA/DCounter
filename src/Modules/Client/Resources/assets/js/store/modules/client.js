@@ -49,10 +49,10 @@ export const actions = {
         } else {
             Swal.fire({
                 type: 'warning',
-                title: 'Client already added',
+                title: this.$t('client.client_already_added'),
                 reverseButtons: true,
-                confirmButtonText: 'Ok',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: this.$t('ok'),
+                cancelButtonText: this.$t('cancel')
             })
         }
     },
