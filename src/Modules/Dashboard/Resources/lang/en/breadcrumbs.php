@@ -27,6 +27,6 @@ return [
     'client_create_link' => 'Create a new client',
     'client_edit_link' => 'Edit client',
     'client_wallet_link' => 'Client wallet',
-    'client_transactions_link' => 'Client wallet',
+    'client_transactions_link' => 'Client transactions',
 
 ];

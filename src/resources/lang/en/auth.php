@@ -25,7 +25,7 @@ return [
     'sign_in' => 'Sign In',
     'remember_me' => 'Remember Me',
     'remember_the_password' => 'Remember the password? <a href=":url">Sign in!</a>',
-    'already_have_an_account' => 'Already have an account? <a href=":url">Sign in!</a',
+    'already_have_an_account' => 'Already have an account? <a href=":url">Sign in!</a>',
     'register' => 'Register',
     'login' => 'Login',
     'logout' => 'Logout'
