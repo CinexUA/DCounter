@@ -36,6 +36,6 @@ class DashboardController extends BaseController
     {
         abort_if(!app()->environment('local'), 403);
         Artisan::call('check:subscription');
-        return redirect()->back()->with(['success' => 'sadasdasd']);
+        return redirect()->back()->with(['success' => 'Success']);
     }
 }
