@@ -24,8 +24,9 @@ jQuery(function($){
 
             $.ajax({
                 url: $(this).data('url'),
-                type: 'DELETE',
+                type: 'POST',
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: { "_method": "DELETE" },
                 beforeSend: function( xhr ) {
                     showLoader();
                 },
