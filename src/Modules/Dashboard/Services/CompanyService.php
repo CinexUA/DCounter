@@ -6,6 +6,7 @@ namespace Modules\Dashboard\Services;
 use App\Models\Company;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class CompanyService extends BaseService
@@ -13,7 +14,9 @@ class CompanyService extends BaseService
     public function paginate(Request $request): LengthAwarePaginator
     {
         $perPage = $request->get('per-page');
-        return Company::with('organizer')
+        return Auth::user()
+            ->companies()
+            ->with('organizer')
             ->filter($request->all())
             ->sortable()
             ->paginateFilter($perPage);

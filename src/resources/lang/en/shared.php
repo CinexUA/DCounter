@@ -40,6 +40,7 @@ return [
     'profile' => 'Profile',
     'user_profile' => 'User profile',
     'users' => 'Users',
+    'users_plural' => 'User|Users|Users',
     'settings' => 'Settings',
     'dashboard' => 'Dashboard',
     'empty_list' => 'Empty list',
@@ -68,4 +69,8 @@ return [
     'next_payment' => 'Next payment',
     'days_trans_variant' => 'day|days|days',
     'clients' => 'Clients',
+    'clients_plural' => 'Client|Clients|Clients',
+    'more_info' => 'More info',
+    'generally' => 'Generally',
+    'user_statistics_with_name' => 'User statistics: :name'
 ];

@@ -40,6 +40,7 @@ return [
     'profile' => 'Профіль',
     'user_profile' => 'Профіль користувача',
     'users' => 'Користувачі',
+    'users_plural' => 'Користувачі|Користувача|Користувачів',
     'settings' => 'Налаштування',
     'dashboard' => 'Панель',
     'empty_list' => 'Порожній список',
@@ -68,4 +69,8 @@ return [
     'next_payment' => 'Наступний платіж',
     'days_trans_variant' => 'день|дні|днів',
     'clients' => 'Клієнти',
+    'clients_plural' => 'Клієнт|Клієнта|Клієнтів',
+    'more_info' => 'Більше інформації',
+    'generally' => 'Загалом',
+    'user_statistics_with_name' => 'Статистика користувача: :name'
 ];

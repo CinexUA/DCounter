@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class ClientService extends BaseService
@@ -44,6 +45,16 @@ class ClientService extends BaseService
         }
 
         return $client;
+    }
+
+    public function countOwnClients(): int
+    {
+        return Auth::user()
+            ->companies()
+            ->withCount('clients')
+            ->having('clients_count', '>', 0)
+            ->get()
+            ->sum('clients_count');
     }
 
     public function makeTransaction(
