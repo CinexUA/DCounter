@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Modules\Dashboard\Services\ClientService;
 
 class DashboardController extends BaseController
@@ -29,5 +30,12 @@ class DashboardController extends BaseController
         'amountAllClients',
             'amountUserOwnClients'
         ));
+    }
+
+    public function simulationPassedDay()
+    {
+        abort_if(!app()->environment('local'), 403);
+        Artisan::call('check:subscription');
+        return redirect()->back()->with(['success' => 'sadasdasd']);
     }
 }

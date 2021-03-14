@@ -11,6 +11,24 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
+
+            @if(app()->environment('local'))
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="{{route('dashboard.simulation.passed.day')}}" method="POST">
+                        @csrf
+                        <button
+                            type="submit"
+                            class="btn btn-sm btn-danger mb-2"
+                            onclick="return confirm('To simulate running a cron task that runs every day at 00:00?')"
+                        >
+                            Simulation of the passed day
+                        </button>
+                    </form>
+                </div>
+            </div>
+            @endif
+
             @role(['administrator'])
             <div class="row">
                 <div class="col-lg-12">

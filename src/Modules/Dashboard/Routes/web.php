@@ -24,6 +24,8 @@ Route::group(
     ], function ($r){
 
     $r->get('/', 'DashboardController@index')->name('index');
+    $r->post('/simulation-passed-day', 'DashboardController@simulationPassedDay')
+        ->name('simulation.passed.day');
     $r->resource('profile', 'ProfileController')->only(['edit', 'update']);
 
     $r->group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['role:administrator']], function($r) {
