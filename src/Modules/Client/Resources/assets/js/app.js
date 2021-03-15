@@ -10,7 +10,7 @@ import './components'
 // create a new Event Bus Instance
 window.Fire = new Vue();
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 /* eslint-disable no-new */
 new Vue({
