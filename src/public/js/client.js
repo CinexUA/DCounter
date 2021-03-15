@@ -1119,7 +1119,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PaymentHistory_vue_vue_type_template_id_c0b9d2f6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PaymentHistory.vue?vue&type=template&id=c0b9d2f6&scoped=true& */ "./Resources/assets/js/components/PaymentHistory.vue?vue&type=template&id=c0b9d2f6&scoped=true&");
 /* harmony import */ var _PaymentHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PaymentHistory.vue?vue&type=script&lang=js& */ "./Resources/assets/js/components/PaymentHistory.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& */ "./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -1127,7 +1129,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _PaymentHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _PaymentHistory_vue_vue_type_template_id_c0b9d2f6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _PaymentHistory_vue_vue_type_template_id_c0b9d2f6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -1156,6 +1158,22 @@ component.options.__file = "Resources/assets/js/components/PaymentHistory.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PaymentHistory.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./Resources/assets/js/components/PaymentHistory.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&":
+/*!********************************************************************************************************************!*\
+  !*** ./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PaymentHistory_vue_vue_type_style_index_0_id_c0b9d2f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -4817,6 +4835,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PaymentHistory",
@@ -4833,6 +4857,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       showHistory: false,
       payments: {}
     };
+  },
+  computed: {
+    isTableNotEmpty: function isTableNotEmpty() {
+      return this.payments["data"] !== undefined && this.payments.data.length > 0;
+    }
   },
   methods: {
     loadPaymentHistory: function loadPaymentHistory() {
@@ -9542,6 +9571,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "\n.modal-mask[data-v-36096eb4] {\n    position: fixed;\n    z-index: 999;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, .5);\n    display: table;\n    transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-36096eb4] {\n    display: table-cell;\n    vertical-align: middle;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n@media only screen and (max-width: 800px) {\ntable tbody tr td:first-child span[data-v-c0b9d2f6]{\n        display: block;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        width: 135px;\n        white-space: nowrap;\n}\n}\n", ""]);
 
 // exports
 
@@ -24963,6 +25011,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./Resources/assets/js/components/PaymentHistory.vue?vue&type=style&index=0&id=c0b9d2f6&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -32566,61 +32644,97 @@ var render = function() {
           on: { onOpen: _vm.loadPaymentHistory }
         },
         [
-          _c("div", { staticClass: "table-responsive" }, [
-            _c("table", { staticClass: "table table-hover mb-0" }, [
-              _c("thead", [
-                _c("tr", [
-                  _c("th", { attrs: { scope: "col" } }, [
-                    _vm._v(_vm._s(_vm.$t("uuid")))
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { attrs: { scope: "col" } }, [
-                    _vm._v(_vm._s(_vm.$t("type")))
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { attrs: { scope: "col" } }, [
-                    _vm._v(_vm._s(_vm.$t("amount")))
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { attrs: { scope: "col" } }, [
-                    _vm._v(_vm._s(_vm.$t("description")))
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { attrs: { scope: "col" } }, [
-                    _vm._v(_vm._s(_vm.$t("created_at")))
+          _vm.isTableNotEmpty
+            ? _c("div", [
+                _c("div", { staticClass: "table-responsive" }, [
+                  _c("table", { staticClass: "table table-hover mb-0" }, [
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", { attrs: { scope: "col" } }, [
+                          _vm._v(_vm._s(_vm.$t("uuid")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { attrs: { scope: "col" } }, [
+                          _vm._v(_vm._s(_vm.$t("type")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { attrs: { scope: "col" } }, [
+                          _vm._v(_vm._s(_vm.$t("amount")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { attrs: { scope: "col" } }, [
+                          _vm._v(_vm._s(_vm.$t("description")))
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { attrs: { scope: "col" } }, [
+                          _vm._v(_vm._s(_vm.$t("created_at")))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.payments.data, function(payment) {
+                        return _c("tr", [
+                          _c(
+                            "td",
+                            { attrs: { "data-title": _vm.$t("uuid") } },
+                            [_c("span", [_vm._v(_vm._s(payment.uuid))])]
+                          ),
+                          _vm._v(" "),
+                          payment.type === "deposit"
+                            ? _c(
+                                "td",
+                                { attrs: { "data-title": _vm.$t("type") } },
+                                [
+                                  _c(
+                                    "span",
+                                    { staticClass: "badge bg-success" },
+                                    [_vm._v(_vm._s(_vm.$t("deposit")))]
+                                  )
+                                ]
+                              )
+                            : _c(
+                                "td",
+                                { attrs: { "data-title": _vm.$t("type") } },
+                                [
+                                  _c(
+                                    "span",
+                                    { staticClass: "badge bg-danger" },
+                                    [_vm._v(_vm._s(_vm.$t("withdrawal")))]
+                                  )
+                                ]
+                              ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            { attrs: { "data-title": _vm.$t("amount") } },
+                            [_vm._v(_vm._s(payment.amount))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            { attrs: { "data-title": _vm.$t("description") } },
+                            [_vm._v(_vm._s(payment.description || " "))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            { attrs: { "data-title": _vm.$t("created_at") } },
+                            [_vm._v(_vm._s(payment.created_at_human))]
+                          )
+                        ])
+                      }),
+                      0
+                    )
                   ])
                 ])
+              ])
+            : _c("div", [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.$t("no_entries")) + "\n        "
+                )
               ]),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.payments.data, function(payment) {
-                  return _c("tr", [
-                    _c("td", [_vm._v(_vm._s(payment.uuid))]),
-                    _vm._v(" "),
-                    payment.type === "deposit"
-                      ? _c("td", [
-                          _c("span", { staticClass: "badge bg-success" }, [
-                            _vm._v(_vm._s(_vm.$t("deposit")))
-                          ])
-                        ])
-                      : _c("td", [
-                          _c("span", { staticClass: "badge bg-danger" }, [
-                            _vm._v(_vm._s(_vm.$t("withdrawal")))
-                          ])
-                        ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(payment.amount))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(payment.description))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(payment.created_at_human))])
-                  ])
-                }),
-                0
-              )
-            ])
-          ]),
           _vm._v(" "),
           _c("pagination", {
             staticClass: "mt-3",
@@ -32722,140 +32836,189 @@ var render = function() {
             fn: function() {
               return [
                 _vm.clients.length > 0
-                  ? _c("div", { staticClass: "table-responsive" }, [
-                      _c("table", { staticClass: "table table-striped mb-0" }, [
-                        _c("thead", { staticClass: "thead-light" }, [
-                          _c("tr", [
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("name")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("provider")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("price_per_month")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("left_days")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("balance")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("status")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("next_payment")))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "th",
-                              {
-                                staticClass: "text-center",
-                                attrs: { scope: "col" }
-                              },
-                              [_vm._v(_vm._s(_vm.$t("payment_history")))]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
+                  ? _c(
+                      "div",
+                      { staticClass: "table-responsive no-more-tables" },
+                      [
                         _c(
-                          "tbody",
-                          _vm._l(_vm.clients, function(client) {
-                            return _c("tr", { key: _vm.clients.id }, [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(client.name))
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(client.provider))
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(client.provider_price))
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(client.left_days))
-                              ]),
-                              _vm._v(" "),
-                              _c("td", {
-                                staticClass: "text-center",
-                                domProps: {
-                                  innerHTML: _vm._s(client.colorize_balance)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", {
-                                staticClass: "text-center",
-                                domProps: {
-                                  innerHTML: _vm._s(client.status_as_badge)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(client.next_payment_humans))
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "td",
-                                { staticClass: "text-center" },
-                                [
-                                  _c("payment-history", {
-                                    attrs: {
-                                      "remember-token": client.remember_token
+                          "table",
+                          { staticClass: "table table-striped mb-0" },
+                          [
+                            _c("thead", { staticClass: "thead-light" }, [
+                              _c("tr", [
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("name")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("provider")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("price_per_month")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("left_days")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("balance")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("status")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("next_payment")))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "th",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { scope: "col" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.$t("payment_history")))]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "tbody",
+                              _vm._l(_vm.clients, function(client) {
+                                return _c("tr", { key: _vm.clients.id }, [
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: { "data-title": _vm.$t("name") }
+                                    },
+                                    [_vm._v(_vm._s(client.name))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "data-title": _vm.$t("provider")
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(client.provider))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "data-title": _vm.$t("price_per_month")
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(client.provider_price))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "data-title": _vm.$t("left_days")
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(client.left_days))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("td", {
+                                    staticClass: "text-center",
+                                    attrs: { "data-title": _vm.$t("balance") },
+                                    domProps: {
+                                      innerHTML: _vm._s(client.colorize_balance)
                                     }
-                                  })
-                                ],
-                                1
-                              )
-                            ])
-                          }),
-                          0
+                                  }),
+                                  _vm._v(" "),
+                                  _c("td", {
+                                    staticClass: "text-center",
+                                    attrs: { "data-title": _vm.$t("status") },
+                                    domProps: {
+                                      innerHTML: _vm._s(client.status_as_badge)
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "data-title": _vm.$t("next_payment")
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(client.next_payment_humans))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "text-center",
+                                      attrs: {
+                                        "data-title": _vm.$t("payment_history")
+                                      }
+                                    },
+                                    [
+                                      _c("payment-history", {
+                                        attrs: {
+                                          "remember-token":
+                                            client.remember_token
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ])
+                              }),
+                              0
+                            )
+                          ]
                         )
-                      ])
-                    ])
+                      ]
+                    )
                   : _c("p", { staticClass: "mb-0" }, [
                       _vm._v(
                         "\n                " +

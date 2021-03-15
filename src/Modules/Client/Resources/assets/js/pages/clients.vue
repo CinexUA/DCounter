@@ -9,7 +9,7 @@
             </template>
 
             <template v-slot:body>
-                <div v-if="clients.length > 0" class="table-responsive">
+                <div v-if="clients.length > 0" class="table-responsive no-more-tables">
                     <table class="table table-striped mb-0">
                         <thead class="thead-light">
                         <tr>
@@ -25,14 +25,14 @@
                         </thead>
                         <tbody>
                         <tr v-for="client in clients" :key="clients.id">
-                            <td class="text-center">{{client.name}}</td>
-                            <td class="text-center">{{client.provider}}</td>
-                            <td class="text-center">{{client.provider_price}}</td>
-                            <td class="text-center">{{client.left_days}}</td>
-                            <td class="text-center" v-html="client.colorize_balance"></td>
-                            <td class="text-center" v-html="client.status_as_badge"></td>
-                            <td class="text-center">{{client.next_payment_humans}}</td>
-                            <td class="text-center">
+                            <td :data-title="$t('name')" class="text-center">{{client.name}}</td>
+                            <td :data-title="$t('provider')" class="text-center">{{client.provider}}</td>
+                            <td :data-title="$t('price_per_month')" class="text-center">{{client.provider_price}}</td>
+                            <td :data-title="$t('left_days')" class="text-center">{{client.left_days}}</td>
+                            <td :data-title="$t('balance')" class="text-center" v-html="client.colorize_balance"></td>
+                            <td :data-title="$t('status')" class="text-center" v-html="client.status_as_badge"></td>
+                            <td :data-title="$t('next_payment')" class="text-center">{{client.next_payment_humans}}</td>
+                            <td :data-title="$t('payment_history')" class="text-center">
                                 <payment-history :remember-token="client.remember_token"/>
                             </td>
                         </tr>

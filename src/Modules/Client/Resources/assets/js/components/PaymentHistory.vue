@@ -8,33 +8,39 @@
             btnOpenModalClass="btn btn-sm btn-primary"
             @onOpen="loadPaymentHistory"
         >
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead>
-                    <tr>
-                        <th scope="col">{{$t('uuid')}}</th>
-                        <th scope="col">{{$t('type')}}</th>
-                        <th scope="col">{{$t('amount')}}</th>
-                        <th scope="col">{{$t('description')}}</th>
-                        <th scope="col">{{$t('created_at')}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="payment in payments.data">
-                        <td>{{ payment.uuid }}</td>
-                        <td v-if="payment.type === 'deposit'">
-                            <span class="badge bg-success">{{$t('deposit')}}</span>
-                        </td>
-                        <td v-else>
-                            <span class="badge bg-danger">{{$t('withdrawal')}}</span>
-                        </td>
-                        <td>{{payment.amount}}</td>
-                        <td>{{payment.description}}</td>
-                        <td>{{payment.created_at_human}}</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div v-if="isTableNotEmpty">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                        <tr>
+                            <th scope="col">{{$t('uuid')}}</th>
+                            <th scope="col">{{$t('type')}}</th>
+                            <th scope="col">{{$t('amount')}}</th>
+                            <th scope="col">{{$t('description')}}</th>
+                            <th scope="col">{{$t('created_at')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="payment in payments.data">
+                            <td :data-title="$t('uuid')"><span>{{ payment.uuid }}</span></td>
+                            <td :data-title="$t('type')" v-if="payment.type === 'deposit'">
+                                <span class="badge bg-success">{{$t('deposit')}}</span>
+                            </td>
+                            <td :data-title="$t('type')" v-else>
+                                <span class="badge bg-danger">{{$t('withdrawal')}}</span>
+                            </td>
+                            <td :data-title="$t('amount')">{{payment.amount}}</td>
+                            <td :data-title="$t('description')">{{payment.description || '&nbsp;'}}</td>
+                            <td :data-title="$t('created_at')">{{payment.created_at_human}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            <div v-else>
+                {{$t('no_entries')}}
+            </div>
+
             <pagination
                 class="mt-3"
                 align="right"
@@ -61,6 +67,11 @@
             showHistory: false,
             payments: {}
         }),
+        computed: {
+            isTableNotEmpty: function () {
+                return this.payments["data"] !== undefined && this.payments.data.length > 0
+            }
+        },
         methods: {
             async loadPaymentHistory(page = 1){
                 this.payments = await this.$store.dispatch(
@@ -76,5 +87,13 @@
 </script>
 
 <style scoped>
-
+    @media only screen and (max-width: 800px) {
+        table tbody tr td:first-child span{
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 135px;
+            white-space: nowrap;
+        }
+    }
 </style>
