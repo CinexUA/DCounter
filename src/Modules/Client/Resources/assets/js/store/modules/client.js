@@ -1,12 +1,11 @@
 import axios from 'axios'
-import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
 import * as types from '../mutation-types'
 
 // state
 export const state = {
     clients: [],
-    tokens: Cookies.get('tokens') ? JSON.parse(Cookies.get('tokens')) : []
+    tokens: localStorage.getItem('dcounter.tokens') ? JSON.parse(localStorage.getItem('dcounter.tokens')) : []
 }
 
 // getters
@@ -23,12 +22,12 @@ export const mutations = {
         const tokensArray = state.tokens;
         tokensArray.push(token)
         state.tokens = tokensArray
-        Cookies.set('tokens', JSON.stringify(tokensArray), 1825)
+        localStorage.setItem("dcounter.tokens", JSON.stringify(tokensArray))
     },
     [types.REMOVE_TOKENS] (state)
     {
         state.tokens = []
-        Cookies.remove('tokens')
+        localStorage.removeItem("dcounter.tokens")
     },
     [types.STORE_CLIENTS] (state, clients)
     {

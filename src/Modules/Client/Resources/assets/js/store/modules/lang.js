@@ -1,11 +1,10 @@
-import Cookies from 'js-cookie'
 import * as types from '../mutation-types'
 
 const { locale, locales } = window.config
 
 // state
 export const state = {
-    locale: Cookies.get('locale') || locale,
+    locale: localStorage.getItem('dcounter.locale') || locale,
     locales: locales
 }
 
@@ -27,6 +26,6 @@ export const actions = {
     setLocale ({ commit }, { locale }) {
         commit(types.SET_LOCALE, { locale })
 
-        Cookies.set('locale', locale, { expires: 365 })
+        localStorage.setItem("dcounter.locale", locale)
     }
 }
