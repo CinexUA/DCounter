@@ -9,6 +9,8 @@ return [
     'role_detail' => 'Role detail',
     'role_edit' => 'Role edit',
 
+    'cron_logs_list' => 'Cron log list',
+
     'role_name_code' => 'Name/Code',
     'showing_all_0' => 'Showing all {0}',
     'selected_permissions' => 'selected permissions',

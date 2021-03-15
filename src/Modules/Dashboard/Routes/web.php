@@ -32,6 +32,7 @@ Route::group(
         $r->resource('users', 'UsersController');
         $r->resource('roles', 'RolesController')->only(['index', 'show', 'edit', 'update']);
         $r->resource('permissions', 'PermissionsController')->only(['index', 'show', 'edit', 'update']);
+        $r->resource('cron-logs', 'CronLogController')->only('index');
     });
 
     $r->resource('companies', 'CompaniesController');

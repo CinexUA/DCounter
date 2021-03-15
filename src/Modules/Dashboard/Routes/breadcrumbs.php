@@ -47,6 +47,13 @@ Breadcrumbs::for('admin.roles.edit', function ($trail, $role) use($trans) {
 });
 //endregion admin roles
 
+//region cron-logs
+Breadcrumbs::for('admin.cron-logs.index', function ($trail) use($trans) {
+    $trail->parent('dashboard');
+    $trail->push($trans('cron_logs_index_link'), route('dashboard.admin.cron-logs.index'));
+});
+//ednregion cron-logs
+
 //region admin permissions
 Breadcrumbs::for('admin.permissions.index', function ($trail) use($trans) {
     $trail->parent('dashboard');

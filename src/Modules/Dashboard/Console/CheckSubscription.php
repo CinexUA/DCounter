@@ -3,6 +3,7 @@
 namespace Modules\Dashboard\Console;
 
 use App\Models\Client;
+use App\Models\CronLog;
 use Illuminate\Console\Command;
 use Modules\Dashboard\Services\ClientService;
 use Symfony\Component\Console\Input\InputOption;
@@ -45,6 +46,7 @@ class CheckSubscription extends Command
         $this->withProgressBar(Client::with('company')->get(), function ($client) use ($clientService) {
             $clientService->checkSubscription($client);
         });
+        CronLog::create(['description' => 'check of subscription & write-off of funds if the subscription has expired']);
     }
 
     /**
