@@ -150,8 +150,9 @@
                 if(confirm('{{trans('dashboard::shared.calculate_days_for_next_month_and_update')}}')){
                     $.ajax({
                         url: '{{route('dashboard.client.calculateDaysForNextMonth', $client)}}',
-                        type: 'PUT',
+                        type: 'POST',
                         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        data: { "_method": "PUT" },
                         beforeSend: function( xhr ) {
                             showLoader();
                         },
