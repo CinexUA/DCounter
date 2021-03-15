@@ -1563,6 +1563,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_i18n__WEBPACK_IMPORTED_MODULE
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_3__["default"]({
   locale: 'uk',
   fallback: 'en',
+  silentTranslationWarn: true,
   messages: {}
 });
 /**
