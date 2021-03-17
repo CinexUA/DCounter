@@ -18,5 +18,6 @@ chown -R www.www /var/www/html/routes/ && \
 chown -R www.www /var/www/html/bootstrap/ && \
 chown -R www.www /var/www/html/config/ && \
 chown -R www.www /var/www/html/database/ && \
+chown -R www.www /var/www/html/database/snapshots && \
 chown -R www.www /var/www/html/Modules/ && \
 php artisan migrate'

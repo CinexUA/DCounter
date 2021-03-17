@@ -33,6 +33,7 @@ Route::group(
         $r->resource('roles', 'RolesController')->only(['index', 'show', 'edit', 'update']);
         $r->resource('permissions', 'PermissionsController')->only(['index', 'show', 'edit', 'update']);
         $r->resource('cron-logs', 'CronLogController')->only('index');
+        $r->get('make-dump-db', 'DashboardController@dbDump')->name('db.dump');
     });
 
     $r->resource('companies', 'CompaniesController');

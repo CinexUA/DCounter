@@ -59,6 +59,23 @@ return [
             'visibility' => 'public',
         ],
 
+        'ftp' => [
+            'driver' => 'ftp',
+            'host' => env('DISK_FTP_HOST'),
+            'username' => env('DISK_FTP_USERNAME'),
+            'password' => env('DISK_FTP_PASSWORD'),
+            'port' => env('DISK_FTP_PORT', 21),
+            'root' => env('DISK_FTP_ROOT', '/'),
+            'passive' => true,
+            'ssl' => false,
+            'timeout' => 30,
+        ],
+
+        'snapshots' => [
+            'driver' => 'local',
+            'root' => database_path('snapshots'),
+        ],
+
     ],
 
     /*

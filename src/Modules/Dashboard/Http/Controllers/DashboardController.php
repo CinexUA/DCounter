@@ -38,4 +38,14 @@ class DashboardController extends BaseController
         Artisan::call('check:subscription');
         return redirect()->back()->with(['success' => 'Success']);
     }
+
+    public function dbDump()
+    {
+        Artisan::call('snapshot:create db-dump --compress');
+        $pathToDump = database_path('snapshots/db-dump.sql.gz');
+        return response()
+            ->download($pathToDump, 'db-dump.sql.gz', [
+                'Content-Type: application/x-gzip',
+            ]);
+    }
 }

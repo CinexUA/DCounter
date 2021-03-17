@@ -74,6 +74,12 @@
                                 <p>Cron Logs</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('dashboard.admin.db.dump')}}" class="nav-link">
+                                <i class="fas fa-database nav-icon"></i>
+                                <p>Backup DB</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 @endrole
