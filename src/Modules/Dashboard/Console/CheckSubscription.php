@@ -16,7 +16,7 @@ class CheckSubscription extends Command
      *
      * @var string
      */
-    protected $signature = 'check:subscription';
+    protected $signature = 'check:subscription {--check-every-hours=}';
 
     /**
      * The console command description.
@@ -41,12 +41,18 @@ class CheckSubscription extends Command
      * @param ClientService $clientService
      * @return mixed
      */
-    public function handle(ClientService $clientService): void
+    public function handle(ClientService $clientService)
     {
+        if ($hours = $this->option('check-every-hours')) {
+            if(!$clientService->isTimePassedSinceLastLaunchCron($hours)){
+                return false;
+            }
+        }
+
         $this->withProgressBar(Client::with('company')->get(), function ($client) use ($clientService) {
             $clientService->checkSubscription($client);
         });
-        CronLog::create(['description' => 'check of subscription & write-off of funds if the subscription has expired']);
+        $clientService->insertCronLogInfoAboutCheckSubscriptionResult();
     }
 
     /**

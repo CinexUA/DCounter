@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CronLog extends Model
 {
-    public $fillable = [ 'description' ];
+    public $fillable = [ 'description', 'type' ];
 
     public function getDescription()
     {

@@ -5,6 +5,7 @@ namespace Modules\Dashboard\Services;
 
 use App\Models\Client;
 use App\Models\Company;
+use App\Models\CronLog;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
@@ -100,6 +101,25 @@ class ClientService extends BaseService
                 $client->decreaseLeftDays();
             }
         }
+    }
+
+    public function isTimePassedSinceLastLaunchCron(int $hours = 24): bool
+    {
+        $latestCron = CronLog::whereType('subscription')->latest()->first();
+        if($latestCron){
+            return Carbon::now()->diffInHours($latestCron->created_at) >= $hours;
+        }
+        return true;
+    }
+
+    public function insertCronLogInfoAboutCheckSubscriptionResult(): void
+    {
+        CronLog::create(
+            [
+                'description' => 'check of subscription & write-off of funds if the subscription has expired',
+                'type' => 'subscription'
+            ]
+        );
     }
 
     /**
