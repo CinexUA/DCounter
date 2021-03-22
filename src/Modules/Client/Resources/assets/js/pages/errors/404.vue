@@ -1,14 +1,16 @@
 <template>
     <card class="text-center">
-        <h3 class="mb-4">
+        <template v-slot:header>
             {{ $t('page_not_found') }}
-        </h3>
+        </template>
 
-        <div class="links">
-            <router-link :to="{ name: 'index' }">
-                {{ $t('go_home') }}
-            </router-link>
-        </div>
+        <template v-slot:body>
+            <div class="links">
+                <router-link :to="{ name: 'index' }">
+                    {{ $t('go_home') }}
+                </router-link>
+            </div>
+        </template>
     </card>
 </template>
 
