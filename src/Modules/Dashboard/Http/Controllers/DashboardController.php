@@ -41,6 +41,7 @@ class DashboardController extends BaseController
 
     public function dbDump()
     {
+        config()->set('filesystems.disks.snapshots.driver', 'local');
         Artisan::call('snapshot:create db-dump --compress');
         $pathToDump = database_path('snapshots/db-dump.sql.gz');
         return response()
