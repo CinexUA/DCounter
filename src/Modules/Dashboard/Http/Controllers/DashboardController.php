@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Modules\Dashboard\Services\ClientService;
+use Modules\Dashboard\Services\DumpDBService;
 
 class DashboardController extends BaseController
 {
@@ -39,11 +40,10 @@ class DashboardController extends BaseController
         return redirect()->back()->with(['success' => 'Success']);
     }
 
-    public function dbDump()
+    public function dbDump(DumpDBService $dumpDBService)
     {
-        config()->set('filesystems.disks.snapshots.driver', 'local');
-        Artisan::call('snapshot:create db-dump --compress');
-        $pathToDump = database_path('snapshots/db-dump.sql.gz');
+        $dumpDBService->makeSnapshot();
+        $pathToDump = $dumpDBService->getPathToSnapshot();
         return response()
             ->download($pathToDump, 'db-dump.sql.gz', [
                 'Content-Type: application/x-gzip',

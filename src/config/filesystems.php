@@ -72,7 +72,7 @@ return [
         ],
 
         'snapshots' => [
-            'driver' => 'ftp',
+            'driver' => 'local',
             'root' => database_path('snapshots'),
         ],
 

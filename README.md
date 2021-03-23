@@ -10,6 +10,7 @@ DCounter is a calculator that helps you keep track of the monthly payment of use
 1. ```php artisan migrate``` \
 to work correctly, you need to set up the cron task once a day:
 1. ```/usr/local/bin/php /var/www/html/artisan check:subscription >/dev/null 2>&1``` or ```http://localhost/api/check-subscription/dGVzdCB0ZXh0IGZvciBlbmNvZGluZyA5NjQ4/handle``` (for free hosting. you need change secret key API_HANDLER_SECRET_KEY in .env for production)
+1. A backup DB (optional): ```/usr/local/bin/php /var/www/html/artisan backup:db --by=email``` (you need to define DB_BACKUP_EMAIL in .env if selected backup by email )
 
 ## Export translatable strings
 ```php artisan translatable:export <lang>``` \

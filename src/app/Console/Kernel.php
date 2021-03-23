@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Modules\Dashboard\Console\BackupDB;
 use Modules\Dashboard\Console\CheckSubscription;
 
 class Kernel extends ConsoleKernel
@@ -14,6 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        BackupDB::class,
         CheckSubscription::class
     ];
 
