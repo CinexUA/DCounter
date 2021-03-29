@@ -77,4 +77,5 @@ return [
     'user_viewed_account' => 'User viewed account',
     'keep_log_customer_visits' => 'Keep log of customer visits',
     'visiting_customers' => 'Visiting customers',
+    'customer_visit_history' => 'Customer visit history',
 ];

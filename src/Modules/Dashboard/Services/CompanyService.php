@@ -46,4 +46,10 @@ class CompanyService extends BaseService
             ->latest()
             ->paginate($perPage);
     }
+
+    public function clearVisitingList(Company $company): void
+    {
+        $clientsIds = $company->clients()->get()->pluck('id')->toArray();
+        ClientVisiting::whereIn('client_id', $clientsIds)->delete();
+    }
 }

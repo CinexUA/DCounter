@@ -47,6 +47,9 @@ Route::group(
     $r->get('company/{company}/visiting-customers',
         ['as' => 'company.visiting_customers', 'uses' => 'CompaniesController@visitingCustomers']
     );
+    $r->delete('company/{company}/visiting-customers',
+        ['as' => 'company.visiting_customers.clear', 'uses' => 'CompaniesController@clearVisitingList']
+    );
     $r->get('company/{company}/client-wallet/{client}/transactions',
         ['as' => 'client-wallet.transactions', 'uses' => 'ClientWalletController@transactions']
     );

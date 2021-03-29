@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClientVisiting extends Model
 {
-    use HasFactory;
-
     public $table = 'clients_visiting';
 
     public $fillable = [

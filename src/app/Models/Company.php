@@ -10,7 +10,7 @@ use Kyslik\ColumnSortable\Sortable;
 
 class Company extends Model
 {
-    use HasFactory, Filterable, Sortable, HasWallet;
+    use Filterable, Sortable, HasWallet;
 
     public $sortable = ['id'];
     public $fillable = [

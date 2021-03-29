@@ -77,4 +77,5 @@ return [
     'user_viewed_account' => 'Користувач переглянув рахунок',
     'keep_log_customer_visits' => 'Вести журнал відвідувань клієнтів',
     'visiting_customers' => 'Відвідування клієнтів',
+    'customer_visit_history' => 'Історія відвідувань клієнтів',
 ];

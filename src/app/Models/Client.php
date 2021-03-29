@@ -12,7 +12,7 @@ use Kyslik\ColumnSortable\Sortable;
 
 class Client extends Model implements Wallet
 {
-    use HasFactory, Filterable, Sortable, HasWalletFloat;
+    use Filterable, Sortable, HasWalletFloat;
 
     public const STATUS_FROZEN = 0;
     public const STATUS_ACTIVE = 10;

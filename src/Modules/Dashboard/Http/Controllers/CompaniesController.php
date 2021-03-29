@@ -65,7 +65,21 @@ class CompaniesController extends BaseController
     {
         abort_if(!$company->visiting_clients_log, 403);
         $this->authorize('view', $company);
+
         $visitingList = $this->companyService->getVisitingList($company, $request);
+
         return view('dashboard::companies.visiting_customers.index', compact('company','visitingList'));
+    }
+
+    public function clearVisitingList(Company $company)
+    {
+        abort_if(!$company->visiting_clients_log, 403);
+        $this->authorize('view', $company);
+
+        $this->companyService->clearVisitingList($company);
+
+        toastr()->success(__("Company history of client visits has been deleted"));
+
+        return response()->json(['message' => null, 'success' => true], 204);
     }
 }

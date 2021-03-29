@@ -18,8 +18,16 @@
                         <div class="row">
                             <div class="col-sm-6 mb-0 mb-sm-0"></div>
                             <div class="col-sm-6 text-sm-right">
-                                <a href="{{route('dashboard.companies.create')}}" class="btn btn-sm btn-success">
-                                    <i class="fas fa-plus"></i> @lang('shared.add')
+                                <a
+                                    class="btn btn-danger delete"
+                                    href="#"
+                                    role="button"
+                                    data-id="{{$company->getKey()}}"
+                                    data-name="@lang('shared.customer_visit_history')"
+                                    data-url="{{route('dashboard.company.visiting_customers.clear', $company)}}"
+
+                                >
+                                    <i class="fas fa-broom"></i>
                                 </a>
                             </div>
                         </div>
