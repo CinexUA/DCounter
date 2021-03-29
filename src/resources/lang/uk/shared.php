@@ -69,8 +69,12 @@ return [
     'next_payment' => 'Наступний платіж',
     'days_trans_variant' => 'день|дні|днів',
     'clients' => 'Клієнти',
+    'client' => 'Клієнт',
     'clients_plural' => 'Клієнт|Клієнта|Клієнтів',
     'more_info' => 'Більше інформації',
     'generally' => 'Загалом',
-    'user_statistics_with_name' => 'Статистика користувача: :name'
+    'user_statistics_with_name' => 'Статистика користувача: :name',
+    'user_viewed_account' => 'Користувач переглянув рахунок',
+    'keep_log_customer_visits' => 'Вести журнал відвідувань клієнтів',
+    'visiting_customers' => 'Відвідування клієнтів',
 ];

@@ -13,6 +13,8 @@ return [
     'role_show_link' => 'Показати роль',
     'role_edit_link' => 'Змінити роль',
 
+    'cron_logs_index_link' => 'Cron logs',
+
     'permissions_index_link' => 'Список дозволів',
     'permission_show_link' => 'Показати дозвіл',
     'permission_edit_link' => 'Редагування дозволу',
@@ -21,6 +23,7 @@ return [
     'company_show_link' => 'Показати компанію',
     'company_create_link' => 'Створення нової компанії',
     'company_edit_link' => 'Редагувати компанію',
+    'company_visiting_customers_link' => 'Відвідування клієнтів',
 
     'client_index_link' => 'Список клієнтів',
     'client_show_link' => 'Показати клієнта',

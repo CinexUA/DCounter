@@ -91,6 +91,13 @@ Breadcrumbs::for('companies.edit', function ($trail, $company) use($trans) {
     $trail->parent('companies.index');
     $trail->push($trans('company_edit_link'), route('dashboard.companies.edit', $company));
 });
+
+Breadcrumbs::for('companies.visiting-customers', function ($trail, $company) use($trans) {
+    $trail->parent('companies.index');
+    $trail->push(
+        $trans('company_visiting_customers_link'), route('dashboard.company.visiting_customers', $company)
+    );
+});
 //endregion companies
 
 //region clients

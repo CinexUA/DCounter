@@ -2,6 +2,7 @@
 
 namespace Modules\Dashboard\Http\Controllers;
 
+use App\Models\ClientVisiting;
 use App\Models\Company;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -58,5 +59,13 @@ class CompaniesController extends BaseController
         $company->delete();
         toastr()->success(__("Company has been deleted"));
         return response()->json(['message' => null, 'success' => true], 204);
+    }
+
+    public function visitingCustomers(Company $company, Request $request)
+    {
+        abort_if(!$company->visiting_clients_log, 403);
+        $this->authorize('view', $company);
+        $visitingList = $this->companyService->getVisitingList($company, $request);
+        return view('dashboard::companies.visiting_customers.index', compact('company','visitingList'));
     }
 }

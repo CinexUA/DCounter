@@ -14,7 +14,7 @@ class Company extends Model
 
     public $sortable = ['id'];
     public $fillable = [
-        'name', 'description', 'price_per_month'
+        'name', 'description', 'price_per_month', 'visiting_clients_log'
     ];
 
     //region relations

@@ -32,6 +32,20 @@
                 </div>
 
                 <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        {{ Form::checkbox('visiting_clients_log', 1, null,
+                                            [
+                                                'class' => 'custom-control-input',
+                                                'id' => 'input-log_customer_visits'
+                                            ])
+                        }}
+                        <label for="input-log_customer_visits" class="custom-control-label">
+                            @lang('shared.keep_log_customer_visits')
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="input-price-per-month">@lang('dashboard::shared.price_per_month')</label>
                     {{ Form::number('price_per_month', null,
                         [

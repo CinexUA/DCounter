@@ -69,8 +69,12 @@ return [
     'next_payment' => 'Next payment',
     'days_trans_variant' => 'day|days|days',
     'clients' => 'Clients',
+    'client' => 'Client',
     'clients_plural' => 'Client|Clients|Clients',
     'more_info' => 'More info',
     'generally' => 'Generally',
-    'user_statistics_with_name' => 'User statistics: :name'
+    'user_statistics_with_name' => 'User statistics: :name',
+    'user_viewed_account' => 'User viewed account',
+    'keep_log_customer_visits' => 'Keep log of customer visits',
+    'visiting_customers' => 'Visiting customers',
 ];

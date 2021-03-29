@@ -10,6 +10,11 @@
                 <i class="fas fa-house-user"></i>
             </a>
             @can('view', $company)
+            @if($company->visiting_clients_log)
+            <a class="btn btn-primary" href="{{route('dashboard.company.visiting_customers', $company)}}" role="button">
+                <i class="fas fa-shoe-prints"></i>
+            </a>
+            @endif
             <a class="btn btn-primary" href="{{route('dashboard.companies.show', $company)}}" role="button">
                 <i class="fas fa-eye"></i>
             </a>

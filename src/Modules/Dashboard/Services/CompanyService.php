@@ -3,6 +3,7 @@
 namespace Modules\Dashboard\Services;
 
 
+use App\Models\ClientVisiting;
 use App\Models\Company;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
@@ -34,5 +35,15 @@ class CompanyService extends BaseService
     {
         $company->update($data);
         return $company;
+    }
+
+    public function getVisitingList(Company $company, Request $request): LengthAwarePaginator
+    {
+        $perPage = $request->get('per-page');
+        $clientsIds = $company->clients()->get()->pluck('id')->toArray();
+        return ClientVisiting::whereIn('client_id', $clientsIds)
+            ->with('client')
+            ->latest()
+            ->paginate($perPage);
     }
 }

@@ -37,6 +37,11 @@ class Client extends Model implements Wallet
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
+
+    public function visiting()
+    {
+        return $this->hasMany(ClientVisiting::class);
+    }
     //endregion relations
 
 

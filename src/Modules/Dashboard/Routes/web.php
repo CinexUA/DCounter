@@ -44,6 +44,9 @@ Route::group(
     )->name('client.calculateDaysForNextMonth');
     $r->resource('company.clients', 'CompanyClientsController');
 
+    $r->get('company/{company}/visiting-customers',
+        ['as' => 'company.visiting_customers', 'uses' => 'CompaniesController@visitingCustomers']
+    );
     $r->get('company/{company}/client-wallet/{client}/transactions',
         ['as' => 'client-wallet.transactions', 'uses' => 'ClientWalletController@transactions']
     );

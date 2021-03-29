@@ -23,6 +23,7 @@ return [
     'company_show_link' => 'Show company',
     'company_create_link' => 'Create a new company',
     'company_edit_link' => 'Edit company',
+    'company_visiting_customers_link' => 'Visiting_customers',
 
     'client_index_link' => 'Clients list',
     'client_show_link' => 'Show client',

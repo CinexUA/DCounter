@@ -35,7 +35,7 @@
                         </p>
                         <hr>
 
-                        <strong>@lang('shared.clients')</strong>
+                        <strong>{{ trans_choice('shared.clients_plural', $company->clients->count()) }}</strong>
                         <p class="text-muted">
                             {{$company->clients->count()}}
                         </p>
@@ -56,6 +56,14 @@
                     >
                         @lang('shared.clients')
                     </a>
+                    @if($company->visiting_clients_log)
+                        <a
+                            href="{{route('dashboard.company.visiting_customers', $company)}}"
+                            class="btn btn-warning"
+                        >
+                            @lang('shared.visiting_customers')
+                        </a>
+                    @endif
                     @can('update', $company)
                     <a
                         href="{{route('dashboard.companies.edit', $company)}}"
