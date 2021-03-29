@@ -50,8 +50,8 @@
 
         .spinner-border{
             position: absolute;
-            top: 50%;
-            left: 50%;
+            /*top: 50%;
+            left: 50%;*/
         }
     }
 </style>
