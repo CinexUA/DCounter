@@ -5,21 +5,21 @@ namespace App\Models;
 use Bavix\Wallet\Traits\HasWalletFloat;
 use Bavix\Wallet\Interfaces\Wallet;
 use EloquentFilter\Filterable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Kyslik\ColumnSortable\Sortable;
 
 class Client extends Model implements Wallet
 {
-    use Filterable, Sortable, HasWalletFloat;
+    use Filterable, Sortable, HasWalletFloat, Notifiable;
 
     public const STATUS_FROZEN = 0;
     public const STATUS_ACTIVE = 10;
 
     public $sortable = ['id'];
     public $fillable = [
-        'name', 'email', 'password', 'status', 'remember_token'
+        'name', 'email', 'phone', 'password', 'status', 'remember_token'
     ];
 
     protected $hidden = [
@@ -45,14 +45,19 @@ class Client extends Model implements Wallet
     //endregion relations
 
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public function getPhone(): string
+    {
+        return $this->phone ?? '';
     }
 
     public function getLeftDays(): int
@@ -126,6 +131,11 @@ class Client extends Model implements Wallet
     public function isActive()
     {
         return $this->getStatus() === self::STATUS_ACTIVE;
+    }
+
+    public function isNegativeBalance(): bool
+    {
+        return $this->balanceFloat < 0;
     }
 
     //region mutators

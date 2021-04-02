@@ -21,7 +21,8 @@ class ClientRequest extends FormRequest
                 'required',
                 'integer',
                 Rule::in(array_keys((new Client())->getStatusValues()))
-            ]
+            ],
+            'phone' => 'nullable|max:15'
         ];
 
         switch ($this->method()){

@@ -33,6 +33,20 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-checkbox">
+                        {{ Form::checkbox('sms_notification', 1, null,
+                                            [
+                                                'class' => 'custom-control-input',
+                                                'id' => 'input-sms_notification'
+                                            ])
+                        }}
+                        <label for="input-sms_notification" class="custom-control-label">
+                            @lang('shared.sms_notification')
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
                         {{ Form::checkbox('visiting_clients_log', 1, null,
                                             [
                                                 'class' => 'custom-control-input',

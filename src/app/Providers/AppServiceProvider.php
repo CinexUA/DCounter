@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Broadcasting\SmsChannel;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Pagination\Paginator;
@@ -36,5 +38,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+
+        Notification::extend('sms', function ($app) {
+            return new SmsChannel();
+        });
     }
 }

@@ -69,7 +69,8 @@
                         </li>
                         @endif
                         <li class="nav-item">
-                            <a href="{{route('dashboard.admin.cron-logs.index')}}" class="nav-link">
+                            <a href="{{route('dashboard.admin.cron-logs.index')}}"
+                               class="nav-link {{set_active('dashboard.admin.cron-logs.*')}}">
                                 <i class="fas fa-cogs nav-icon"></i>
                                 <p>Cron Logs</p>
                             </a>

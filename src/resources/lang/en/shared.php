@@ -78,4 +78,8 @@ return [
     'keep_log_customer_visits' => 'Keep log of customer visits',
     'visiting_customers' => 'Visiting customers',
     'customer_visit_history' => 'Customer visit history',
+    'phone' => 'Phone',
+    'on' => 'On',
+    'off' => 'Off',
+    'sms_notification' => 'Sms notification',
 ];

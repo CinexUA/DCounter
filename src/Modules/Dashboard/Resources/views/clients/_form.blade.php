@@ -32,6 +32,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="input-phone">@lang('shared.phone')</label>
+                    {{ Form::text('phone', null,
+                        [
+                            'class' => 'form-control' . ($errors->has('phone') ? ' is-invalid' : ''),
+                            'placeholder' => trans('shared.phone'),
+                            'id' => 'input-phone'
+                        ]
+                    ) }}
+                    @error("phone")
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="input-status">@lang('shared.status')</label>
                     {{ Form::select('status', $statues, null,
                         [

@@ -35,6 +35,14 @@
                         </p>
                         <hr>
 
+                        @if(!empty($company->isEnabledSmsNotification()))
+                            <strong>@lang('shared.sms_notification')</strong>
+                            <p class="text-muted">
+                                {!! $company->getStatusSmsNotificationAsBadge() !!}
+                            </p>
+                            <hr>
+                        @endif
+
                         <strong>{{ trans_choice('shared.clients_plural', $company->clients->count()) }}</strong>
                         <p class="text-muted">
                             {{$company->clients->count()}}

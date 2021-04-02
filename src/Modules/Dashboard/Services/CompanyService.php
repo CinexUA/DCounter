@@ -3,11 +3,13 @@
 namespace Modules\Dashboard\Services;
 
 
+use App\Models\Client;
 use App\Models\ClientVisiting;
 use App\Models\Company;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Modules\Dashboard\Notifications\NegativeBalance;
 
 
 class CompanyService extends BaseService
@@ -40,7 +42,7 @@ class CompanyService extends BaseService
     public function getVisitingList(Company $company, Request $request): LengthAwarePaginator
     {
         $perPage = $request->get('per-page');
-        $clientsIds = $company->clients()->get()->pluck('id')->toArray();
+        $clientsIds = $company->clients()->pluck('id')->toArray();
         return ClientVisiting::whereIn('client_id', $clientsIds)
             ->with('client')
             ->latest()
@@ -49,7 +51,22 @@ class CompanyService extends BaseService
 
     public function clearVisitingList(Company $company): void
     {
-        $clientsIds = $company->clients()->get()->pluck('id')->toArray();
+        $clientsIds = $company->clients()->pluck('id')->toArray();
         ClientVisiting::whereIn('client_id', $clientsIds)->delete();
+    }
+
+    public function notifyingUsersOfNegativeBalance()
+    {
+        $companiesWithEnabledNotifications = Company::smsNotificationEnabled()->with('clients')->get();
+
+        foreach ($companiesWithEnabledNotifications as $company){
+            foreach ($company->clients as $client){
+
+                if(!empty($client->phone) && $client->isNegativeBalance()){
+                    $client->notify(new NegativeBalance($client->phone, $client->balanceFloat, $company->getName()));
+                }
+
+            }
+        }
     }
 }

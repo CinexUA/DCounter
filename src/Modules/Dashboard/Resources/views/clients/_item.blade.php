@@ -2,6 +2,7 @@
     <td>{{$client->getKey()}}</td>
     <td>{{$client->getName()}}</td>
     <td>{{$client->getEmail()}}</td>
+    <td>{{$client->getPhone()}}</td>
     <td>{!! $client->getStatusAsBadge() !!}</td>
     <td>{{$client->wallet->balanceFloat}}</td>
     <td>{{$client->getLeftDaysTransVariant()}}</td>

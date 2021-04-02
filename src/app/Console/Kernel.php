@@ -6,6 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Modules\Dashboard\Console\BackupDB;
 use Modules\Dashboard\Console\CheckSubscription;
+use Modules\Dashboard\Console\NegativeBalance;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,7 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         BackupDB::class,
-        CheckSubscription::class
+        CheckSubscription::class,
+        NegativeBalance::class
     ];
 
     /**

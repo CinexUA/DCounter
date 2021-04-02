@@ -30,8 +30,8 @@ class RolesController extends BaseController
 
     public function edit(Role $role)
     {
-        $permissions = Permission::all()->pluck('display_name', 'id')->toArray();
-        $selectedPermissions = $role->permissions()->get()->pluck('id')->toArray();
+        $permissions = Permission::pluck('display_name', 'id')->toArray();
+        $selectedPermissions = $role->permissions()->pluck('id')->toArray();
         return view('dashboard::roles.edit', compact('role', 'permissions', 'selectedPermissions'));
     }
 

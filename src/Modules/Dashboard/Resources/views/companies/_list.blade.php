@@ -5,6 +5,7 @@
             <th style="width: 55px">@sortablelink('id', '#')</th>
             <th>@lang('shared.name')</th>
             <th>@lang('shared.description')</th>
+            <th>@lang('shared.sms_notification')</th>
             <th>@lang('shared.organizer')</th>
             <th>@lang('shared.price_per_month')</th>
             <th>@lang('shared.action')</th>

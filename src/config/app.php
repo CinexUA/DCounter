@@ -176,6 +176,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\MailProvider::class,
+        App\Services\Sms\SmsServiceProvider::class,
 
     ],
 
@@ -228,6 +229,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Sms' => App\Services\Sms\Facades\Sms::class,
 
     ],
 

@@ -11,7 +11,7 @@ class RoleService extends BaseService
 {
     public function listAsSelectArray()
     {
-        return Role::all()->pluck('name', 'id')->toArray();
+        return Role::pluck('name', 'id')->toArray();
     }
 
     public function paginate(): LengthAwarePaginator

@@ -92,12 +92,12 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     public function getUserRolesAsString()
     {
-        return implode(', ', $this->roles()->get()->pluck('display_name')->toArray());
+        return implode(', ', $this->roles()->pluck('display_name')->toArray());
     }
 
     public function getUserRolesAsStringWrap()
     {
-        $rolesArray = $this->roles()->get()->pluck('display_name')->toArray();
+        $rolesArray = $this->roles()->pluck('display_name')->toArray();
         $rolesArray = array_map(function ($el){
             return sprintf('<span class="badge bg-success">%s</span>', $el);
         }, $rolesArray);

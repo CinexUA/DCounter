@@ -2,6 +2,7 @@
     <td>{{$company->getKey()}}</td>
     <td>{{$company->getName()}}</td>
     <td>{{$company->getDescription()}}</td>
+    <td>{!! $company->getStatusSmsNotificationAsBadge() !!}</td>
     <td>{{$company->organizer->getName()}}</td>
     <td>{{$company->getPricePerMonthFormatted()}}</td>
     <td>

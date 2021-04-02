@@ -27,6 +27,14 @@
                         </p>
                         <hr>
 
+                        @if($client->getPhone())
+                        <strong>@lang('shared.phone')</strong>
+                        <p class="text-muted">
+                            {{$client->getPhone()}}
+                        </p>
+                        <hr>
+                        @endif
+
                         <strong>@lang('shared.company')</strong>
                         <p class="text-muted">
                             {{$company->getName()}}
