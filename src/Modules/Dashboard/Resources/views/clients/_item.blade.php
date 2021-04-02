@@ -8,6 +8,9 @@
     <td>{{$client->getLeftDaysTransVariant()}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">
+            <a class="btn btn-success" href="{{route('dashboard.client-wallet.edit', $client)}}" role="button">
+                <i class="fas fa-hand-holding-usd"></i>
+            </a>
             @can('view', $client)
             <a class="btn btn-primary" href="{{route('dashboard.company.clients.show', [$company, $client])}}" role="button">
                 <i class="fas fa-eye"></i>

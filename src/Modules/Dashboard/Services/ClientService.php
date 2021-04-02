@@ -39,7 +39,7 @@ class ClientService extends BaseService
 
     public function update(Client $client, array $data): Client
     {
-        $filteredData = Arr::only($data, ['name', 'email', 'phone', 'status']);
+        $filteredData = Arr::only($data, ['name', 'email', 'phone', 'status', 'preferred_language']);
         $client->update($filteredData);
 
         if(!empty($data['password'])){
@@ -67,12 +67,14 @@ class ClientService extends BaseService
     {
         if($deposit){
             $client->deposit($amount, ['description' => $description]);
+
             if(!empty($client->phone)){
                 $amountPrecision = intval($amount / 100);
                 $client->notify(
-                    new DepositedBalance($client->phone, $amountPrecision, $client->company->getName())
+                    new DepositedBalance($client, $amountPrecision, $client->company->getName())
                 );
             }
+
         } else {
             $client->forceWithdraw($amount, ['description' => $description]);
         }

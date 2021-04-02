@@ -64,7 +64,7 @@ class CompanyService extends BaseService
             foreach ($company->clients as $client){
 
                 if(!empty($client->phone) && $client->isNegativeBalance()){
-                    $client->notify(new NegativeBalance($client->phone, $client->balanceFloat, $company->getName()));
+                    $client->notify(new NegativeBalance($client, $client->balanceFloat, $company->getName()));
                 }
 
             }

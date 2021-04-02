@@ -19,7 +19,7 @@ class Client extends Model implements Wallet
 
     public $sortable = ['id'];
     public $fillable = [
-        'name', 'email', 'phone', 'password', 'status', 'remember_token'
+        'name', 'email', 'phone', 'password', 'status', 'preferred_language', 'remember_token'
     ];
 
     protected $hidden = [

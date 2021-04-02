@@ -61,6 +61,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="input-preferred_language">@lang('shared.language_client_spoken')</label>
+                    {{ Form::select('preferred_language', $languageList, null,
+                        [
+                            'class' => 'form-control custom-select rounded-0'
+                                            . ($errors->has('preferred_language') ? ' is-invalid' : ''),
+                            'placeholder' => trans('shared.does_not_matter'),
+                            'id' => 'input-preferred_language'
+                        ]
+                    ) }}
+                    @error("preferred_language")
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="input-password">@lang('shared.password')</label>
                     @if(isset($client))
                         <small class="text-muted">

@@ -5,15 +5,17 @@ namespace Modules\Dashboard\Http\Requests;
 use App\Models\Client;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Modules\Dashboard\Services\LanguageService;
 
 class ClientRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
      *
+     * @param LanguageService $languageService
      * @return array
      */
-    public function rules()
+    public function rules(LanguageService $languageService)
     {
         $rules = [
             'name' => 'required|string|max:255',
@@ -22,7 +24,11 @@ class ClientRequest extends FormRequest
                 'integer',
                 Rule::in(array_keys((new Client())->getStatusValues()))
             ],
-            'phone' => 'nullable|max:15'
+            'phone' => 'nullable|max:15',
+            'preferred_language' => [
+                'nullable',
+                Rule::in($languageService->languagesKeysList())
+            ]
         ];
 
         switch ($this->method()){

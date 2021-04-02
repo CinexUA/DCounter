@@ -47,6 +47,14 @@
                         </p>
                         <hr>
 
+                        @if($client->preferred_language)
+                        <strong>@lang('shared.language_client_spoken')</strong>
+                        <p class="text-muted">
+                            {{ $languageClientSpoken }}
+                        </p>
+                        <hr>
+                        @endif
+
                         <strong>@lang('dashboard::shared.payment_will_be_charged_via')</strong>
                         <p class="text-muted">
                             {{$client->getLeftDaysTransVariant()}}

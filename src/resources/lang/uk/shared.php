@@ -82,4 +82,7 @@ return [
     'on' => 'Включено',
     'off' => 'Виключено',
     'sms_notification' => 'СМС сповіщення',
+    'preferred_language' => 'Бажана мова',
+    'language_client_spoken' => 'Мова, якою розмовляє клієнт',
+    'does_not_matter' => 'Неважливо',
 ];

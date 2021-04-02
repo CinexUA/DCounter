@@ -82,4 +82,7 @@ return [
     'on' => 'On',
     'off' => 'Off',
     'sms_notification' => 'Sms notification',
+    'preferred_language' => 'Preferred language',
+    'language_client_spoken' => 'Language spoken by the client',
+    'does_not_matter' => 'Does not matter',
 ];

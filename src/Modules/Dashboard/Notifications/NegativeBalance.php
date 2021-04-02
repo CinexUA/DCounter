@@ -2,6 +2,7 @@
 
 namespace Modules\Dashboard\Notifications;
 
+use App\Models\Client;
 use App\Services\Sms\Facades\Sms;
 use App\Services\Sms\SmsBuilder;
 use Illuminate\Bus\Queueable;
@@ -11,15 +12,19 @@ class NegativeBalance extends Notification
 {
     use Queueable;
 
-    private $phone;
+    private $client;
     private $balance;
-    private $company;
+    private $companyName;
 
-    public function __construct(string $phone, string $balance, string $company)
+    public function __construct(Client $client, string $balance, string $companyName)
     {
-        $this->phone = $phone;
+        $this->client = $client;
         $this->balance = $balance;
-        $this->company = $company;
+        $this->companyName = $companyName;
+
+        if(!empty($client->preferred_language)){
+            app()->setLocale($client->preferred_language);
+        }
     }
 
     /**
@@ -36,7 +41,7 @@ class NegativeBalance extends Notification
     public function toSms()
     {
         $sms = new SmsBuilder();
-        $sms->setTo($this->phone);
+        $sms->setTo($this->client->phone);
         $sms->setMessage($this->prepareMessage());
 
         Sms::send($sms);
@@ -46,7 +51,7 @@ class NegativeBalance extends Notification
     {
         return trans('dashboard::shared.negative_balance_on_your_account',[
             'balance' => $this->balance,
-            'company' => $this->company,
+            'company' => $this->companyName,
         ]);
     }
 }

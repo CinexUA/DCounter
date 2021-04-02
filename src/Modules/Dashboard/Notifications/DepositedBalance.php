@@ -2,6 +2,7 @@
 
 namespace Modules\Dashboard\Notifications;
 
+use App\Models\Client;
 use App\Services\Sms\Facades\Sms;
 use App\Services\Sms\SmsBuilder;
 use Illuminate\Bus\Queueable;
@@ -11,15 +12,19 @@ class DepositedBalance extends Notification
 {
     use Queueable;
 
-    private $phone;
+    private $client;
     private $balance;
-    private $company;
+    private $companyName;
 
-    public function __construct(string $phone, string $balance, string $company)
+    public function __construct(Client $client, string $balance, string $companyName)
     {
-        $this->phone = $phone;
+        $this->client = $client;
         $this->balance = $balance;
-        $this->company = $company;
+        $this->companyName = $companyName;
+
+        if(!empty($client->preferred_language)){
+            app()->setLocale($client->preferred_language);
+        }
     }
 
     /**
@@ -36,7 +41,7 @@ class DepositedBalance extends Notification
     public function toSms()
     {
         $sms = new SmsBuilder();
-        $sms->setTo($this->phone);
+        $sms->setTo($this->client->getPhone());
         $sms->setMessage($this->prepareMessage());
 
         Sms::send($sms);
@@ -44,9 +49,9 @@ class DepositedBalance extends Notification
 
     private function prepareMessage(): string
     {
-        return trans('dashboard::shared.on_your_account_deposited',[
+        return trans('dashboard::shared.on_your_account_deposited', [
             'balance' => $this->balance,
-            'company' => $this->company,
+            'company' => $this->companyName,
         ]);
     }
 }
