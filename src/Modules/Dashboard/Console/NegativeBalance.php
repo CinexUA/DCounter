@@ -44,6 +44,7 @@ class NegativeBalance extends Command
     public function handle(CompanyService $companyService): void
     {
         $companyService->notifyingUsersOfNegativeBalance();
+        $companyService->insertCronLogNegativeBalanceNotifyResult();
     }
 
     /**

@@ -6,6 +6,7 @@ namespace Modules\Dashboard\Services;
 use App\Models\Client;
 use App\Models\ClientVisiting;
 use App\Models\Company;
+use App\Models\CronLog;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,5 +69,15 @@ class CompanyService extends BaseService
 
             }
         }
+    }
+
+    public function insertCronLogNegativeBalanceNotifyResult(): void
+    {
+        CronLog::create(
+            [
+                'description' => 'negative balance check and notification',
+                'type' => 'negative_balance_notify'
+            ]
+        );
     }
 }
