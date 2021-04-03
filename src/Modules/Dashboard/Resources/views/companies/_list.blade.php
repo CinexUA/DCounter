@@ -8,6 +8,7 @@
             <th>@lang('shared.sms_notification')</th>
             <th>@lang('shared.organizer')</th>
             <th>@lang('shared.price_per_month')</th>
+            <th>@lang('shared.currency')</th>
             <th>@lang('shared.action')</th>
         </tr>
         </thead>

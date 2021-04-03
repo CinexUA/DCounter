@@ -13,6 +13,7 @@ return [
 
     'roles_structure' => [
         'administrator' => [
+            'currencies' => 'c,r,u,d',
             'users' => 'c,r,u,d',
             'roles' => 'c,r,u,d',
             'permissions' => 'c,r,u,d',

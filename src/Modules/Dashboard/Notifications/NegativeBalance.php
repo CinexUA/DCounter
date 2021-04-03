@@ -50,7 +50,7 @@ class NegativeBalance extends Notification
     private function prepareMessage(): string
     {
         return trans('dashboard::shared.negative_balance_on_your_account',[
-            'balance' => $this->balance,
+            'balance' => $this->balance.$this->client->company->currency->getName(),
             'company' => $this->companyName,
         ]);
     }

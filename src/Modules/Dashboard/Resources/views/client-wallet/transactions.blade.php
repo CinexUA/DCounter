@@ -30,7 +30,7 @@
                                 @forelse($transactions as $transaction)
                                     <tr>
                                         <td>{{$transaction->uuid}}</td>
-                                        <td>{{$transaction->amount / 100}}</td>
+                                        <td>{{$transaction->amount / 100}}{{$company->currency->getName()}}</td>
                                         <td>
                                             @if($transaction->type == \Bavix\Wallet\Models\Transaction::TYPE_DEPOSIT)
                                                 <span class="badge bg-success">@lang('shared.deposit')</span>

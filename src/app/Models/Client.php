@@ -100,10 +100,11 @@ class Client extends Model implements Wallet
         ];
     }
 
-    public function colorizeBalance(): string
+    public function colorizeBalance(?bool $withPrefix = false): string
     {
         $type = ($this->balanceFloat > 0) ? 'success' : 'danger';
-        return sprintf('<span class="text-%s">%s</span>', $type, $this->balanceFloat);
+        $prefix = $withPrefix ? $this->company->currency->getName() : '';
+        return sprintf('<span class="text-%s">%s%s</span>', $type, $this->balanceFloat, $prefix);
     }
 
     public function decreaseLeftDays(): void

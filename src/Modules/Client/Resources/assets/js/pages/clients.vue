@@ -27,7 +27,9 @@
                         <tr v-for="client in clients" :key="clients.id">
                             <td :data-title="$t('name')" class="text-center">{{client.name}}</td>
                             <td :data-title="$t('provider')" class="text-center">{{client.provider}}</td>
-                            <td :data-title="$t('price_per_month')" class="text-center">{{client.provider_price}}</td>
+                            <td :data-title="$t('price_per_month')" class="text-center">
+                                {{client.provider_price+client.currency}}
+                            </td>
                             <td :data-title="$t('left_days')" class="text-center">{{client.left_days}}</td>
                             <td :data-title="$t('balance')" class="text-center" v-html="client.colorize_balance"></td>
                             <td :data-title="$t('status')" class="text-center" v-html="client.status_as_badge"></td>

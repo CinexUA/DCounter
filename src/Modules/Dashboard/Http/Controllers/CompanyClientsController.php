@@ -50,7 +50,7 @@ class CompanyClientsController extends BaseController
     public function create(Company $company)
     {
         $statues = (new Client())->getStatusValues();
-        $languageList = $this->languageService->languagesArrayList();
+        $languageList = $this->languageService->languagesArrayList('native');
         return view('dashboard::clients.create', compact('company', 'statues', 'languageList'));
     }
 
@@ -65,7 +65,7 @@ class CompanyClientsController extends BaseController
     public function edit(Company $company, Client $client)
     {
         $statues = $client->getStatusValues();
-        $languageList = $this->languageService->languagesArrayList();
+        $languageList = $this->languageService->languagesArrayList('native');
         return view('dashboard::clients.edit',
             compact(
                 'company',

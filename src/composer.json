@@ -24,6 +24,7 @@
         "santigarcor/laratrust": "^6.3",
         "spatie/laravel-db-snapshots": "^1.7",
         "spatie/laravel-medialibrary": "^9.0.0",
+        "spatie/laravel-translatable": "^4.6",
         "tucker-eric/eloquentfilter": "^2.4",
         "yoeunes/toastr": "^1.2"
     },

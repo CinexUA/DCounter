@@ -21,6 +21,7 @@ class CompanyRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'description' => 'nullable|string|max:65535',
+            'currency_id' => 'required|exists:currencies,id',
             'price_per_month' => 'required|numeric|min:1',
             'sms_notification' => 'boolean',
             'visiting_clients_log' => 'boolean',

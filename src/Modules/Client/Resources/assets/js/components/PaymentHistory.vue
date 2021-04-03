@@ -29,7 +29,7 @@
                             <td :data-title="$t('type')" v-else>
                                 <span class="badge bg-danger">{{$t('withdrawal')}}</span>
                             </td>
-                            <td :data-title="$t('amount')">{{payment.amount}}</td>
+                            <td :data-title="$t('amount')">{{payment.amount}}{{payment.currency}}</td>
                             <td :data-title="$t('description')">{{payment.description || '&nbsp;'}}</td>
                             <td :data-title="$t('created_at')">{{payment.created_at_human}}</td>
                         </tr>

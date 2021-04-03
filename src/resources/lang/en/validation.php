@@ -147,6 +147,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name.uk'               => 'Name in Ukrainian',
+        'name.en'               => 'Name in English',
+    ],
 
 ];

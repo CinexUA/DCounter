@@ -4,6 +4,11 @@ return [
 
     'dashboard_link' => 'Dashboard',
 
+    'currencies_index_link' => 'Currencies list',
+    'currency_show_link' => 'Show currency',
+    'currency_create_link' => 'Create a new currency',
+    'currency_edit_link' => 'Edit currency',
+
     'users_index_link' => 'Users list',
     'user_show_link' => 'Show user',
     'user_create_link' => 'Create a new user',

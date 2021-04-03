@@ -38,6 +38,11 @@ class Company extends Model
     {
         return $this->hasMany(Client::class, 'company_id');
     }
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
     //endregion relations
 
 

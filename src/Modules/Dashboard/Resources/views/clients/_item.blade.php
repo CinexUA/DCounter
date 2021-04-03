@@ -4,7 +4,7 @@
     <td>{{$client->getEmail()}}</td>
     <td>{{$client->getPhone()}}</td>
     <td>{!! $client->getStatusAsBadge() !!}</td>
-    <td>{{$client->wallet->balanceFloat}}</td>
+    <td>{{$client->wallet->balanceFloat}}{{$client->company->currency->getName()}}</td>
     <td>{{$client->getLeftDaysTransVariant()}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">

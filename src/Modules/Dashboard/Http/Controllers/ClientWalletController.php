@@ -22,7 +22,7 @@ class ClientWalletController extends BaseController
 
     public function edit(Client $client)
     {
-        $client->load('company');
+        $client->load('company.currency');
         return view('dashboard::client-wallet.edit', compact('client'));
     }
 
@@ -36,13 +36,14 @@ class ClientWalletController extends BaseController
             $request->has('is_deposit')
         );
 
-        return redirect()->route('dashboard.company.clients.show', [$client->company->getKey(), $client]);
+        return redirect()->route('dashboard.company.clients.show', [$client->company, $client]);
     }
 
     public function transactions(Company $company, Client $client, Request $request)
     {
         $this->authorize('view', $company);
+        $company->load('currency');
         $transactions = $this->clientService->getPaginateTransactions($client, $request->get('per-page'));
-        return view('dashboard::client-wallet.transactions', compact('client', 'transactions'));
+        return view('dashboard::client-wallet.transactions', compact('company','client', 'transactions'));
     }
 }

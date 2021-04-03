@@ -30,7 +30,9 @@
                         <hr>
 
                         <div class="form-group">
-                            <label for="input-amount">@lang('shared.amount')</label>
+                            <label for="input-amount">
+                                @lang('shared.amount') ({{ $client->company->currency->getName() }})
+                            </label>
                             {{ Form::number('amount', null,
                                 [
                                     'class' => 'form-control' . ($errors->has('amount') ? ' is-invalid' : ''),

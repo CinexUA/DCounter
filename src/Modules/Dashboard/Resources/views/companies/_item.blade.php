@@ -5,6 +5,7 @@
     <td>{!! $company->getStatusSmsNotificationAsBadge() !!}</td>
     <td>{{$company->organizer->getName()}}</td>
     <td>{{$company->getPricePerMonthFormatted()}}</td>
+    <td>{{$company->currency->getName()}}</td>
     <td>
         <div class="btn-group btn-group-xs" role="group">
             <a class="btn btn-success" href="{{route('dashboard.company.clients.index', $company)}}" role="button">

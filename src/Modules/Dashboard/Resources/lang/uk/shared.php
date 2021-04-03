@@ -3,6 +3,9 @@
 return [
 
     'price_per_month' => 'Ціна за місяць',
+    'add_new_currency' => 'Додати нову валюту',
+    'edit_currency' => 'Редагувати валюту',
+    'currency_detail' => 'Деталі валюти',
     'add_new_user' => 'Додати нового користувача',
     'edit_user' => 'Редагувати користувача',
 

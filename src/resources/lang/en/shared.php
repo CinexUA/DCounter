@@ -79,6 +79,8 @@ return [
     'visiting_customers' => 'Visiting customers',
     'customer_visit_history' => 'Customer visit history',
     'phone' => 'Phone',
+    'currency' => 'Currency',
+    'currencies' => 'Currencies',
     'on' => 'On',
     'off' => 'Off',
     'sms_notification' => 'Sms notification',

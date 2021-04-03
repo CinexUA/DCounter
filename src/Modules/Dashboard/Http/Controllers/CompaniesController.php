@@ -8,15 +8,18 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Modules\Dashboard\Http\Requests\CompanyRequest;
 use Modules\Dashboard\Services\CompanyService;
+use Modules\Dashboard\Services\CurrencyService;
 
 class CompaniesController extends BaseController
 {
     private $companyService;
+    private $currencyService;
 
-    public function __construct(CompanyService $companyService)
+    public function __construct(CompanyService $companyService, CurrencyService $currencyService)
     {
         $this->authorizeResource(Company::class);
         $this->companyService = $companyService;
+        $this->currencyService = $currencyService;
     }
 
     public function index(Request $request): Renderable
@@ -32,7 +35,8 @@ class CompaniesController extends BaseController
 
     public function create()
     {
-        return view('dashboard::companies.create');
+        $currencies = $this->currencyService->selectList();
+        return view('dashboard::companies.create', compact('currencies'));
     }
 
     public function store(CompanyRequest $companyRequest)
@@ -44,7 +48,8 @@ class CompaniesController extends BaseController
 
     public function edit(Company $company)
     {
-        return view('dashboard::companies.edit', compact('company'));
+        $currencies = $this->currencyService->selectList();
+        return view('dashboard::companies.edit', compact('company', 'currencies'));
     }
 
     public function update(CompanyRequest $companyRequest, Company $company)

@@ -5,12 +5,16 @@ namespace Modules\Dashboard\Services;
 
 class LanguageService extends BaseService
 {
-    public function languagesArrayList(): array
+    public function languagesArrayList(string $concrete = null): array
     {
         $arrayList = [];
         $languageList = \LaravelLocalization::getLocalesOrder();
         foreach ($languageList as $k=>$lang){
-            $arrayList[$k] = $lang['native'];
+            if($concrete){
+                $arrayList[$k] = $lang[$concrete];
+            } else {
+                $arrayList[$k] = $lang;
+            }
         }
         return $arrayList;
     }

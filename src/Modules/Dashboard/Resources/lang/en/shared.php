@@ -3,6 +3,9 @@
 return [
 
     'price_per_month' => 'Price per month',
+    'add_new_currency' => 'Add new currency',
+    'edit_currency' => 'Edit currency',
+    'currency_detail' => 'Currency detail',
     'add_new_user' => 'Add new user',
     'edit_user' => 'Edit user',
 

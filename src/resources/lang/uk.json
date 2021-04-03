@@ -21,5 +21,9 @@
     "Verify Your Email Address": "Перевірте свою адресу електронної пошти",
     "Wallet balance updated": "Баланс гаманця оновлено",
     "You are logged in!": "Ви ввійшли в систему!",
-    "Company history of client visits has been deleted": "Історію відвідувань клієнтів компанії видалено"
+    "Company history of client visits has been deleted": "Історію відвідувань клієнтів компанії видалено",
+    "Currency created": "Нову валюту створено",
+    "Currency updated": "Валюту відредаговано",
+    "Currency has been deleted": "Валюту видалено",
+    "Currency can't be deleted because it has relations": "Видалити валюту не можна, оскільки вона має зв'язки з іншими таблицями"
 }

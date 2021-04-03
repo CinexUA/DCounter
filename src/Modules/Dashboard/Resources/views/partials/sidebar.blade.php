@@ -30,6 +30,16 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
+                        @ability('administrator', 'currencies-read')
+                        <li class="nav-item">
+                            <a href="{{route('dashboard.admin.currencies.index')}}"
+                               class="nav-link {{set_active('dashboard.admin.currencies.*')}}"
+                            >
+                                <i class="far fa-money-bill-alt nav-icon"></i>
+                                <p>@lang('dashboard::sidebar.currencies_link_name')</p>
+                            </a>
+                        </li>
+                        @endability
                         @ability('administrator', 'users-read')
                         <li class="nav-item">
                             <a href="{{route('dashboard.admin.users.index')}}"

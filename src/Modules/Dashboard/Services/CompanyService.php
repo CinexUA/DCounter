@@ -20,7 +20,7 @@ class CompanyService extends BaseService
         $perPage = $request->get('per-page');
         return Auth::user()
             ->companies()
-            ->with('organizer')
+            ->with('organizer', 'currency')
             ->filter($request->all())
             ->sortable()
             ->paginateFilter($perPage);

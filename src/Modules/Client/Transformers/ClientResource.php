@@ -20,7 +20,8 @@ class ClientResource extends JsonResource
             'provider_price' => $client->company->getPricePerMonthFormatted(),
             'left_days' => $client->getLeftDays(),
             'balance' => $client->balance,
-            'colorize_balance' => $client->colorizeBalance(),
+            'currency' => $client->company->currency->getName(),
+            'colorize_balance' => $client->colorizeBalance(true),
             'is_active' => $client->isActive(),
             'status_as_badge' => $client->getStatusAsBadge(),
             'next_payment_humans' => app(ClientService::class)->nextPaymentAt($this->company, $client)

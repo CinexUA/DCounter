@@ -4,6 +4,11 @@ return [
 
     'dashboard_link' => 'Панель',
 
+    'currencies_index_link' => 'Список валют',
+    'currency_show_link' => 'Показати валюту',
+    'currency_create_link' => 'Створити нову валюту',
+    'currency_edit_link' => 'Редагувати валюту',
+
     'users_index_link' => 'Список користувачів',
     'user_show_link' => 'Показати користувача',
     'user_create_link' => 'Створення нового користувача',

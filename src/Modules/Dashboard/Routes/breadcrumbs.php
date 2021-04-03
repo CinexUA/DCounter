@@ -8,6 +8,28 @@ Breadcrumbs::for('dashboard', function ($trail) use($trans) {
     $trail->push($trans('dashboard_link'), route('dashboard.index'));
 });
 
+//region admin currencies
+Breadcrumbs::for('admin.currencies.index', function ($trail) use($trans) {
+    $trail->parent('dashboard');
+    $trail->push($trans('currencies_index_link'), route('dashboard.admin.currencies.index'));
+});
+
+Breadcrumbs::for('admin.currencies.show', function ($trail, $currency) use($trans) {
+    $trail->parent('admin.users.index');
+    $trail->push($trans('currency_show_link'), route('dashboard.admin.currencies.show', $currency));
+});
+
+Breadcrumbs::for('admin.currencies.create', function ($trail) use($trans) {
+    $trail->parent('admin.users.index');
+    $trail->push($trans('currency_create_link'), route('dashboard.admin.currencies.create'));
+});
+
+Breadcrumbs::for('admin.currencies.edit', function ($trail, $currency) use($trans) {
+    $trail->parent('admin.currencies.index');
+    $trail->push($trans('currency_edit_link'), route('dashboard.admin.currencies.edit', $currency));
+});
+//endregion admin currencies
+
 //region admin users
 Breadcrumbs::for('admin.users.index', function ($trail) use($trans) {
     $trail->parent('dashboard');

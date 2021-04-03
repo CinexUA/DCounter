@@ -73,7 +73,7 @@
 
                         <strong>@lang('shared.balance')</strong>
                         <p class="text-muted">
-                            {{$client->balanceFloat}}
+                            {{$client->balanceFloat}}{{$company->currency->getName()}}
                         </p>
 
                     </div>
@@ -102,7 +102,7 @@
                             @forelse($latestTransactions as $transaction)
                             <tr>
                                 <td>{{Str::limit($transaction->uuid, 8)}}</td>
-                                <td>{{$transaction->amount / 100}}</td>
+                                <td>{{$transaction->amount / 100}}{{$company->currency->getName()}}</td>
                                 <td>
                                     @if($transaction->type == \Bavix\Wallet\Models\Transaction::TYPE_DEPOSIT)
                                         <span class="badge bg-success">@lang('shared.deposit')</span>

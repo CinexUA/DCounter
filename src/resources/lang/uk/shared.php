@@ -79,6 +79,8 @@ return [
     'visiting_customers' => 'Відвідування клієнтів',
     'customer_visit_history' => 'Історія відвідувань клієнтів',
     'phone' => 'Телефон',
+    'currency' => 'Валюта',
+    'currencies' => 'Валюти',
     'on' => 'Включено',
     'off' => 'Виключено',
     'sms_notification' => 'СМС сповіщення',

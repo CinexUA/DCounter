@@ -23,7 +23,7 @@ class ClientService extends BaseService
         $perPage = $request->get('per-page');
         return $company
             ->clients()
-            ->with(['company', 'wallet'])
+            ->with(['company.currency', 'wallet'])
             ->filter($request->all())
             ->sortable()
             ->paginateFilter($perPage);
@@ -65,8 +65,12 @@ class ClientService extends BaseService
         ?string $description,
         bool $deposit = true): Client
     {
+        $client->load('company.currency');
+
         if($deposit){
-            $client->deposit($amount, ['description' => $description]);
+            $client->deposit($amount, [
+                'description' => $description, 'currency' => $client->company->currency->getName()
+            ]);
 
             if(!empty($client->phone)){
                 $amountPrecision = intval($amount / 100);
@@ -76,7 +80,9 @@ class ClientService extends BaseService
             }
 
         } else {
-            $client->forceWithdraw($amount, ['description' => $description]);
+            $client->forceWithdraw($amount, [
+                'description' => $description, 'currency' => $client->company->currency->getName()
+            ]);
         }
         return $client;
     }

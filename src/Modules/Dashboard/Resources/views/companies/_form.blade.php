@@ -32,6 +32,19 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="input-currency">@lang('shared.currency')</label>
+                    {{ Form::select('currency_id', $currencies, null,
+                        [
+                            'class' => 'custom-select rounded-0' . ($errors->has('currency_id') ? ' is-invalid' : ''),
+                            'id' => 'input-currency'
+                        ]
+                    ) }}
+                    @error("currency_id")
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <div class="custom-control custom-checkbox">
                         {{ Form::checkbox('sms_notification', 1, null,
                                             [

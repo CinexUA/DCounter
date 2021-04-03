@@ -50,7 +50,7 @@ class DepositedBalance extends Notification
     private function prepareMessage(): string
     {
         return trans('dashboard::shared.on_your_account_deposited', [
-            'balance' => $this->balance,
+            'balance' => $this->balance.$this->client->company->currency->getName(),
             'company' => $this->companyName,
         ]);
     }

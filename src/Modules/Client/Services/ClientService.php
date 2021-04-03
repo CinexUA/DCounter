@@ -11,7 +11,7 @@ class ClientService extends BaseService
 {
     public function getClientsByTokens(array $tokens): Collection
     {
-        $clients = Client::with('company')
+        $clients = Client::with('company.currency')
             ->whereIn('remember_token', $tokens)
             ->get();
 
