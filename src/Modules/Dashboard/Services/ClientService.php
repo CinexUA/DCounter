@@ -72,7 +72,7 @@ class ClientService extends BaseService
                 'description' => $description, 'currency' => $client->company->currency->getName()
             ]);
 
-            if(!empty($client->phone)){
+            if($client->company->isEnabledSmsNotification() && !empty($client->phone)){
                 $amountPrecision = intval($amount / 100);
                 $client->notify(
                     new DepositedBalance($client, $amountPrecision, $client->company->getName())
