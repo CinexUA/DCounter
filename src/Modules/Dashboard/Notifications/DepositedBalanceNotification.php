@@ -13,13 +13,13 @@ class DepositedBalanceNotification extends Notification
     use Queueable;
 
     private $client;
-    private $balance;
+    private $sum;
     private $companyName;
 
-    public function __construct(Client $client, string $balance, string $companyName)
+    public function __construct(Client $client, string $sum, string $companyName)
     {
         $this->client = $client;
-        $this->balance = $balance;
+        $this->sum = $sum;
         $this->companyName = $companyName;
 
         if(!empty($client->preferred_language)){
@@ -50,7 +50,8 @@ class DepositedBalanceNotification extends Notification
     private function prepareMessage(): string
     {
         return trans('dashboard::shared.on_your_account_deposited', [
-            'balance' => $this->balance.$this->client->company->currency->getName(),
+            'sum' => $this->sum.$this->client->company->currency->getName(),
+            'balance' => $this->client->wallet->getBalanceFloatAttribute(),
             'company' => $this->companyName,
         ]);
     }

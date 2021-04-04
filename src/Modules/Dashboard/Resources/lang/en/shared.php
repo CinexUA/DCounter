@@ -42,5 +42,5 @@ return [
     'calculate_days_for_next_month' => 'Calculate days for the next month',
     'calculate_days_for_next_month_and_update' => 'Attention! Calculate days for the next month and update the counter?',
     'negative_balance_on_your_account' => 'You have a negative balance on your account: :balance. Service: :company',
-    'on_your_account_deposited' => 'On your account has been deposited: :balance. Service: :company',
+    'on_your_account_deposited' => 'On your account has been deposited: :sum. Your balance: :balance. Service: :company',
 ];
