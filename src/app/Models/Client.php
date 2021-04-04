@@ -5,6 +5,7 @@ namespace App\Models;
 use Bavix\Wallet\Traits\HasWalletFloat;
 use Bavix\Wallet\Interfaces\Wallet;
 use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
@@ -31,6 +32,13 @@ class Client extends Model implements Wallet
         'status' => 'integer',
         'left_days' => 'integer',
     ];
+
+    //region scopes
+    public function scopeActive(Builder $builder)
+    {
+        $builder->where('status', self::STATUS_ACTIVE);
+    }
+    //endregion scopes
 
     //region relations
     public function company()

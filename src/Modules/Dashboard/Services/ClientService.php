@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Modules\Dashboard\Notifications\DepositedBalance;
+use Modules\Dashboard\Notifications\DepositedBalanceNotification;
 
 
 class ClientService extends BaseService
@@ -51,12 +51,11 @@ class ClientService extends BaseService
 
     public function countOwnClients(): int
     {
-        return Auth::user()
-            ->companies()
-            ->withCount('clients')
-            ->having('clients_count', '>', 0)
-            ->get()
-            ->sum('clients_count');
+        $id = auth()->id();
+
+        return Client::whereHas('company', function ($q) use($id) {
+            $q->select('id')->where('organizer_id', $id);
+        })->count();
     }
 
     public function makeTransaction(
@@ -75,7 +74,7 @@ class ClientService extends BaseService
             if($client->company->isEnabledSmsNotification() && !empty($client->phone)){
                 $amountPrecision = intval($amount / 100);
                 $client->notify(
-                    new DepositedBalance($client, $amountPrecision, $client->company->getName())
+                    new DepositedBalanceNotification($client, $amountPrecision, $client->company->getName())
                 );
             }
 
@@ -102,19 +101,17 @@ class ClientService extends BaseService
         return $client->transactions()->take($latest)->latest()->get();
     }
 
-    public function checkSubscription(Client $client)
+    public function checkActiveSubscription(Client $client)
     {
-        if($client->isActive()){
-            if($client->hasSubscriptionExpired()){
-                $client->forceWithdraw($client->company->getPricePerMonth() * 100,
-                    [
-                        'description' => $client->company->getName()
-                    ]
-                );
-                $client->calculateNextLeftDays();
-            } else {
-                $client->decreaseLeftDays();
-            }
+        if($client->hasSubscriptionExpired()){
+            $client->forceWithdraw($client->company->getPricePerMonth() * 100,
+                [
+                    'description' => $client->company->getName()
+                ]
+            );
+            $client->calculateNextLeftDays();
+        } else {
+            $client->decreaseLeftDays();
         }
     }
 

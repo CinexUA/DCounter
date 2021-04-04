@@ -10,7 +10,7 @@ use App\Models\CronLog;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Modules\Dashboard\Notifications\NegativeBalance;
+use Modules\Dashboard\Notifications\NegativeBalanceNotification;
 
 
 class CompanyService extends BaseService
@@ -58,17 +58,21 @@ class CompanyService extends BaseService
 
     public function notifyingUsersOfNegativeBalance()
     {
-        $companiesWithEnabledNotifications = Company::smsNotificationEnabled()->with('clients')->get();
-
-        foreach ($companiesWithEnabledNotifications as $company){
-            foreach ($company->clients as $client){
-
-                if(!empty($client->phone) && $client->isNegativeBalance()){
-                    $client->notify(new NegativeBalance($client, $client->balanceFloat, $company->getName()));
+        Client::whereNotNull('phone')
+            ->whereHas('company', function ($q){
+                $q->select('id')->where('sms_notification', 1);
+            })
+            ->whereHas('wallet', function ($q){
+                $q->select('id')->where('balance', '<', 0);
+            })
+            ->with('company.currency')
+            ->chunk(50, function ($clients){
+                foreach ($clients as $client) {
+                    $client->notify(
+                        new NegativeBalanceNotification($client, $client->balanceFloat, $client->company->getName())
+                    );
                 }
-
-            }
-        }
+            });
     }
 
     public function insertCronLogNegativeBalanceNotifyResult(): void

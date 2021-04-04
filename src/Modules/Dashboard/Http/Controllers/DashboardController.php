@@ -4,8 +4,6 @@ namespace Modules\Dashboard\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\User;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Modules\Dashboard\Services\ClientService;
 use Modules\Dashboard\Services\DumpDBService;

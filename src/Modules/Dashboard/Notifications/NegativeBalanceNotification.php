@@ -8,7 +8,7 @@ use App\Services\Sms\SmsBuilder;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 
-class NegativeBalance extends Notification
+class NegativeBalanceNotification extends Notification
 {
     use Queueable;
 

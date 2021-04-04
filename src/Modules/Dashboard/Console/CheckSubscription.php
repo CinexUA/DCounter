@@ -49,9 +49,14 @@ class CheckSubscription extends Command
             }
         }
 
-        $this->withProgressBar(Client::with('company')->get(), function ($client) use ($clientService) {
-            $clientService->checkSubscription($client);
-        });
+        Client::active()
+            ->with('company.currency')
+            ->chunk(50, function ($clients) use ($clientService) {
+                foreach ($clients as $client){
+                    $clientService->checkActiveSubscription($client);
+                }
+            });
+
         $clientService->insertCronLogInfoAboutCheckSubscriptionResult();
     }
 
