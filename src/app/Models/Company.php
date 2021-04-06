@@ -18,7 +18,12 @@ class Company extends Model
 
     public $sortable = ['id'];
     public $fillable = [
-        'name', 'description', 'price_per_month', 'sms_notification', 'visiting_clients_log'
+        'name',
+        'description',
+        'price_per_month',
+        'sms_notification',
+        'visiting_clients_log',
+        'currency_id'
     ];
 
     //region scopes
