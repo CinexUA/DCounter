@@ -110,7 +110,7 @@
                                         <span class="badge bg-danger">@lang('shared.withdrawal')</span>
                                     @endif
                                 </td>
-                                <td>{{$transaction->created_at->diffForHumans()}}</td>
+                                <td>{{$transaction->created_at->format('H:m d.m.Y')}}</td>
                             </tr>
                             @empty
                                 @include('shared._empty_table_row')

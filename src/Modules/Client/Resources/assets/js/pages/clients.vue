@@ -16,7 +16,7 @@
                             <th class="text-center" scope="col">{{$t('name')}}</th>
                             <th class="text-center" scope="col">{{$t('provider')}}</th>
                             <th class="text-center" scope="col">{{$t('price_per_month')}}</th>
-                            <th class="text-center" scope="col">{{$t('left_days')}}</th>
+                            <th class="text-center" scope="col">{{$t('write_off_via')}}</th>
                             <th class="text-center" scope="col">{{$t('balance')}}</th>
                             <th class="text-center" scope="col">{{$t('status')}}</th>
                             <th class="text-center" scope="col">{{$t('next_payment')}}</th>
@@ -30,7 +30,10 @@
                             <td :data-title="$t('price_per_month')" class="text-center">
                                 {{client.provider_price+client.currency}}
                             </td>
-                            <td :data-title="$t('left_days')" class="text-center">{{client.left_days}}</td>
+                            <td :data-title="$t('write_off_via')" class="text-center">
+                                <!--{{$tc('days_plural', client.left_days, { count: client.left_days })}}-->
+                                {{$tc('days_plural', 21, { count: 21 })}}
+                            </td>
                             <td :data-title="$t('balance')" class="text-center" v-html="client.colorize_balance"></td>
                             <td :data-title="$t('status')" class="text-center" v-html="client.status_as_badge"></td>
                             <td :data-title="$t('next_payment')" class="text-center">{{client.next_payment_humans}}</td>

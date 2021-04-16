@@ -15,7 +15,7 @@ class TransactionResource extends JsonResource
             'amount' => $this->amount / 100,
             'currency' =>  $this->meta['currency'] ?? '',
             'description' => $this->meta['description'],
-            'created_at' => $this->created_at,
+            'created_at' => $this->created_at->format('H:m d.m.Y'),
             'created_at_human' => $this->created_at->diffForHumans(),
         ];
     }

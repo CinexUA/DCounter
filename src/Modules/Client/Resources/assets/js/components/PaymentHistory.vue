@@ -17,7 +17,7 @@
                             <th scope="col">{{$t('type')}}</th>
                             <th scope="col">{{$t('amount')}}</th>
                             <th scope="col">{{$t('description')}}</th>
-                            <th scope="col">{{$t('created_at')}}</th>
+                            <th scope="col">{{$t('date')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -31,7 +31,7 @@
                             </td>
                             <td :data-title="$t('amount')">{{payment.amount}}{{payment.currency}}</td>
                             <td :data-title="$t('description')">{{payment.description || '&nbsp;'}}</td>
-                            <td :data-title="$t('created_at')">{{payment.created_at_human}}</td>
+                            <td :data-title="$t('created_at')">{{payment.created_at}}</td>
                         </tr>
                         </tbody>
                     </table>
