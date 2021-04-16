@@ -31,7 +31,7 @@
                             </td>
                             <td :data-title="$t('amount')">{{payment.amount}}{{payment.currency}}</td>
                             <td :data-title="$t('description')">{{payment.description || '&nbsp;'}}</td>
-                            <td :data-title="$t('created_at')">{{payment.created_at}}</td>
+                            <td :data-title="$t('date')">{{payment.created_at}}</td>
                         </tr>
                         </tbody>
                     </table>
