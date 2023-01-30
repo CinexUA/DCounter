@@ -19,12 +19,20 @@ class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->isLocal()) {
             //providers
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+            if (class_exists(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class)) {
+                $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            }
+
+            if (class_exists(\Barryvdh\Debugbar\ServiceProvider::class)) {
+                $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+            }
 
             $loader = AliasLoader::getInstance();
             //alias
-            $loader->alias('Debugbar', \Barryvdh\Debugbar\Facade::class);
+
+            if (class_exists(\Barryvdh\Debugbar\Facade::class)) {
+                $loader->alias('Debugbar', \Barryvdh\Debugbar\Facade::class);
+            }
 
         }
 
