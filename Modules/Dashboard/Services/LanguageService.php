@@ -25,12 +25,16 @@ class LanguageService extends BaseService
         return array_keys($languageList);
     }
 
-    public function getLanguageItemByLangKey(string $langKey): ?array
+    public function getLanguageItemByLangKey(?string $langKey): ?array
     {
+        if (is_null($langKey)) {
+            return null;
+        }
+
         return config("laravellocalization.supportedLocales.{$langKey}");
     }
 
-    public function getNativeLanguageByLangKey(string $langKey): string
+    public function getNativeLanguageByLangKey(?string $langKey): ?string
     {
         $languageItem = $this->getLanguageItemByLangKey($langKey);
         return $languageItem['native'] ?? '';
