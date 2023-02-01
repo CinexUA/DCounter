@@ -20,17 +20,17 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y \
        cron \
-       php8.2-cli php7.4-dev \
-       php8.2-pgsql php7.4-sqlite3 php7.4-gd \
-       php8.2-curl \
-       php8.2-imap php7.4-mysql php7.4-mbstring \
-       php8.2-xml php7.4-zip php7.4-bcmath php7.4-soap \
-       php8.2-intl php7.4-readline \
-       php8.2-ldap \
-       php8.2-msgpack php7.4-igbinary php7.4-redis php7.4-swoole \
-       php8.2-memcached php7.4-pcov \
-       php8.2-xdebug \
-       #php8.2-opcache \
+       php7.4-cli php7.4-dev \
+       php7.4-pgsql php7.4-sqlite3 php7.4-gd \
+       php7.4-curl \
+       php7.4-imap php7.4-mysql php7.4-mbstring \
+       php7.4-xml php7.4-zip php7.4-bcmath php7.4-soap \
+       php7.4-intl php7.4-readline \
+       php7.4-ldap \
+       php7.4-msgpack php7.4-igbinary php7.4-redis php7.4-swoole \
+       php7.4-memcached php7.4-pcov \
+       php7.4-xdebug \
+       #php7.4-opcache \
        jpegoptim \
        optipng \
        pngquant \
@@ -54,7 +54,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.2
+RUN setcap "cap_net_bind_service=+ep" /usr/bin/php7.4
 
 RUN groupadd --force -g $WWWGROUP sail
 RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
@@ -63,9 +63,9 @@ RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
 
 COPY start-container /usr/local/bin/start-container
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY php.ini /etc/php/8.2/cli/conf.d/99-sail.ini
-#COPY opcache.ini /etc/php/8.2/cli/conf.d/opcache.ini
-COPY ext-xdebug.ini /etc/php/8.2/cli/conf.d/ext-xdebug.ini
+COPY php.ini /etc/php/7.4/cli/conf.d/99-sail.ini
+#COPY opcache.ini /etc/php/7.4/cli/conf.d/opcache.ini
+COPY ext-xdebug.ini /etc/php/7.4/cli/conf.d/ext-xdebug.ini
 RUN chmod +x /usr/local/bin/start-container
 
 COPY scheduler /etc/cron.d/scheduler

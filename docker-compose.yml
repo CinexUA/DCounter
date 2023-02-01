@@ -1,7 +1,7 @@
 # For more information: https://laravel.com/docs/sail
 version: '3'
 services:
-    laravel.test:
+    dcounter-app:
         container_name: dcounter-app
         build:
             context: ./docker/7.4
@@ -23,7 +23,7 @@ services:
         volumes:
             - '.:/var/www/html'
         networks:
-            - sail
+            - dcounter-network
         depends_on:
             - mariadb
     mariadb:
@@ -39,7 +39,7 @@ services:
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
         volumes:
-            - 'sail-mariadb:/var/lib/mysql'
+            - 'dcounter-mariadb:/var/lib/mysql'
             - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
         command:
              - mysqld
@@ -48,7 +48,7 @@ services:
              - "--collation-server=utf8mb4_unicode_ci"
              - "--default-time-zone=Europe/Kiev"
         networks:
-            - sail
+            - dcounter-network
         healthcheck:
             test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
             retries: 3
@@ -68,10 +68,10 @@ services:
             UPLOAD_LIMIT: 300M
             PMA_ARBITRARY: 1
         networks:
-            - sail
+            - dcounter-network
 networks:
-    sail:
+    dcounter-network:
         driver: bridge
 volumes:
-    sail-mariadb:
+    dcounter-mariadb:
         driver: local
