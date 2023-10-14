@@ -154,12 +154,12 @@ class ClientService extends BaseService
 
         $monthsWithoutRemainder = intval(floor($monthsRemaining));
         if($monthsWithoutRemainder > 0){
-            $shiftByDays += Carbon::now()->addMonths($monthsWithoutRemainder)->diffInDays();
+            $shiftByDays += Carbon::now()->addMonthsNoOverflow($monthsWithoutRemainder)->diffInDays();
         }
 
         $remainderDays = $monthsRemaining - $monthsWithoutRemainder;
         if($remainderDays > 0){
-            $daysInMonth = Carbon::now()->addMonths($monthsWithoutRemainder)->daysInMonth;
+            $daysInMonth = Carbon::now()->addMonthsNoOverflow($monthsWithoutRemainder)->daysInMonth;
             $shiftByDays += intval(floor($daysInMonth * $remainderDays));
         }
 
