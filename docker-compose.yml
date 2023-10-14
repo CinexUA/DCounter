@@ -4,11 +4,11 @@ services:
     laravel.test:
         container_name: dcounter-app
         build:
-            context: ./docker/7.4
+            context: ./docker/8.2
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: sail-xdebug-7.4/app
+        image: sail-xdebug-8.2/app
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
