@@ -129,7 +129,7 @@ class Client extends Model implements Wallet
 
     public function hasSubscriptionExpired(): bool
     {
-        return $this->getLeftDays() <= 1;
+        return $this->getLeftDays() <= 0;
     }
 
     public function isFrozen()
