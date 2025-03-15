@@ -40,6 +40,6 @@ return [
     'calculate_days_for_next_month' => 'Обчислити дні для наступного місяця',
     'calculate_days_for_next_month_and_update' => 'Увага! Обчислити дні для наступного місяця та оновити лічильник?',
     'negative_balance_on_your_account' => 'У Вас на рахунку негативний баланс: :balance. Послуга: :company',
-    'on_your_account_deposited' => 'На ваш рахунок було внесено: :sum. Ваш баланс: :balance. Послуга: :company',
+    'on_your_account_deposited' => 'Інтернет рахунок поповнено на: :sum. Ваш баланс: :balance.',
 
 ];

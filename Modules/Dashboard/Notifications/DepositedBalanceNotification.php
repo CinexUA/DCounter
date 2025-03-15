@@ -52,7 +52,7 @@ class DepositedBalanceNotification extends Notification
         return trans('dashboard::shared.on_your_account_deposited', [
             'sum' => $this->sum.$this->client->company->currency->getName(),
             'balance' => $this->client->balanceFloat,
-            'company' => $this->companyName,
+            //'company' => $this->companyName,
         ]);
     }
 }
